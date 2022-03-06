@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700;900&display=swap');
+
+:root {
+    --primary: #007BFF;
+    --secondary: #28A745;
+    --success: #28A745;
+    --danger: #FFC107;
+    --warning: #17A2B8;
+    --info: #F8F9FA;
+    --light: #343A40;
+    --dark: #FFFFFF;
+  }
+
+
+
+.primary {
+    color: var(--primary)
+}
+.secondary {
+    color: var(--secondary)
+}
+.success {
+    color: var(--success)
+}
+.danger {
+    color: var(--danger)
+}
+.warning {
+    color: var(--warning)
+}
+.info {
+    color: var(--info)
+}
+.light {
+    color: var(--light)
+}
+.dark {
+    color: var(--dark)
+}
+
+.bg-primary {
+    background: var(--primary)
+}
+.bg-secondary {
+    background: var(--secondary)
+}
+.bg-success {
+    background: var(--success)
+}
+.bg-danger {
+    background: var(--danger)
+}
+.bg-warning {
+    background: var(--warning)
+}
+.bg-info {
+    background: var(--info)
+}
+.bg-light {
+    background: var(--light)
+}
+.bg-dark {
+    background: var(--dark)
+}
+
+.bg-azul {
+    background: blue;
+}
+
+.cl-azul {
+    color: blue;
+}
+
+.cl-branco {
+    color: white;
+}
+
+    
+

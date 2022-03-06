@@ -1,0 +1,184 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.main {
+    background: steelblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    /* height: calc(100vh + 200px); */
+    height: 100%;
+    width: 100%;
+    margin-top: 60px;
+
+}
+
+h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 2rem;
+    color: white
+
+}
+
+.form {
+    width: 90%;
+    padding: 10px;
+    background: rgb(228, 226, 226); 
+    border: 1px solid grey;
+    border-radius: 5px;
+    min-width: 300px;
+} 
+
+.inputBox {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.inputBoxCPF {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.inputBox40 {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+}
+
+.checkboxBox {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border: 1px solid grey;
+    margin-top: 15px;
+    border-radius: 5px;
+    background: white;
+    justify-content: start;
+    align-items: center;
+}
+
+.checkboxBox input {
+    flex: 1;
+    margin-left: 15px;
+}
+
+.checkboxBox label {
+    flex: 9;
+    padding-bottom: 10px;
+}
+
+.form label,
+.form input,
+.form select {
+    display: inline-block;
+}
+
+label {
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    margin-left: 8px;
+}
+
+
+.login-input{
+    width: 100%;
+    padding: 0.3rem 8px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid grey;
+    background: white;
+    
+}
+
+input:disabled {
+    background: lightgray;
+}
+
+.botaoBox {
+    margin: 20px 80px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: start;
+    background: steelblue;
+    border-radius: 8px;
+}
+
+.botaoBox-button {
+    padding: 6px;
+    font-size: 1rem;
+    border-radius: 10px;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    margin: auto;
+}
+
+.radioBox {
+
+    padding: 0.6rem 0rem 0.6rem 0.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid grey;
+    background: white;
+
+}
+
+.radioBoxLeft input, label {
+    display: inline-block;
+}
+
+
+.radioBox2Col {
+    flex: 1;
+}
+
+.radioBoxLinha {
+display: flex;
+flex-direction: row;
+justify-content: flex-start;
+padding: 7px;
+}
+
+.radioBoxLinha label{
+    margin: 0;
+}
+
+.radioBoxLinha input {
+    margin-right: 10px;
+    width: 30px;
+}
+
+.containerTitulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+
+
+@media (min-width: 460px) {
+    .form {
+        padding: 20px;
+        width: 400px;
+        max-width: 500px;
+        min-width: 350px;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+        font-size: 2rem;
+    }    
+
+
+}

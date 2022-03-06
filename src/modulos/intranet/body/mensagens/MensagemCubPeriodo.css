@@ -1,0 +1,26 @@
+.intra-cub__tab {
+    display: flex;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.intra-cub__tab-cab {
+    background: lightgray;
+    font-weight: bold;
+}
+
+
+.intra-cub__tab div:nth-child(2),
+.intra-cub__tab div:nth-child(4) {
+    flex: 20; 
+    border: 1px solid white;
+    padding: 5px 0; 
+}
+
+.intra-cub__tab div:nth-child(1),
+.intra-cub__tab div:nth-child(3),
+.intra-cub__tab div:nth-child(5) {
+    flex: 10;
+    border: 1px solid white;
+    padding: 5px 0;
+}

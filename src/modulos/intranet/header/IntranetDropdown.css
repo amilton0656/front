@@ -1,0 +1,102 @@
+:root {
+    --header-mob-primary: white;
+    --header-mob-largura: 300px;
+  }
+
+
+  .intra-mob-menu__show  {
+    position: absolute;
+    padding: 0 10px;
+    list-style: none;
+    top: 68px;
+    left: 95px;
+    width: var(--header-mob-largura); 
+    background: var(--third); 
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    transition: all 0.5s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    height: 100%; 
+    
+}
+
+.intra-mob-menu__hidden {
+    position: absolute;
+    padding: 0 10px;
+    list-style: none;
+    top: 68px;
+    left: 95px;
+    width: var(--header-mob-largura); 
+    background: var(--third); 
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    transition: all 0.5s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    height: 0%; 
+}
+
+
+.intra-mob-menu__item {
+    padding: 5px;
+    list-style: none;
+  }
+
+  .intra-mob-menu__subitem {
+    padding: 5px;
+    margin-left: 20px;
+    width: 100%;
+    color: black;
+    list-style: none;
+  }
+
+  .intra-mob-menu__subitem a:link,
+  .intra-mob-menu__subitem a:visited,
+  .intra-mob-menu__subitem a:hover,
+  .intra-mob-menu__subitem a:active
+  {
+    color: black;
+    
+  }
+
+  .intra-mob-menu__subitem a {
+    text-decoration: none;
+  }
+
+  @media (min-width: 460px) {
+    .intra-mob-menu__show  {
+        position: absolute;
+        padding: 0 10px;
+        list-style: none;
+        top: 68px;
+        left: calc(100vw - var(--header-mob-largura));
+        width: var(--header-mob-largura); 
+        background: var(--third); 
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+        transition: all 0.5s ease;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+        height: 100%; 
+    }
+    
+    .intra-mob-menu__hidden {
+        position: absolute;
+        padding: 0 10px;
+        list-style: none;
+        top: 68px;
+        left: calc(100vw - var(--header-mob-largura));
+        width: var(--header-mob-largura); 
+        background: var(--third); 
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+        transition: all 0.5s ease;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+        height: 0%; 
+    }
+  }
+
+  @media (min-width: 990px) {
+    .intra-mob-menu__show,
+    .intra-mob-menu__hidden {
+        display: none;
+    }
+  }

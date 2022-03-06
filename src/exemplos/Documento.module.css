@@ -1,0 +1,7 @@
+
+
+@media print {
+    .newPage {
+        page-break-before: always;
+    }
+}

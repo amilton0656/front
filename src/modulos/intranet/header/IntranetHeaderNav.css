@@ -1,0 +1,205 @@
+:root {
+    --primary: steelblue;
+    --second: black;
+    --third: #a6fde0;
+  }
+
+  .intra-nav__dropdown {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    margin-right: 0px;;
+}
+
+.intra-nav__dropdown-item {
+    color: var(--second);
+    margin: 0 0px;
+    text-align: center;
+    position: relative;
+    height: 100%;
+    padding: 0 10px;
+}
+
+.intra-nav__dropdown-item:hover
+ {
+    background: rgba(0,0,0,0.1);
+    color: var(--third);
+}
+
+.intra-nav__dropdown-item:hover
+.intra-nav__dropdown-submenu {
+    opacity: 1;
+    transform: translateX(-50%) rotateX(0);
+    transition-timing-function: ease-out;
+}
+
+.intra-nav__dropdown-link {
+    color: var(--second);
+    text-decoration: none;
+    display: inline-block;
+    height: 100%;
+    padding-top: 15px;
+}
+
+.intra-nav__dropdown-link:hover {
+    text-decoration: none;
+}
+
+.intra-nav__dropdown-submenu {
+    background-color: var(--third);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 7px;
+    list-style: none;
+    margin: 0;
+    padding: 15px 0px;
+    width: 250px;
+    opacity: 0.25;
+    position: absolute;
+    left: 50%;
+    top: calc(100% + 0px);
+    transform: translateX(-50%) rotateX(-90deg);
+    transform-origin: top center;
+    transition: all 150ms  ease-in;
+}
+
+.intra-nav__dropdown-submenu::after {
+    border: 8px solid transparent;
+    border-bottom-color: var(--third);
+    content: "";
+    left: 50%;
+    position: absolute;
+    top: -15px;
+    transform: translateX(-50%);
+
+}
+
+/* .intra-nav__dropdown-submenu-item {
+
+} */
+
+.intra-nav__dropdown-submenu-link {
+    color:black;
+    display: inline-block;
+    text-decoration: none;
+    text-align: left;
+    width: 100%;
+    height: 100%;
+    padding: 6px 10px;
+    margin: 0;
+}
+
+.intra-nav__dropdown-submenu-link:hover {
+    text-decoration: none;
+    background: rgba(0,0,0,0.1);
+}
+
+@media (max-width: 990px) {
+
+    .intra-nav__dropdown {
+        /* display: none; */
+        color: black;
+    }
+
+}
+
+
+
+/* :root {
+    --nav-item: black;
+    --nav-itemhover: white;
+  }
+
+.intra-nav__dropdown {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.intra-nav__dropdown-item {
+    color: var(--nav-item);
+    margin: 0 0px;
+    text-align: center;
+    position: relative;
+    height: 100%;
+    padding: 0 10px;
+}
+
+.intra-nav__dropdown-item:hover
+ {
+    background: rgba(0,0,0,0.1);
+    color: var(--nav-itemhover);
+}
+
+.intra-nav__dropdown-item:hover
+.intra-nav__dropdown-submenu {
+    opacity: 1;
+    transform: translateX(-50%) rotateX(0);
+    transition-timing-function: ease-out;
+}
+
+.intra-nav__dropdown-link {
+    color: var(--nav-item);
+    text-decoration: none;
+    display: inline-block;
+    height: 100%;
+    padding-top: 15px;
+}
+
+.intra-nav__dropdown-link:hover {
+    text-decoration: none;
+}
+
+.intra-nav__dropdown-submenu {
+    background-color: var(--nav-itemhover);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 7px;
+    list-style: none;
+    margin: 0;
+    padding: 15px 0px;
+    width: 250px;
+    opacity: 0.25;
+    position: absolute;
+    left: 50%;
+    top: calc(100% + 0px);
+    transform: translateX(-50%) rotateX(-90deg);
+    transfor.intra-nav__origin: top center;
+    transition: all 150ms  ease-in;
+}
+
+.intra-nav__dropdown-submenu::after {
+    border: 8px solid transparent;
+    border-botto.intra-nav__color: var(--nav-itemhover);
+    content: "";
+    left: 50%;
+    position: absolute;
+    top: -15px;
+    transform: translateX(-50%);
+
+}
+
+.intra-nav__dropdown-submenu-item {
+
+}
+
+
+.intra-nav__dropdown-submenu-link {
+    color:black;
+    display: inline-block;
+    text-decoration: none;
+    text-align: left;
+    width: 100%;
+    height: 100%;
+    padding: 6px 10px;
+    margin: 0;
+}
+
+.intra-nav__dropdown-submenu-link:hover {
+    text-decoration: none;
+    background: rgba(0,0,0,0.1);
+} */

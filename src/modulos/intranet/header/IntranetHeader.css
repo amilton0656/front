@@ -1,0 +1,59 @@
+
+
+.intra-header__main {
+    height: 80px;
+    width: 100%;
+    background: LightGray;
+    border: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: linear-gradient(to right, darkgrey, lightgrey);
+    background-image: url('./img/predios.png'); 
+    background-repeat: repeat-x;
+    background-position: bottom;
+    color: rgb(65, 64, 64);
+    font-weight: 80%;
+}
+
+.intra-header__logo {
+    height: 60px;
+    background: rgb(246, 243, 243);
+    border-radius: 5px;
+    border: 1px solid red;
+    margin-top: 0;
+    box-shadow: 5px 5px 5px 0.1px rgba(48, 44, 44, 0.3), 0 6px 20px 0 rgba(48, 44, 44, 0.2);
+    margin: auto 10px;
+}
+
+.intra-header__nav {
+    display: none;
+}
+
+.intra-header__button-container {
+    display: inline-block;
+    width: 70px;
+    cursor: pointer;
+    border: none;
+    background-color: rec;
+}
+
+.intra-header__button {
+    border: none;
+    background-color: transparent;
+}
+
+@media (min-width: 990px) {
+    .intra-header__button {
+        display: none;
+    }
+
+    .intra-header__nav {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        padding: 0 20px;
+    }
+
+}

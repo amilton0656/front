@@ -1,0 +1,22 @@
+.intra-card {
+    margin: 10px;
+}
+
+.intra-card__barra {
+    background: steelblue;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+.intra-card__titulo {
+    color: white;
+    margin-left: 5px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.intra-card__date {
+    color: white;
+    margin-left: 5px;
+    font-size: 0.8rem;
+}

@@ -1,0 +1,142 @@
+.container {
+    background: rgb(115, 115, 116);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 60px;
+    position: absolute;
+}
+
+.logo {
+    color: white;
+    font-size: 2rem;
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.items {
+    display: none;
+    width: calc(100% - 100px);
+    text-align:end;
+    vertical-align: middle;
+}
+
+
+.items a {
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    height: 100%;
+}
+
+.items a:hover {
+    color: white;
+}
+
+.item {
+    display: inline;
+    font-size: 0.7rem;
+    margin: 0 15px;
+}
+
+.toggle-button__bar {
+    width: 30px;
+    height: 0.1rem;
+    background: black;
+    display: block;
+    margin: 0.6rem 0;
+    background-color: white;
+}
+
+.toggle-button {
+    width: 3rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding-top: 0;
+    padding-bottom: 0;
+    vertical-align: middle;
+}
+
+.toggle-button:focus {
+    outline: none;
+}
+
+.nav-mobile {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    height: 280px;
+    background: rgb(138, 137, 137);
+    overflow: hidden;
+    color: black;
+    /* padding: 20px; */
+    transform: translateX(0%);
+    transition: all 1s ease;
+    
+}
+.nav-mobile__hidden {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    height: 0;
+    background: rgb(138, 137, 137);
+    overflow: hidden;
+    color: black;
+    /* padding: 0px; */
+    transform: translateX(0%);
+    transition: all 1s ease;
+    
+}
+
+
+.nav-items {
+    margin: 20px;
+}
+
+
+
+.nav-item__mobile {
+    display: block;
+    width: 100%;
+}
+
+.nav-item__mobile a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    margin: 20px 0;
+}
+
+.nav-item__mobile a:hover {
+    background: white;
+    color: black;
+}
+
+@media (min-width: 460px) {
+    .logo {
+        font-size: 3rem;
+    }
+    
+    .items {
+        display: inline-block;
+    }
+    
+    .toggle-button {
+        display: none;
+    }
+    
+    .items__mobile {
+        display: none;
+    }
+    
+    .nav-mobile {
+        display: none;
+    }
+}

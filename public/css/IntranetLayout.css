@@ -1,0 +1,336 @@
+:root {
+    --nav-item: black;
+    --nav-itemhover: white;
+    --header-mob-primary: white;
+    --header-mob-largura: 300px;
+  }
+
+/* **********     layout     ********** */
+
+.intra-main {
+    background: #FAF0E6;
+    width: 100vw;
+    height: 100vh;
+    max-width: 1300px;
+    min-width: 460px;
+}
+
+.intra-body {
+    display: flex;
+}
+
+.intra-noticias {
+    width: 70%;
+    padding: 15px;
+}
+
+.intra-empreendimentos {
+    width: 30%;
+    padding: 15px 15px 15px 5px;
+}
+
+@media (min-width: 1px) and (max-width: 459px) {
+    .intra-noticias {
+        width: 100%;
+        padding: 15px;
+    }
+    
+    .intra-empreendimentos {
+        width: 100%;
+        padding: 15px 15px 15px 5px;
+    }
+}
+
+
+/* **********     header     ********** */
+
+.intra-header__main {
+    height: 80px;
+    width: 100%;
+    background: LightGray;
+    border: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    background-color: linear-gradient(to right, darkgrey, lightgrey);
+    background-image: url('./img/predios.png'); 
+    background-repeat: repeat-x;
+    background-position: bottom;
+    color: rgb(65, 64, 64);
+    font-weight: 80%;
+}
+
+.intra-header__logo {
+    height: 60px;
+    background: rgb(246, 243, 243);
+    border-radius: 5px;
+    border: 1px solid red;
+    margin-top: 0;
+    box-shadow: 5px 5px 5px 0.1px rgba(48, 44, 44, 0.3), 0 6px 20px 0 rgba(48, 44, 44, 0.2);
+    margin: auto 10px;
+}
+
+.intra-header__nav {
+    width: 100%;
+    height: 100%;
+    padding: 0 20px;
+}
+
+.intra-header__button {
+    display: inline-block;
+    width: 70px;
+    cursor: pointer;
+}
+
+
+/* **********     header-nav     ********** */
+
+.intra-nav__dropdown {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.intra-nav__dropdown-item {
+    color: var(--nav-item);
+    margin: 0 0px;
+    text-align: center;
+    position: relative;
+    height: 100%;
+    padding: 0 10px;
+}
+
+.intra-nav__dropdown-item:hover
+ {
+    background: rgba(0,0,0,0.1);
+    color: var(--nav-itemhover);
+}
+
+.intra-nav__dropdown-item:hover
+.intra-nav__dropdown-submenu {
+    opacity: 1;
+    transform: translateX(-50%) rotateX(0);
+    transition-timing-function: ease-out;
+}
+
+.intra-nav__dropdown-link {
+    color: var(--nav-item);
+    text-decoration: none;
+    display: inline-block;
+    height: 100%;
+    padding-top: 15px;
+}
+
+.intra-nav__dropdown-link:hover {
+    text-decoration: none;
+}
+
+.intra-nav__dropdown-submenu {
+    background-color: var(--nav-itemhover);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 7px;
+    list-style: none;
+    margin: 0;
+    padding: 15px 0px;
+    width: 250px;
+    opacity: 0.25;
+    position: absolute;
+    left: 50%;
+    top: calc(100% + 0px);
+    transform: translateX(-50%) rotateX(-90deg);
+    transform-origin: top center;
+    transition: all 150ms  ease-in;
+}
+
+.intra-nav__dropdown-submenu::after {
+    border: 8px solid transparent;
+    border-bottom-color: var(--nav-itemhover);
+    content: "";
+    left: 50%;
+    position: absolute;
+    top: -15px;
+    transform: translateX(-50%);
+
+}
+
+
+.intra-nav__dropdown-submenu-link {
+    color:black;
+    display: inline-block;
+    text-decoration: none;
+    text-align: left;
+    width: 100%;
+    height: 100%;
+    padding: 6px 10px;
+    margin: 0;
+}
+
+.intra-nav__dropdown-submenu-link:hover {
+    text-decoration: none;
+    background: rgba(0,0,0,0.1);
+}
+
+/* **********     header-dropdown-mob    ********** */
+
+.intra-mob-menu__show {
+    position: absolute;
+    padding: 0 10px;
+    list-style: none;
+    top: 80px;
+    width: var(--header-mob-largura); 
+    height: 100%; 
+    background: var(--third); 
+    overflow: hidden;
+    transform: translateX(calc(100vw - var(--header-mob-largura)));
+    transition: all 0.5s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    background: var(header-mob-);
+}
+
+.intra-mob-menu__hidden {
+    position: absolute;
+    padding: 0 10px;
+    list-style: none;
+    top: 80px;
+    width: var(--header-mob-largura); 
+    height: 100px; 
+    background: var(--third); 
+    overflow: hidden;
+    transform: translateX(1000%);
+    transition: all 0.5s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    background: var(header-mob-);
+}
+
+.intra-mob-menu__item {
+    padding: 5px;
+    list-style: none;
+  }
+
+  .intra-mob-menu__subitem {
+    padding: 5px;
+    margin-left: 20px;
+    width: 100%;
+    color: black;
+    list-style: none;
+  }
+
+  .intra-mob-menu__subitem a:link,
+  .intra-mob-menu__subitem a:visited,
+  .intra-mob-menu__subitem a:hover,
+  .intra-mob-menu__subitem a:active
+  {
+    color: black;
+    
+  }
+
+  .intra-mob-menu__subitem a {
+    text-decoration: none;
+  }
+
+@media (min-width: 1px) and (max-width: 459px) {
+
+  .intra-mob-menu__show {
+      position: absolute;
+      padding: 0 10px;
+      list-style: none;
+      top: 80px;
+      width: var(--header-mob-largura); 
+      height: 100%; 
+      background: var(--third); 
+      overflow: hidden;
+      /* transform: translateX(25%); */
+      transform: translateX(calc(100vw - var(--header-mob-largura) + 50px));
+      transition: all 0.5s ease;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+      background: var(header-mob-);
+  }
+
+  .intra-mob-menu__hidden {
+      position: absolute;
+      padding: 0 10px;
+      list-style: none;
+      top: 80px;
+      width: var(--header-mob-largura); 
+      height: 100%; 
+      background: var(--third); 
+      overflow: hidden;
+      transform: translateX(150%);
+      transition: all 0.5s ease;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+      background: var(header-mob-);
+  }
+
+}
+
+@media (min-width: 990px) {
+    .intra-mob-menu__show,
+    .intra-mob-menu__hidden {
+        position: absolute;
+        padding: 0 10px;
+        list-style: none;
+        left: 0;
+        top: 80px;
+        display: none; 
+        width: var(--header-mob-largura); 
+        height: 300px; 
+        background: red; 
+        overflow: hidden;
+        transform: translateX(150%);
+        transition: all 0.5s ease;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+        background: var(header-mob-);
+    }
+}
+
+
+
+
+@media (min-width: 990px) {
+    .intra-header__main {
+        height: 80px;
+        width: 100%;
+        margin: auto;
+        background: LightGray;
+        border: none;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        background-color: linear-gradient(to right, darkgrey, lightgrey);
+        background-image: url('./img/predios.png'); 
+        background-repeat: repeat-x;
+        background-position: bottom;
+        color: rgb(65, 64, 64);
+        font-weight: 80%;
+    }
+
+    .intra-header__button {
+        display: none;
+        margin: 0;
+        margin-right: 5px;
+        padding: 0;
+    }
+
+
+}
+
+@media (max-width: 990px) {
+
+    .intra-nav__dropdown {
+        display: none;
+    }
+
+}
+
+
+@media (max-width: 460px) {
+
+    .intra-main {
+        width: 100%;
+    }
+    
+}
+

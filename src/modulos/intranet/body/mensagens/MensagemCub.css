@@ -1,0 +1,34 @@
+.intra-cub__titulo {
+    font-size: 1.4rem;
+    font-weight: 600;
+    /* opacity: 0.6; */
+    text-align: center;
+    color: rgb(99, 98, 98);
+}
+
+.intra-cub__linhas {
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.intra-cub__linhas div span {
+    display: inline-block;
+    width: 120px;
+    text-align: left;
+}
+
+.intra-cub__linhas div{
+    font-size: 1.3rem;
+}
+
+@media (min-width: 800px) {
+    .intra-cub__linhas {
+        flex-direction: row;
+        text-align: left;
+    }
+
+}

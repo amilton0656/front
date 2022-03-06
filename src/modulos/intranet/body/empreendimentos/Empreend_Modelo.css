@@ -1,0 +1,17 @@
+.intra-empreend-card {
+    width: 100%;
+    margin: 0;
+}
+
+.intra-empreend-card-fluid {
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 460px) {
+
+    .intra-empreend-card {
+        width: 100%;
+        margin: 0px;
+    }
+}

@@ -1,0 +1,671 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/padrao.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<script src="js/addswf.js"></script>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Intranet COTA - Normas Internas</title>
+<style type="text/css">
+<!--
+.style1 {font-size: medium}
+.style3 {font-size: 12px; }
+-->
+</style>
+<!-- InstanceEndEditable -->
+<style type="text/css">
+body {
+margin:0;
+padding:0;
+background:#cccccc; /* cor de fundo geral */
+text-align:center; /* hack para o IE */	
+	}
+#tudo {
+width: 776px;
+margin:0 auto;			
+padding: 0px;
+text-align:left; /* "remédio" para o hack do IE */	
+	}
+#conteudo {
+padding: 0px;
+background-color: #eeeeee; /* cor de fundo pagina central */
+	}
+
+<!-- Menu  -->
+	
+body { font: normal 62.5% verdana; }
+ 
+ul.menubar{
+  margin: 0px;
+  padding: 0px;
+  background-color: #FFFFFF; /* IE6 Bug */
+  font-size: 100%;
+}
+ 
+ul.menubar .submenu{
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  background-color: #FFFFFF;
+  border: 1px solid #ccc;
+  float:left;
+}
+ 
+ul.menubar ul.menu{
+	display: none;
+	position: absolute;
+
+}
+ 
+ul.menubar a{
+  padding: 5px;
+  display:block;
+  text-decoration: none;
+  color: #777;
+  padding: 5px;
+}
+ 
+ul.menu, ul.menu ul{
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #ccc;
+  width: 150px; /* Width of Menu Items */
+  background-color: #FFFFFF; /* IE6 Bug */
+}
+ 
+ul.menu li{
+  position: relative;
+  list-style: none;
+  border: 0px;
+}
+ 
+ul.menu li a{
+  display: block;
+  text-decoration: none;
+  border: 1px solid #ccc;
+  border-bottom: 0px;
+  color: #777;
+  padding: 5px 10px 5px 5px;
+}
+ 
+ul.menu li sup{
+  font-weight:bold;
+  font-size:7px;
+  color: red;
+}
+ 
+/* Fix IE. Hide from IE Mac \*/
+* html ul.menu li { float: left; height: 1%; }
+* html ul.menu li a { height: 1%; }
+/* End */
+ 
+ul.menu ul{
+  position: absolute;
+  display: none;
+  left: 149px; /* Set 1px less than menu width */
+  top: 0px;
+}
+ 
+ul.menu li.submenu ul { display: none; } /* Hide sub-menus initially */
+ 
+ul.menu li.submenu { background: transparent url(.Templates/img/bolinha.gif) right center no-repeat; }
+ 
+
+ul.menubar li a:hover { color: #000000; }
+ul.menubar li a:hover { background: #cccccc; }
+
+ul.menu li a:hover { color: #ffffff; }
+ul.menu li a:hover { background: #999999; }	
+<!-- Menu  -->
+#barra { background-color: #009900;
+         color: #ffffff;
+	     text-align: left;
+		 font-family: Verdana, Geneva, Arial, sans-serif;
+		 font-size: 20px;
+		 font-weight: bold;
+		 vertical-align: middle;
+	     visibility: visible;
+	     height: 20px;
+		 padding: 5px;
+	     }	
+#corpo { background: "#009900";
+         font-family: Verdana, Geneva, Arial, sans-serif;
+	     text-align: center;
+	     visibility: visible;
+	     height: 30px;
+	     }			 
+		 		 
+#footer { background-color: #99CC99;
+          padding: 5px;
+	      text-align: left;
+	      visibility: visible;
+	      height: 10px;
+		  font-family: Verdana, Geneva, Arial, sans-serif;
+		  font-size: 10px;
+	     }
+#noticia { font-family: Verdana, Geneva, Arial, sans-serif;
+           width: 567px;
+           padding: 10px;
+		   font-size: 30px;
+		   background-color: #F1efe2;
+           color: #5d665b;
+		 }		
+#megasena { width: 190px; 
+           padding: 0px;
+		   font-size: 30px;
+		   background-color: #CCC9C8;
+           color: #5d665b; 
+		 }		 
+#obra01 { width: 300px; 
+           padding: 5px;
+		   font-size: 30px;
+		   background-color: #ffffff;
+           color: #5d665b; 
+		 }
+.conteinerfoto { 
+   float:left; 
+   width:160px; 
+    /*height:140px; */
+   margin: 1px; 
+   padding:1px; 
+   background-color:#f5f7f9; 
+   border-right: #a5a7aa solid 1px; 
+   border-bottom: #a5a7aa solid 1px; 
+   text-align:center; 
+   font-family:Verdana, Geneva, Arial, sans-serif;
+   font-size: 10px;
+   line-height: 220%;
+   
+} 
+.separafoto { 
+   float:left; 
+   width:160px; 
+   height:5px; 
+   margin: 1px; 
+   padding:1px; 
+   background-color:nome; 
+   text-align:center; 
+   
+} 
+
+
+</style>
+
+<script type="text/javascript">
+function horizontal() {
+ 
+   var navItems = document.getElementById("menu_dropdown").getElementsByTagName("li");
+    
+   for (var i=0; i< navItems.length; i++) {
+      if(navItems[i].className == "submenu")
+
+      {
+         if(navItems[i].getElementsByTagName('ul')[0] != null)
+         {
+            navItems[i].onmouseover=function() {this.getElementsByTagName('ul')[0].style.display="block";this.style.backgroundColor = "#f9f9f9";}
+            navItems[i].onmouseout=function() {this.getElementsByTagName('ul')[0].style.display="none";this.style.backgroundColor = "#FFFFFF";}
+         }
+      }
+   }
+ 
+}
+
+function virus() { alert('Exemplo de contaminação !!!'); }
+ 
+</script>
+
+</head>
+
+<body bgcolor="#e3f4ea" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0"  onload="horizontal();">
+<div id="tudo">
+<div id="conteudo">
+<!-- corpo centralizado -->
+<!-- cabeçalho -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="ffffff">
+<!--f8f8f8-->
+  <tr>
+    <td width="163"><div align="right"><img src="img/logoCOTA.gif" width="160" height="69" border="0" usemap="#Map" />      </div></td>
+	<td width="15"> </td>
+    <td width="598">
+      <script>
+                        addSWF("../flash/faixa.swf", 598, 75, true);
+                        //addSWF('Caminho e arquivo a ser chamado', Largura , altura , true ou false para transparente)
+          </script>
+	  <!--
+	  <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="598" height="75">
+        <param name="movie" value="../flash/faixa.swf" />
+        <param name="quality" value="high" />
+        <embed src="../flash/faixa.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="598" height="75"></embed>
+      </object>
+-->
+    </td>
+  </tr>
+</table>
+<!-- cabeçalho -->    
+<!-- Início Menu -->	  
+	  
+	  <table width="100%" border="0" align="center" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td bgcolor="#CCCCCC">
+<ul id="menu_dropdown" class="menubar">
+        <li class="submenu"><font size="1"><a href="index.php">Principal</a></font></li>
+        <li class="submenu"><font size="1"><a href="">Obras</a> </font>          
+              <ul class="menu">			  
+                <li><font size="1"><a href="cota.html">COTA</a></font></li>
+				<li><font size="1"><a href="america.html">America Officenter</a></font></li>
+				<li><font size="1"><a href="cityofficesquare.html">City Office Square</a></font></li>
+				<li><font size="1"><a href="greenvillage.html">Green Village Residence</a></font></li>
+				<li><font size="1"><a href="horizontenovoestreito.html">Horizonte Novo Estreito</a></font></li>
+				<li><font size="1"><a href="maxflora.html">Max & Flora Center</a></font></li>
+				<li><font size="1"><a href="paco.html">Paço Imperial</a></font></li>
+                <li><font size="1"><a href="atlantico.html">Porto Atlântico</a></font></li>
+				<li><font size="1"><a href="portomareresidence.html">Porto Mare Residence</a></font></li>
+				<li><font size="1"><a href="puntablumallboutique.html">Punta Blu Mall Boutique</a></font></li>
+				<li><font size="1"><a href="puntabluresidence.html">Punta Blu Residence</a></font></li>
+                <li><font size="1"><a href="solardegaia.html">Solar de Gaia</a></font></li>
+				<li><font size="1"><a href="platanos.html">Solar dos Plátanos</a></font></li>
+				
+				<li><font size="1"><a href="TheOfficeAvenida.html">The Office Avenida</a></font></li>
+				<li><font size="1"><a href="TheOffice.html">The Office Business Center</a></font></li>
+				<li><font size="1"><a href="UrbanClassic.html">Urban Classic</a></font></li>
+				<li><font size="1"><a href="VivazCondominioJardim.html">Vivaz Condomínio Jardim</a></font></li>
+                <li><font size="1"><a href="combase.html">COMBASE</a></font></li>
+                <li><font size="1"><a href="cambirela.html">Solar Cambirela</a></font> 
+                <li><font size="1"><a href="svr.html">SVR</a></font></li>
+                <li><font size="1"><a href="sunvillage.html">Sun Village Residence</a></font></li>
+              </ul>
+        </li>
+        <li class="submenu"><font size="1"><a href="#">Administrativo</a> </font>         
+              <ul class="menu">
+                <li><font size="1"><a href="organograma.pdf">Organograma</a></font></li>
+                <li><font size="1"><a href="funcoes.html">Manual de Funções</a></font></li>
+                <li><font size="1"><a href="normas.html">Normas Internas</a></font></li>
+              </ul>
+        </li>
+        <li class="submenu"><font size="1"><a href="sugestoes.html">Sugestões</a> </font></li>
+		
+       <li class="submenu"><font size="1"><a href="#">Jornais e Revistas</a> </font>        
+              <ul class="menu">
+                <li><font size="1"><a href="http://www.diario.com.br">Diário Catarinense</a></font></li>
+                <li><font size="1"><a href="http://www.an.com.br">A Notícia</a></font></li>
+                <li><font size="1"><a href="http://www.clicrbs.com.br/zerohora">Zero 
+                  Hora</a></font></li>
+                <li><font size="1"><a href="http://oglobo.globo.com/">O Globo</a></font></li>
+                <li><font size="1"><a href="http://www.folha.com.br">Folha de 
+                  São Paulo</a></font></li>
+                <li><font size="1"><a href="http://www.estadao.com.br">O Estado 
+                  de São Paulo</a></font></li>
+                <li><font size="1"><a href="http://jbonline.terra.com.br/">Jornal 
+                  do Brasil</a></font></li>
+                <li><font size="1"><a href="http://veja.abril.com.br">Veja</a></font></li>
+                <li><font size="1"><a href="http://www.terra.com.br/istoe">Isto 
+                  é</a></font></li>
+				<li><font size="1"><a href="http://www.bbc.co.uk/portuguese/">BBC</a></font></li>  
+              </ul>
+        </li>
+		<li class="submenu"><font size="1"><a href="#">Portais de Notícias</a> </font>         
+              <ul class="menu">
+                <li><font size="1"><a href="http://www.globo.com/">Globo</a></font></li>
+                <li><font size="1"><a href="http://noticias.br.msn.com/">MSN</a></font></li>
+                <li><font size="1"><a href="http://www.terra.com.br">Terra</a></font></li>
+                <li><font size="1"><a href="http://www.uol.com.br">UOL</a></font></li>
+              </ul>
+        </li>
+		<li class="submenu"><font size="1"><a href="#">Bancos</a> </font>        
+              <ul class="menu">
+			  	<li><font size="1"><a href="http://www.bradesco.com.br">Bradesco</a></font></li>
+                <li><font size="1"><a href="http://www.bb.com.br">Brasil</a></font></li>
+                <li><font size="1"><a href="file:///C:/BancoBrasil/officeIE/index.html">Brasil 
+                  - Office</a></font></li>
+                <li><font size="1"><a href="http://www.caixa.gov.br/">CEF</a></font></li>
+                <li><font size="1"><a href="http://www.hsbc.com.br">HSBC</a></font></li>
+                <li><font size="1"><a href="https://www.secureweb.com.br/">Real</a></font></li>
+                <li><font size="1"><a href="http://www.safraempresas.com.br/">Safra</a></font></li>
+                <li><font size="1"><a href="http://www.santander.com.br">Santander</a></font></li>
+                <li><font size="1"><a href="http://bancoreal.clientes.ananke.com.br/landingpage.html">Sudameris</a></font></li>
+                <li><font size="1"><a href="http://www.credicard.com.br/home/default.htm">Credicard</a></font></li>
+				<li><font size="1"><a href="http://www.itau.com.br/empresas">Itau</a></font></li>
+              </ul>
+        </li>
+		<li class="submenu"><font size="1"><a href="#">Órgãos Públicos</a> </font>         
+              <ul class="menu">
+                <li><font size="1"><a href="http://www.presidencia.gov.br/">Presidência 
+                  - Planalto</a></font></li>
+                <li><font size="1"><a href="http://www.jfsc.gov.br/">Tribunal 
+                  de Justiça Federal - SC</a></font></li>
+                <li><font size="1"><a href="http://www.tj.sc.gov.br/">Tribunal 
+                  de Justiça - SC</a></font></li>
+                <li><font size="1"><a href="http://www.receita.fazenda.gov.br">Receita 
+                  Federal</a></font></li>
+                <li><font size="1"><a href="http://www.previdenciasocial.gov.br">Previdência 
+                  Social</a></font></li>
+                <li><font size="1"><a href="http://www.sef.sc.gov.br">Fazenda 
+                  Estadual</a></font></li>
+                <li><font size="1"><a href="http://www.jucesc.sc.gov.br/">Junta 
+                  Comercial</a></font></li>
+				<li><font size="1"><a href="http://www.pmf.sc.gov.br/">Prefeitura Florianópolis</a></font></li> 
+                <li><font size="1"><a href="http://sefinnet.pmf.sc.gov.br/">Fazenda 
+                  Municipal</a></font></li>
+                <li><font size="1"><a href="http://www.sinduscon-fpolis.org.br">Sinduscon</a></font></li>
+                <li><font size="1"><a href="http://www.checkcheck.com.br/">SPC</a></font></li>
+              </ul>
+        </li>
+		<li class="submenu"><font size="1"><a href="#">Sites Úteis</a> </font>         
+              <ul class="menu">
+			    <li><font size="1"><a href="http://www.buscacep.correios.com.br/">CEP's</a></font></li>
+				<li><font size="1"><a href="http://www.construtivo.com/cota/">Construtivo</a></font></li>
+			    <li><font size="1"><a href="http://www.cota.com.br">COTA</a></font></li>
+				<li><font size="1"><a href="http://www.crea-sc.org.br">CREA</a></font></li>
+                <li><font size="1"><a href="http://www.google.com.br">Google</a></font></li>
+				<li><font size="1"><a href="http://www.horariodebrasilia.org/">Horário Oficial do Brasil</a></font></li>
+                <li><font size="1"><a href="http://g1.globo.com/Noticias/Transito/0,,ABD0-7396,00.html">Mapas</a></font></li>
+				<li><font size="1"><a href="new.html">Nova Intranet</a></font></li>
+			    <li><font size="1"><a href="http://www.brasiltelecom.com.br/site/frame.jsp?frame=http://www.brasiltelecom.com.br/site/102/index.jsp?seg=res">Telefones 
+                  - Brasil Telecom</a></font></li>
+
+              </ul>
+        </li>
+		<li class="submenu"><font size="1"><a href="">Câmeras</a> </font>
+		<ul class="menu">
+                <li><font size="1"><a href="http://192.168.1.27">Internas</a></font></li>
+                <li><font size="1"><a href="http://hlcota.ddns.com.br:8550/">The Office Avenida</a></font></li>
+				
+              </ul>    
+        </li>
+	  </ul>
+	  </tr>
+</table> 
+<!-- Fim Menu -->
+
+<!-- Início Barra -->
+<!-- InstanceBeginEditable name="barra" -->
+<DIV id="barra">
+	NORMAS INTERNAS
+	</DIV>
+<!-- InstanceEndEditable -->
+<!-- Fim Barra -->	
+
+<!-- Início Corpo -->
+<!-- InstanceBeginEditable name="corpo" -->
+<div style="background:#9AE2C4">
+	<table width="100%" border="0" bordercolor="" dwcopytype="CopyTableRow">
+        <tr> 
+          <td width="12%">&nbsp;</td>
+          <td width="76%"> <div align="justify"> 
+              <p>&nbsp;</p>
+              <p class="style1"><font color="#333333" face="Verdana, Arial, Helvetica, sans-serif">As 
+                normas abaixo t&ecirc;m o objetivo de regulamentar e orientar 
+                a todos quanto a rotinas, usos e costumes. O bom senso e o esp&iacute;rito 
+                de equipe s&atilde;o os pilares de cria&ccedil;&atilde;o das mesmas, 
+                contudo, melhorias cont&iacute;nuas poder&atilde;o e dever&atilde;o 
+                acontecer para que este documento nos norteie para a boa conduta 
+                e &eacute;tica profissional.</font></p>
+              <p>&nbsp;</p>
+            </div></td>
+          <td width="12%">&nbsp;</td>
+        </tr>
+      </table>
+	  <table width="100%" border="0" dwcopytype="CopyTableRow">
+        <tr bgcolor="#9AE2C4"> 
+          <td width="12%" bgcolor="#9AE2C4">&nbsp;</td>
+          <td width="6%" valign="top"><img src="img/bolinha.gif" width="22" height="15"></td>
+          <td width="70%" colspan="2"> <div align="justify" class="style1"> 
+              <p><font color="#333333" face="Verdana, Arial, Helvetica, sans-serif">O 
+                telefone deve ter sua utiliza&ccedil;&atilde;o da forma mais racional 
+                poss&iacute;vel, restringindo ao m&aacute;ximo as liga&ccedil;&otilde;es 
+                particulares e para celulares. Entretanto, &eacute; pr&aacute;tico 
+                e de baix&iacute;ssimo custo o uso do telefone para comunica&ccedil;&atilde;o 
+                interna (entre departamentos), raz&atilde;o pela qual incentivamos 
+                sua utiliza&ccedil;&atilde;o, evitando tr&acirc;nsito interno. 
+                Os custos totais e individuais (ramais) com telefonia estar&atilde;o 
+                sendo monitorados pela Comiss&atilde;o de Custos. Esta comiss&atilde;o 
+                &eacute; formada pelos seguintes colaboradores: Aliator, F&aacute;bio, 
+                Jos&eacute; Leonel, Joceli e Liliane.</font></p>
+              <p>&nbsp;</p>
+          </div></td>
+          <td width="12%">&nbsp;</td>
+        </tr>
+        <tr bgcolor="#9AE2C4"> 
+          <td>&nbsp;</td>
+          <td valign="top"><img src="img/bolinha.gif" width="22" height="15"></td>
+          <td colspan="2"> <div align="justify" class="style1"> 
+              <p><font color="#333333" face="Verdana, Arial, Helvetica, sans-serif">Refor&ccedil;ando 
+                a cita&ccedil;&atilde;o supra, &eacute; importante que evitemos 
+                nos deslocar de forma contumaz de nosso posto de trabalho, evitando, 
+                assim, excesso de vai e vem pelos corredores. Entretanto, quando 
+                inadi&aacute;vel, &eacute; importante que comuniquemos nossa aus&ecirc;ncia 
+                principalmente para Nilce e/ou Vera e ao nosso colega ao lado, 
+                evitando desta forma que a telefonista e/ou clientes fiquem nos 
+                procurando. Em casos de aus&ecirc;ncia da empresa, favor comunicar 
+                a Nilce e/ou Vera.</font></p>
+              <p>&nbsp;</p>
+          </div></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr bgcolor="#9AE2C4"> 
+          <td>&nbsp;</td>
+          <td valign="top"><img src="img/bolinha.gif" width="22" height="15"></td>
+          <td colspan="2"> <div align="justify" class="style1"> 
+              <p><font color="#333333" face="Verdana, Arial, Helvetica, sans-serif">Todos 
+                sabemos de nossa satisfa&ccedil;&atilde;o com a mudan&ccedil;a 
+                para a nova sede administrativa. Foi e &eacute; motivo de grande 
+                alegria e orgulho estarmos num endere&ccedil;o muito mais moderno, 
+                bonito e funcional. Entretanto, como j&aacute; decorreu determinado 
+                tempo de nossa mudan&ccedil;a, vemos como desnecess&aacute;ria 
+                (salvo casos excepcionais) que continuemos a todo e qualquer momento 
+                e hor&aacute;rio mostrando todos os setores e todas as &aacute;reas 
+                de funcionamento da empresa para as pessoas, quer fornecedores 
+                ou visitantes. Este procedimento tira a aten&ccedil;&atilde;o 
+                e a concentra&ccedil;&atilde;o dos funcion&aacute;rios que est&atilde;o 
+                em seus postos de trabalho, al&eacute;m de reduzir nossa seguran&ccedil;a 
+                (principalmente da &aacute;rea financeira).</font></p>
+              <p>&nbsp;</p>
+          </div></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr bgcolor="#9AE2C4"> 
+          <td>&nbsp;</td>
+          <td valign="top"><img src="img/bolinha.gif" width="22" height="15"></td>
+          <td colspan="2"> <div align="justify" class="style1"> 
+              <p><font color="#333333" face="Verdana, Arial, Helvetica, sans-serif">Quando 
+                estivermos na recep&ccedil;&atilde;o ou em nosso posto de trabalho, 
+                evitar tratar de assuntos da empresa ao telefone ou pessoalmente 
+                na presen&ccedil;a de pessoas de fora. Esta atitude pode gerar 
+                constrangimentos, m&aacute; impress&atilde;o, antiprofissionalismo 
+                ou at&eacute; mesmo denunciar pr&aacute;ticas de negocia&ccedil;&atilde;o. 
+                Por exemplo, um comprador negocia ao telefone com um fornecedor, 
+                enquanto outro fornecedor, espera a sua frente. &Eacute; &oacute;bvio 
+                que este &uacute;ltimo estar&aacute; super atento as t&aacute;ticas 
+                de negocia&ccedil;&atilde;o do nosso comprador.</font></p>
+              <p>&nbsp;</p>
+          </div></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr bgcolor="#9AE2C4"> 
+          <td>&nbsp;</td>
+          <td valign="top"><img src="img/bolinha.gif" width="22" height="15"></td>
+          <td colspan="2"> <div align="justify" class="style1"> 
+              <p><font color="#333333" face="Verdana, Arial, Helvetica, sans-serif">Devemos 
+                evitar o atendimento do telefone quando estivermos em reuni&atilde;o, 
+                somente em casos de extrema urg&ecirc;ncia ou clientes.</font></p>
+              <p>&nbsp;</p>
+          </div></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr bgcolor="#9AE2C4"> 
+          <td>&nbsp;</td>
+          <td valign="top"><img src="img/bolinha.gif" width="22" height="15"></td>
+          <td colspan="2"> <div align="justify" class="style1"> 
+              <p><font color="#333333" face="Verdana, Arial, Helvetica, sans-serif">&Eacute; 
+                estritamente proibido usar de nossas recepcionistas e telefonista 
+                para fazer liga&ccedil;&otilde;es, exceto a Diretoria. Dispomos 
+                de agenda telef&ocirc;nica eletr&ocirc;nica e sistema telef&ocirc;nico 
+                que permitem que fa&ccedil;amos nossas pr&oacute;prias liga&ccedil;&otilde;es. 
+                Assim, n&atilde;o estaremos comprometendo os servi&ccedil;os de 
+                atendimento de nossas recepcionistas e telefonista.</font></p>
+              <p>&nbsp;</p>
+          </div></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr bgcolor="#9AE2C4"> 
+          <td>&nbsp;</td>
+          <td valign="top"><img src="img/bolinha.gif" width="22" height="15"></td>
+          <td colspan="2"> <div align="justify" class="style1"> 
+              <p><font color="#333333" face="Verdana, Arial, Helvetica, sans-serif">Para 
+                evitar danos no Outlook Express (caixa de e-mail) e n&atilde;o 
+                sobrecarregar o sistema de backup, por favor, delete as mensagens 
+                desnecess&aacute;rias e periodicamente (a cada semana) esvazie 
+                a pasta Itens Exclu&iacute;dos.</font></p>
+              <p>&nbsp;</p>
+          </div></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr bgcolor="#9AE2C4"> 
+          <td>&nbsp;</td>
+          <td valign="top"><img src="img/bolinha.gif" width="22" height="15"></td>
+          <td colspan="2"> <div align="justify" class="style1"> 
+              <p><font color="#333333" face="Verdana, Arial, Helvetica, sans-serif">Todos 
+                os equipamentos, m&oacute;veis, utens&iacute;lios, enfim, todo 
+                o mobili&aacute;rio de nossas instala&ccedil;&otilde;es foram 
+                criteriosamente selecionados para nosso melhor conforto e funcionalidade. 
+                &Eacute; de muito importante que fa&ccedil;amos o uso da forma 
+                mais racional poss&iacute;vel, tendo sempre presente a necessidade 
+                de aliarmos o conforto ao custo de manuten&ccedil;&atilde;o de 
+                nossas instala&ccedil;&otilde;es. Como exemplo podemos citar o 
+                uso indiscriminado do ar condicionado nos dias em que a temperatura 
+                externa se mostra agrad&aacute;vel ou seu acionamento com janelas 
+                abertas.</font></p>
+              <p>&nbsp;</p>
+          </div></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr bgcolor="#9AE2C4"> 
+          <td>&nbsp;</td>
+          <td valign="top"><img src="img/bolinha.gif" width="22" height="15"></td>
+          <td colspan="2"> <div align="justify" class="style1"> 
+              <p><font color="#333333" face="Verdana, Arial, Helvetica, sans-serif">&Eacute; 
+                imprescind&iacute;vel e mais seguro que o hor&aacute;rio destinado 
+                ao atendimento dos fornecedores do setor de compras seja respeitado. 
+                A saber: ter&ccedil;as e sextas-feiras.</font></p>
+              <p>&nbsp;</p>
+          </div></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr bgcolor="#9AE2C4"> 
+          <td>&nbsp;</td>
+          <td valign="top"><img src="img/bolinha.gif" width="22" height="15"></td>
+          <td colspan="2"> <div align="justify" class="style1"> 
+              <p><font color="#333333" face="Verdana, Arial, Helvetica, sans-serif">Os 
+                funcion&aacute;rios ser&atilde;o chamados por Nilce para receberem 
+                e acompanharem todas as pessoas (clientes, fornecedores, etc.) 
+                at&eacute; as suas salas quando pertinente. Este procedimento 
+                evita que as recepcionistas saiam de seus postos de trabalho deixando 
+                assim as recep&ccedil;&otilde;es vulner&aacute;veis.</font></p>
+              <p>&nbsp;</p>
+          </div></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr bgcolor="#9AE2C4"> 
+          <td>&nbsp;</td>
+          <td valign="top"><img src="img/bolinha.gif" width="22" height="15"></td>
+          <td colspan="2"> <div align="justify" class="style1"> 
+              <p><font color="#333333" face="Verdana, Arial, Helvetica, sans-serif">Os 
+                ve&iacute;culos da empresa se destinam para fins exclusivos e 
+                espec&iacute;ficos da mesma. O uso particular deve acontecer em 
+                car&aacute;ter de exce&ccedil;&atilde;o. Quando ocorrer, deve 
+                o fato ter autoriza&ccedil;&atilde;o espec&iacute;fica de um dos 
+                Diretores, correndo por conta do usu&aacute;rio todas as despesas 
+                de combust&iacute;vel e eventual danifica&ccedil;&atilde;o.</font></p>
+              <p>&nbsp;</p>
+          </div></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr bgcolor="#9AE2C4"> 
+          <td>&nbsp;</td>
+          <td valign="top"><img src="img/bolinha.gif" width="22" height="15"></td>
+          <td colspan="2"> <div align="justify" class="style1"> 
+              <p><font color="#333333" face="Verdana, Arial, Helvetica, sans-serif">Estamos 
+                partindo do princ&iacute;pio que todos os equipamentos comprados 
+                e todos os funcion&aacute;rios contratados pela Cota s&atilde;o 
+                absolutamente necess&aacute;rios e indispens&aacute;veis para 
+                o pleno desempenho das atividades da empresa, portanto, &eacute; 
+                imperioso que n&atilde;o se usem os equipamentos para fins particulares 
+                e muito menos que se ocupem quaisquer dos funcion&aacute;rios 
+                para atividades que n&atilde;o sejam exclusivamente da Cota. Um 
+                exemplo disto &eacute; a m&aacute;quina de xerox, impressoras, 
+                marcenaria do canteiro central, uso do analista para fins particulares, 
+                dentre outros.</font></p>
+              <p>&nbsp;</p>
+          </div></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr bgcolor="#9AE2C4"> 
+          <td>&nbsp;</td>
+          <td valign="top"><img src="img/bolinha.gif" width="22" height="15"></td>
+          <td colspan="2"> <div align="justify" class="style1"> 
+              <p><font color="#333333" face="Verdana, Arial, Helvetica, sans-serif">A 
+                Cota ir&aacute; providenciar visitas as obras com o objetivo de 
+                manter informados, sob v&aacute;rios aspectos, os nossos funcion&aacute;rios 
+                sobre os produtos que a Cota oferta ao mercado. Contudo, &eacute; 
+                importante que o funcion&aacute;rio se mantenha atualizado quanto 
+                ao est&aacute;gio da obra e unidades a venda para que saiba informar 
+                quando lhe for solicitado. H&aacute; v&aacute;rias formas de se 
+                manter atualizado: internet, intranet, funcion&aacute;rio do setor, 
+                visitando por conta pr&oacute;pria as obras, dentre outras.</font></p>
+              <p>&nbsp;</p>
+          </div></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr bgcolor="#9AE2C4"> 
+          <td>&nbsp;</td>
+          <td valign="top">&nbsp;</td>
+          <td colspan="2"> <div align="right" class="style3"> 
+              <p><font color="#333333" face="Verdana, Arial, Helvetica, sans-serif">Florian&oacute;polis, 
+                06 de Abril de 2005</font></p>
+              <p>&nbsp;</p>
+          </div></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr bgcolor="#9AE2C4"> 
+          <td>&nbsp;</td>
+          <td valign="top">&nbsp;</td>
+          <td> <div align="center" class="style3"><font color="#333333" face="Verdana, Arial, Helvetica, sans-serif">Liliane 
+          Martins Cabral</font></div></td>
+          <td> <div align="center" class="style3"><font face="Verdana, Arial, Helvetica, sans-serif">Joci 
+              Jos&eacute; Martins</font></div></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr bgcolor="#9AE2C4"> 
+          <td>&nbsp;</td>
+          <td valign="top">&nbsp;</td>
+          <td> <div align="center" class="style3"><font color="#333333" face="Verdana, Arial, Helvetica, sans-serif">Gerente 
+          Adm &amp; Marketing </font></div></td>
+          <td> <div align="center" class="style3"><font face="Verdana, Arial, Helvetica, sans-serif">Diretor 
+              Presidente</font></div></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr bgcolor="#9AE2C4">
+          <td>&nbsp;</td>
+          <td valign="top">&nbsp;</td>
+          <td><span class="style1"></span></td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+      </table>
+	</div>
+<!-- InstanceEndEditable -->
+<!-- Fim Corpo -->
+
+<!--Início Footer
+    <div id="footer">
+Copyright © 2008 - Design por Amilton
+
+</div>
+-->
+<!--Fim Footer-->
+<!-- corpo centralizado -->	
+</div>
+</div>
+
+<map name="Map" id="Map"><area shape="rect" coords="-1,-4,160,71" href="index.php" />
+</map></body>
+<!-- InstanceEnd --></html>

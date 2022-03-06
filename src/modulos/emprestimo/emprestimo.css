@@ -1,0 +1,82 @@
+.main-emprestimo {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.main-emprestimo__sub {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    width: 100%;
+}
+
+.centralizar-lista {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.title {
+    color: black;
+}
+
+.sideByside {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+.header {
+    /* border: 1px solid grey; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: lightgray;
+}
+
+.headerTitle {
+    font-weight: bold;
+    margin-left: 30px;
+}
+
+.containerButton {
+    width: 200px;
+    background: steelblue;
+    text-align: center;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.containerButton button {
+    font-size: 1rem;
+    padding: 10px 0;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0;
+    
+}
+
+.containerButton button span {
+text-align: center;
+width: 100%;
+display: inline-block;
+}
+
+@media print {
+    .newPage {
+        /* page-break-before: always; */
+        page-break-after: always;
+    }
+    h2 {
+        color: 'blue';
+    }
+
+    .hide-component {
+        display: none;
+    }
+}

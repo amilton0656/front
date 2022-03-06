@@ -1,0 +1,118 @@
+
+.intra-card {
+    margin: 10px;
+}
+
+.intra-card__barra {
+    background: steelblue;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+.intra-card__titulo {
+    color: white;
+    margin-left: 5px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.intra-card__date {
+    color: white;
+    margin-left: 5px;
+    font-size: 0.8rem;
+}
+
+
+
+
+
+.intra-body-aniv {
+    display: flex;
+    padding-top: 10px;
+}
+
+.intra-body-aniv__img {
+    flex: 3;
+}
+
+.intra-body-aniv__text {
+    flex: 7;
+
+}
+
+.intra-img-small {
+    width: 100%;
+    min-width: 50px;
+    max-width: 150px;
+    height: 100%;
+    margin-right: 15px;
+    margin-top: 15px;
+}
+
+.intra-img-all {
+    width: 100%;
+    height: 100%;
+    margin-top: 15px;
+}
+
+.intra-body-aniv__text {
+    flex: 7;
+}
+.intra-body-aniv__nome {
+    font-size: 1.6rem;
+    color: #2867AC;
+    font-weight: bold;
+    margin-top: 0.6rem;
+    display: inline-block;
+}
+
+.intra-body-aniv__local {
+    font-size: 0.8rem;
+}
+
+.intra-body-aniv__date {
+    display: inline-block;
+    font-size: 1rem;
+    padding-top: 0.6rem;
+}
+
+.intra-body-aniv__parabens {
+        font-size: 2rem;
+        color: #00CC00;
+        font-weight: bold;
+        margin-top: 1rem;
+}
+
+.intra-card__texto {
+    text-align: justify;
+    font-size: 1.4rem;
+}
+
+.intra-card__texto-nome {
+    color: blue;
+    font-size: 1.6rem;
+    font-weight: bold;
+    
+}
+
+.intra-card__texto-bolo {
+    color: green;
+    font-size: 1.6rem;
+    font-weight: bold;
+    font-style: italic;
+}
+
+
+@media (min-width: 800px) {
+    .intra-cub__linhas {
+        flex-direction: row;
+    }
+
+    .intra-cub__linhas {
+        text-align: left;
+    }
+
+    .intra-body-aniv__parabens {
+        font-size: 2.3rem;
+    }
+}

@@ -1,0 +1,69 @@
+.sideByside {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+.main {
+    border: 1px solid grey;
+    /* margin-top: 20px; */
+    padding: 10px;
+    width: 100%;
+}
+
+.lista {
+    width: 780px;
+    padding: 20px;
+    height: 100%;
+}
+
+.linha {
+    padding: 5px 0;
+    border-bottom: 1px solid grey;
+    width: 100%;
+}
+
+.indice {
+    display: inline-block;
+    width: 10%;
+    text-align: right;
+}
+
+.valor {
+    display: inline-block;
+    width: 18%;
+    text-align: right;
+}
+
+.paramsLinha {
+    display: flex;
+}
+
+.paramsItems {
+    display: flex;
+    padding: 8px 0;
+}
+
+.paramsItemTitle {
+    width: 200px;
+}
+
+.paramsItemValue {
+    width: 110px;
+    margin-right: 120px;
+}
+
+@media print {
+    .newPage {
+        /* page-break-before: always; */
+        page-break-after: always;
+    }
+    h2 {
+        color: 'blue';
+    }
+
+    .hide {
+        display: none;
+    }
+}

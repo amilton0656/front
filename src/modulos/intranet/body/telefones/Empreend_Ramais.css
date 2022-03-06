@@ -1,0 +1,19 @@
+.intra-ramais__button {
+    width: 100%;
+    background: steelBlue;
+    border-radius: 5px;
+    padding: 10px 0;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 4px;
+    font-weight: bold;
+    margin-top: 0;
+    justify-content: flex-start;
+    color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.intra-ramais__items li{
+    padding: 5px;
+    list-style: none;
+}

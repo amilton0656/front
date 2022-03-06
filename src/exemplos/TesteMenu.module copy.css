@@ -1,0 +1,66 @@
+.nav {
+    height: 50px;
+    width: 100%;
+    background: rgb(56, 56, 56);
+    color: white;
+}
+
+.nav ul {
+    display: flex;
+    justify-content: space-around;
+    height: 50px;
+    /* width: 200px; */
+}
+
+.nav ul li {
+    display: inline-block;
+    width: 200px;
+    /* border: 1px solid white; */
+    padding: 0 20px;
+    line-height: 50px;
+    vertical-align: center;
+    position: relative;
+}
+
+.susp {
+    position: absolute;
+}
+
+.susp ul {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    background: lightsalmon;
+}
+
+.susp ul active {
+    display: inline-block;
+    width: 200px;
+    height: 400px;
+    background: lightsalmon;
+}
+
+
+
+.susp ul li {
+    display: inline-block;
+    width: 100%;
+    padding: 0 20px;
+    line-height: 50px;
+}
+
+.azul { 
+    color: blue
+}
+
+.verde {
+    color: green;
+}
+
+.button {
+    width: 150px;
+    height: 30px;
+    background: steelblue;
+
+    margin-top: 500px;
+}

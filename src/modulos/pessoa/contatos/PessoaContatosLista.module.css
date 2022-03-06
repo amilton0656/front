@@ -1,0 +1,52 @@
+main {
+        margin-top: 15px;
+        border: 1px solid grey;
+        border-radius: 5px;
+        padding: 5px
+}
+
+.containerHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.containerButton {
+width: 30px;
+height: 30px;
+background: green;
+border-radius: 50%;
+}
+
+.containerHeader button {
+    display: flex;
+    color: white;
+    font-size: 2rem;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    margin: 0;
+}
+
+.items {
+    /* width: 100%; */
+    margin-top: 5px;
+}
+
+.item {
+    border-top: 1px solid grey;
+    padding: 5px;
+    width: 100%;
+}
+
+.showCad {
+    transform: rotate(45deg);
+    transition: all 0.5s ease;
+}
+
+.hideCad {
+    transform: rotate(0deg);
+    transition: all 0.5s ease;
+}
+

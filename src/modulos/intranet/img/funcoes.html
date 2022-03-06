@@ -1,0 +1,469 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/padrao.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<script src="js/addswf.js"></script>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Intranet COTA - Manual de Fun&ccedil;&otilde;es</title>
+<style type="text/css">
+<!--
+#menufun { padding: 0; 
+           margin: 0;
+           font: 18px Verdana, sans-serif;
+           line-height:150%;
+		   color: #666666;
+         }
+#menufun li { list-style: none;
+              margin: 0.5em 0 0.5em 0.5em; 
+              text-align:left;
+              color:#666666;
+            }
+#menufun li a { margin:0; 
+                padding:0;
+                text-decoration:none;
+                text-align:left
+                color:#666666;
+               }
+			   
+#menufun li a:link    { color: #666666; 
+                      }		   
+#menufun li a:visited { color: #666666;
+                      }
+#menufun li a:active  { color:#666666;  
+                      }					  
+#menufun li a:hover   { background: #669900;
+                        color: #FFF; 
+                      }
+-->
+</style>
+<!-- InstanceEndEditable -->
+<style type="text/css">
+body {
+margin:0;
+padding:0;
+background:#cccccc; /* cor de fundo geral */
+text-align:center; /* hack para o IE */	
+	}
+#tudo {
+width: 776px;
+margin:0 auto;			
+padding: 0px;
+text-align:left; /* "rem�dio" para o hack do IE */	
+	}
+#conteudo {
+padding: 0px;
+background-color: #eeeeee; /* cor de fundo pagina central */
+	}
+
+<!-- Menu  -->
+	
+body { font: normal 62.5% verdana; }
+ 
+ul.menubar{
+  margin: 0px;
+  padding: 0px;
+  background-color: #FFFFFF; /* IE6 Bug */
+  font-size: 100%;
+}
+ 
+ul.menubar .submenu{
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  background-color: #FFFFFF;
+  border: 1px solid #ccc;
+  float:left;
+}
+ 
+ul.menubar ul.menu{
+	display: none;
+	position: absolute;
+
+}
+ 
+ul.menubar a{
+  padding: 5px;
+  display:block;
+  text-decoration: none;
+  color: #777;
+  padding: 5px;
+}
+ 
+ul.menu, ul.menu ul{
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #ccc;
+  width: 150px; /* Width of Menu Items */
+  background-color: #FFFFFF; /* IE6 Bug */
+}
+ 
+ul.menu li{
+  position: relative;
+  list-style: none;
+  border: 0px;
+}
+ 
+ul.menu li a{
+  display: block;
+  text-decoration: none;
+  border: 1px solid #ccc;
+  border-bottom: 0px;
+  color: #777;
+  padding: 5px 10px 5px 5px;
+}
+ 
+ul.menu li sup{
+  font-weight:bold;
+  font-size:7px;
+  color: red;
+}
+ 
+/* Fix IE. Hide from IE Mac \*/
+* html ul.menu li { float: left; height: 1%; }
+* html ul.menu li a { height: 1%; }
+/* End */
+ 
+ul.menu ul{
+  position: absolute;
+  display: none;
+  left: 149px; /* Set 1px less than menu width */
+  top: 0px;
+}
+ 
+ul.menu li.submenu ul { display: none; } /* Hide sub-menus initially */
+ 
+ul.menu li.submenu { background: transparent url(.Templates/img/bolinha.gif) right center no-repeat; }
+ 
+
+ul.menubar li a:hover { color: #000000; }
+ul.menubar li a:hover { background: #cccccc; }
+
+ul.menu li a:hover { color: #ffffff; }
+ul.menu li a:hover { background: #999999; }	
+<!-- Menu  -->
+#barra { background-color: #009900;
+         color: #ffffff;
+	     text-align: left;
+		 font-family: Verdana, Geneva, Arial, sans-serif;
+		 font-size: 20px;
+		 font-weight: bold;
+		 vertical-align: middle;
+	     visibility: visible;
+	     height: 20px;
+		 padding: 5px;
+	     }	
+#corpo { background: "#009900";
+         font-family: Verdana, Geneva, Arial, sans-serif;
+	     text-align: center;
+	     visibility: visible;
+	     height: 30px;
+	     }			 
+		 		 
+#footer { background-color: #99CC99;
+          padding: 5px;
+	      text-align: left;
+	      visibility: visible;
+	      height: 10px;
+		  font-family: Verdana, Geneva, Arial, sans-serif;
+		  font-size: 10px;
+	     }
+#noticia { font-family: Verdana, Geneva, Arial, sans-serif;
+           width: 567px;
+           padding: 10px;
+		   font-size: 30px;
+		   background-color: #F1efe2;
+           color: #5d665b;
+		 }		
+#megasena { width: 190px; 
+           padding: 0px;
+		   font-size: 30px;
+		   background-color: #CCC9C8;
+           color: #5d665b; 
+		 }		 
+#obra01 { width: 300px; 
+           padding: 5px;
+		   font-size: 30px;
+		   background-color: #ffffff;
+           color: #5d665b; 
+		 }
+.conteinerfoto { 
+   float:left; 
+   width:160px; 
+    /*height:140px; */
+   margin: 1px; 
+   padding:1px; 
+   background-color:#f5f7f9; 
+   border-right: #a5a7aa solid 1px; 
+   border-bottom: #a5a7aa solid 1px; 
+   text-align:center; 
+   font-family:Verdana, Geneva, Arial, sans-serif;
+   font-size: 10px;
+   line-height: 220%;
+   
+} 
+.separafoto { 
+   float:left; 
+   width:160px; 
+   height:5px; 
+   margin: 1px; 
+   padding:1px; 
+   background-color:nome; 
+   text-align:center; 
+   
+} 
+
+
+</style>
+
+<script type="text/javascript">
+function horizontal() {
+ 
+   var navItems = document.getElementById("menu_dropdown").getElementsByTagName("li");
+    
+   for (var i=0; i< navItems.length; i++) {
+      if(navItems[i].className == "submenu")
+
+      {
+         if(navItems[i].getElementsByTagName('ul')[0] != null)
+         {
+            navItems[i].onmouseover=function() {this.getElementsByTagName('ul')[0].style.display="block";this.style.backgroundColor = "#f9f9f9";}
+            navItems[i].onmouseout=function() {this.getElementsByTagName('ul')[0].style.display="none";this.style.backgroundColor = "#FFFFFF";}
+         }
+      }
+   }
+ 
+}
+
+function virus() { alert('Exemplo de contamina��o !!!'); }
+ 
+</script>
+
+</head>
+
+<body bgcolor="#e3f4ea" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0"  onload="horizontal();">
+<div id="tudo">
+<div id="conteudo">
+<!-- corpo centralizado -->
+<!-- cabe�alho -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="ffffff">
+<!--f8f8f8-->
+  <tr>
+    <td width="163"><div align="right"><img src="img/logoCOTA.gif" width="160" height="69" border="0" usemap="#Map" />      </div></td>
+	<td width="15"> </td>
+    <td width="598">
+      <script>
+                        addSWF("../flash/faixa.swf", 598, 75, true);
+                        //addSWF('Caminho e arquivo a ser chamado', Largura , altura , true ou false para transparente)
+          </script>
+	  <!--
+	  <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="598" height="75">
+        <param name="movie" value="../flash/faixa.swf" />
+        <param name="quality" value="high" />
+        <embed src="../flash/faixa.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="598" height="75"></embed>
+      </object>
+-->
+    </td>
+  </tr>
+</table>
+<!-- cabe�alho -->    
+<!-- In�cio Menu -->	  
+	  
+	  <table width="100%" border="0" align="center" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td bgcolor="#CCCCCC">
+<ul id="menu_dropdown" class="menubar">
+        <li class="submenu"><font size="1"><a href="index.php">Principal</a></font></li>
+        <li class="submenu"><font size="1"><a href="">Obras</a> </font>          
+              <ul class="menu">			  
+                <li><font size="1"><a href="cota.html">COTA</a></font></li>
+				<li><font size="1"><a href="america.html">America Officenter</a></font></li>
+				<li><font size="1"><a href="cityofficesquare.html">City Office Square</a></font></li>
+				<li><font size="1"><a href="greenvillage.html">Green Village Residence</a></font></li>
+				<li><font size="1"><a href="horizontenovoestreito.html">Horizonte Novo Estreito</a></font></li>
+				<li><font size="1"><a href="maxflora.html">Max & Flora Center</a></font></li>
+				<li><font size="1"><a href="paco.html">Pa�o Imperial</a></font></li>
+                <li><font size="1"><a href="atlantico.html">Porto Atl�ntico</a></font></li>
+				<li><font size="1"><a href="portomareresidence.html">Porto Mare Residence</a></font></li>
+				<li><font size="1"><a href="puntablumallboutique.html">Punta Blu Mall Boutique</a></font></li>
+				<li><font size="1"><a href="puntabluresidence.html">Punta Blu Residence</a></font></li>
+                <li><font size="1"><a href="solardegaia.html">Solar de Gaia</a></font></li>
+				<li><font size="1"><a href="platanos.html">Solar dos Pl�tanos</a></font></li>
+				
+				<li><font size="1"><a href="TheOfficeAvenida.html">The Office Avenida</a></font></li>
+				<li><font size="1"><a href="TheOffice.html">The Office Business Center</a></font></li>
+				<li><font size="1"><a href="UrbanClassic.html">Urban Classic</a></font></li>
+				<li><font size="1"><a href="VivazCondominioJardim.html">Vivaz Condom�nio Jardim</a></font></li>
+                <li><font size="1"><a href="combase.html">COMBASE</a></font></li>
+                <li><font size="1"><a href="cambirela.html">Solar Cambirela</a></font> 
+                <li><font size="1"><a href="svr.html">SVR</a></font></li>
+                <li><font size="1"><a href="sunvillage.html">Sun Village Residence</a></font></li>
+              </ul>
+        </li>
+        <li class="submenu"><font size="1"><a href="#">Administrativo</a> </font>         
+              <ul class="menu">
+                <li><font size="1"><a href="organograma.pdf">Organograma</a></font></li>
+                <li><font size="1"><a href="funcoes.html">Manual de Fun��es</a></font></li>
+                <li><font size="1"><a href="normas.html">Normas Internas</a></font></li>
+              </ul>
+        </li>
+        <li class="submenu"><font size="1"><a href="sugestoes.html">Sugest�es</a> </font></li>
+		
+       <li class="submenu"><font size="1"><a href="#">Jornais e Revistas</a> </font>        
+              <ul class="menu">
+                <li><font size="1"><a href="http://www.diario.com.br">Di�rio Catarinense</a></font></li>
+                <li><font size="1"><a href="http://www.an.com.br">A Not�cia</a></font></li>
+                <li><font size="1"><a href="http://www.clicrbs.com.br/zerohora">Zero 
+                  Hora</a></font></li>
+                <li><font size="1"><a href="http://oglobo.globo.com/">O Globo</a></font></li>
+                <li><font size="1"><a href="http://www.folha.com.br">Folha de 
+                  S�o Paulo</a></font></li>
+                <li><font size="1"><a href="http://www.estadao.com.br">O Estado 
+                  de S�o Paulo</a></font></li>
+                <li><font size="1"><a href="http://jbonline.terra.com.br/">Jornal 
+                  do Brasil</a></font></li>
+                <li><font size="1"><a href="http://veja.abril.com.br">Veja</a></font></li>
+                <li><font size="1"><a href="http://www.terra.com.br/istoe">Isto 
+                  �</a></font></li>
+				<li><font size="1"><a href="http://www.bbc.co.uk/portuguese/">BBC</a></font></li>  
+              </ul>
+        </li>
+		<li class="submenu"><font size="1"><a href="#">Portais de Not�cias</a> </font>         
+              <ul class="menu">
+                <li><font size="1"><a href="http://www.globo.com/">Globo</a></font></li>
+                <li><font size="1"><a href="http://noticias.br.msn.com/">MSN</a></font></li>
+                <li><font size="1"><a href="http://www.terra.com.br">Terra</a></font></li>
+                <li><font size="1"><a href="http://www.uol.com.br">UOL</a></font></li>
+              </ul>
+        </li>
+		<li class="submenu"><font size="1"><a href="#">Bancos</a> </font>        
+              <ul class="menu">
+			  	<li><font size="1"><a href="http://www.bradesco.com.br">Bradesco</a></font></li>
+                <li><font size="1"><a href="http://www.bb.com.br">Brasil</a></font></li>
+                <li><font size="1"><a href="file:///C:/BancoBrasil/officeIE/index.html">Brasil 
+                  - Office</a></font></li>
+                <li><font size="1"><a href="http://www.caixa.gov.br/">CEF</a></font></li>
+                <li><font size="1"><a href="http://www.hsbc.com.br">HSBC</a></font></li>
+                <li><font size="1"><a href="https://www.secureweb.com.br/">Real</a></font></li>
+                <li><font size="1"><a href="http://www.safraempresas.com.br/">Safra</a></font></li>
+                <li><font size="1"><a href="http://www.santander.com.br">Santander</a></font></li>
+                <li><font size="1"><a href="http://bancoreal.clientes.ananke.com.br/landingpage.html">Sudameris</a></font></li>
+                <li><font size="1"><a href="http://www.credicard.com.br/home/default.htm">Credicard</a></font></li>
+				<li><font size="1"><a href="http://www.itau.com.br/empresas">Itau</a></font></li>
+              </ul>
+        </li>
+		<li class="submenu"><font size="1"><a href="#">�rg�os P�blicos</a> </font>         
+              <ul class="menu">
+                <li><font size="1"><a href="http://www.presidencia.gov.br/">Presid�ncia 
+                  - Planalto</a></font></li>
+                <li><font size="1"><a href="http://www.jfsc.gov.br/">Tribunal 
+                  de Justi�a Federal - SC</a></font></li>
+                <li><font size="1"><a href="http://www.tj.sc.gov.br/">Tribunal 
+                  de Justi�a - SC</a></font></li>
+                <li><font size="1"><a href="http://www.receita.fazenda.gov.br">Receita 
+                  Federal</a></font></li>
+                <li><font size="1"><a href="http://www.previdenciasocial.gov.br">Previd�ncia 
+                  Social</a></font></li>
+                <li><font size="1"><a href="http://www.sef.sc.gov.br">Fazenda 
+                  Estadual</a></font></li>
+                <li><font size="1"><a href="http://www.jucesc.sc.gov.br/">Junta 
+                  Comercial</a></font></li>
+				<li><font size="1"><a href="http://www.pmf.sc.gov.br/">Prefeitura Florian�polis</a></font></li> 
+                <li><font size="1"><a href="http://sefinnet.pmf.sc.gov.br/">Fazenda 
+                  Municipal</a></font></li>
+                <li><font size="1"><a href="http://www.sinduscon-fpolis.org.br">Sinduscon</a></font></li>
+                <li><font size="1"><a href="http://www.checkcheck.com.br/">SPC</a></font></li>
+              </ul>
+        </li>
+		<li class="submenu"><font size="1"><a href="#">Sites �teis</a> </font>         
+              <ul class="menu">
+			    <li><font size="1"><a href="http://www.buscacep.correios.com.br/">CEP's</a></font></li>
+				<li><font size="1"><a href="http://www.construtivo.com/cota/">Construtivo</a></font></li>
+			    <li><font size="1"><a href="http://www.cota.com.br">COTA</a></font></li>
+				<li><font size="1"><a href="http://www.crea-sc.org.br">CREA</a></font></li>
+                <li><font size="1"><a href="http://www.google.com.br">Google</a></font></li>
+				<li><font size="1"><a href="http://www.horariodebrasilia.org/">Hor�rio Oficial do Brasil</a></font></li>
+                <li><font size="1"><a href="http://g1.globo.com/Noticias/Transito/0,,ABD0-7396,00.html">Mapas</a></font></li>
+				<li><font size="1"><a href="new.html">Nova Intranet</a></font></li>
+			    <li><font size="1"><a href="http://www.brasiltelecom.com.br/site/frame.jsp?frame=http://www.brasiltelecom.com.br/site/102/index.jsp?seg=res">Telefones 
+                  - Brasil Telecom</a></font></li>
+
+              </ul>
+        </li>
+		<li class="submenu"><font size="1"><a href="">C�meras</a> </font>
+		<ul class="menu">
+                <li><font size="1"><a href="http://192.168.1.27">Internas</a></font></li>
+                <li><font size="1"><a href="http://hlcota.ddns.com.br:8550/">The Office Avenida</a></font></li>
+				
+              </ul>    
+        </li>
+	  </ul>
+	  </tr>
+</table> 
+<!-- Fim Menu -->
+
+<!-- In�cio Barra -->
+<!-- InstanceBeginEditable name="barra" -->
+<div id="barra"> MANUAL DE FUN��ES </div>
+<!-- InstanceEndEditable -->
+<!-- Fim Barra -->	
+
+<!-- In�cio Corpo -->
+<!-- InstanceBeginEditable name="corpo" -->
+<div id="corpo">
+<table width="774" border="0" align="left">
+  <tr>
+    <td width="16">&nbsp;</td>
+    <td width="388">
+	<ul id="menufun">
+      <li><a href="funcoes/conselho_diretor.doc" title="">Conselho Diretor</a></li>
+      <li><a href="funcoes/diretor_presidente.doc" title="">Diretor Presidente</a></li>
+      <li><a href="funcoes/diretor_operacional.doc" title="">Diretor Operacional</a></li>
+      <li><a href="funcoes/diretor_tecnico.doc" title="">Diretor T&eacute;cnico</a></li>
+      <li><a href="funcoes/diretor_estrategico.doc" title="">Diretor Estrat&eacute;gico  </a></li>
+      <li><a href="funcoes/gerente_financeiro.doc" title="">Gerente Financeiro</a></li>
+      <li><a href="funcoes/gerente_marketing_administracao.doc" title="">Gerente de Marketing e Administra&ccedil;&atilde;o</a></li>
+      <li><a href="funcoes/assessor_especial.doc" title="">Assessor Especial</a></li>
+      <li><a href="funcoes/gerente_imobiliario.doc" title="">Gerente Imobili&aacute;rio</a></li>
+      <li><a href="funcoes/gerente_compras.doc" title="">Gerente de Compras</a></li>
+      <li><a href="funcoes/engenheiro_obra.doc" title="">Engenheiro (Obras)</a></li>
+      <li><a href="funcoes/engenheiro_seg_trabalho.doc" title="">Engenheiro (Atendimento ao Cliente)</a></li>
+    </ul></td>
+    
+    <td width="356"><ul id="menufun">
+      <li><a href="funcoes/arquiteto.doc" title="">Arquiteto</a></li>
+      <li><a href="funcoes/tesoureiro.doc" title="">Tesoureiro</a></li>
+      <li><a href="funcoes/contador.doc" title="">Contador</a></li>
+      <li><a href="funcoes/tecnico_informatica.doc" title="">T&eacute;cnico em Inform&aacute;tica</a></li>
+      <li><a href="funcoes/comprador.doc" title="">Comprador</a></li>
+      <li><a href="funcoes/tecnico_edificacoes.doc" title="">T&eacute;cnico em Edifica&ccedil;&otilde;es </a></li>
+      <li><a href="funcoes/aux_rec_humanos.doc" title="">Auxiliar de Recursos Humanos</a></li>
+      <li><a href="funcoes/almoxarife.doc" title="">Almoxarife</a></li>
+      <li><a href="funcoes/secretaria.doc" title="">Secret&aacute;ria</a></li>
+      <li><a href="funcoes/aux_escritorio.doc" title="">Auxiliar de Escrit&oacute;rio</a></li>
+      <li><a href="funcoes/engenheiro_seg_trabalho.doc" title="">Engenheiro (Seguran&ccedil;a no trabalho)</a></li>
+      <li><a href="funcoes/enc_assist_tecnica.doc" title="">Encarregado de Assist&ecirc;ncia T&eacute;cnica</a></li>
+    </ul></td>
+  </tr>
+  <tr>
+    
+  </tr>
+</table>
+
+</div>
+<!-- InstanceEndEditable -->
+<!-- Fim Corpo -->
+
+<!--In�cio Footer
+    <div id="footer">
+Copyright � 2008 - Design por Amilton
+
+</div>
+-->
+<!--Fim Footer-->
+<!-- corpo centralizado -->	
+</div>
+</div>
+
+<map name="Map" id="Map"><area shape="rect" coords="-1,-4,160,71" href="index.php" />
+</map></body>
+<!-- InstanceEnd --></html>
