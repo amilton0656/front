@@ -1,9 +1,11 @@
 import React from 'react'
 
+import Card from '../../../../components/Card'
+
 const MensagemImg = ({titulo,cor,data,img}) => {
     return (
         <div className="intra-card intra-flex-center">
-
+            <Card>
             <div className="intra-card__barra" style={{background: cor}}>
                 <div className="intra-card__titulo">{titulo}</div>
                 <div className="intra-card__date">{data}</div>
@@ -12,7 +14,7 @@ const MensagemImg = ({titulo,cor,data,img}) => {
             <div>
                 <img src={img} className="intra-img-all" alt="foto"/>
             </div>
-
+            </Card>
         </div>
 
 

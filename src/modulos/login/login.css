@@ -1,0 +1,16 @@
+.login-container {
+    background: rgb(35, 101, 155);
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-title {
+    margin: 1rem;
+    margin-bottom: 2rem;
+    font-size: 30px;
+    text-align: center;
+}
+

@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { Link, useNavigate } from 'react-router-dom'
+
 import './IntranetHeaderNav.css'
 
 import { 
@@ -12,6 +14,8 @@ import {
 } from './IntranetMenuItems';
 
 const IntranetHeaderNav = () => {
+
+    const navigate = useNavigate()
 
     return (
         <ul className='intra-nav__dropdown'>
@@ -88,7 +92,8 @@ const IntranetHeaderNav = () => {
                 </ul>
             </li>
             <li className='intra-nav__dropdown-item'>
-                <a href="#" className='intra-nav__dropdown-link'>Sistema</a>
+                {/* <a href="#" className='intra-nav__dropdown-link'>Sistema</a> */}
+                <Link className='intra-nav__dropdown-link' to ='/erp'>Sistema</Link>
             </li>
         </ul>
 

@@ -3,3 +3,7 @@ react-router-dom
 react-redux
 axios
 react-icons
+sweetalert2
+
+bcryptjs
+pdfMake

@@ -4,30 +4,27 @@ import { convertToReal } from '../../../util/util'
 import EmprestimoPriceListaPDF from './EmprestimoPriceListaPDF'
 
 
-import classes2 from '../EmprestimoSAC.module.css'
-
-import '../form.css'
 import '../emprestimo.css'
 
-const ref = React.createRef();
+const ref = React.createRef()
 
 
 const ItemLinha = props => {
 
     const { item } = props
 
-    const classe = item.mes === 250 ? classes2.newPage : ''
+    // const classe = item.mes === 250 ? classes2.newPage : ''
 
 
     return (
-        <div className={classe}>
-            <li key={props.item.mes} className={classes2.linha}>
-                <div className={classes2.indice}>{item.mes}</div>
-                <div className={classes2.valor}>{item.aporte}</div>
-                <div className={classes2.valor}>{item.juros}</div>
-                <div className={classes2.valor}>{item.desembolso}</div>
-                <div className={classes2.valor}>{item.amortizacao}</div>
-                <div className={classes2.valor}>{item.saldo}</div>
+        <div>
+            <li key={props.item.mes} className='emprestimo__tabela-linha'>
+                <div className='emprestimo__tabela-indice'>{item.mes}</div>
+                <div className='emprestimo__tabela-valor'>{item.aporte}</div>
+                <div className='emprestimo__tabela-valor'>{item.juros}</div>
+                <div className='emprestimo__tabela-valor'>{item.desembolso}</div>
+                <div className='emprestimo__tabela-valor'>{item.amortizacao}</div>
+                <div className='emprestimo__tabela-valor'>{item.saldo}</div>
 
             </li>
         </div>
@@ -37,7 +34,7 @@ const ItemLinha = props => {
 const Parametros = props => {
 
     const { formData, totalDesembolso } = props
-    const desembolsoEditado = convertToReal(totalDesembolso)  
+    const desembolsoEditado = convertToReal(totalDesembolso)
 
     const abc = [
         {
@@ -74,21 +71,21 @@ const Parametros = props => {
         <div>
             {
                 abc.map(linha => (
-                    <div className={classes2.paramsLinha}>
-                        <div className={classes2.paramsItems}>
-                            <div className={classes2.paramsItemTitle}>{linha.title}</div>
-                            <div className={classes2.paramsItemValue} style={{ textAlign: 'right' }}>{linha.value}</div>
+                    <div className='emprestimo__paramsLinha'>
+                        <div className='emprestimo__paramsItems'>
+                            <div className='emprestimo__paramsItemTitle'>{linha.title}</div>
+                            <div className='emprestimo__paramsItemValue' style={{ textAlign: 'right' }}>{linha.value}</div>
                         </div>
-                        <div className={classes2.paramsItems}>
-                            <div className={classes2.paramsItemTitle}>{linha.title2}</div>
-                            <div className={classes2.paramsItemValue} style={{ textAlign: 'right' }}>{linha.value2}</div>
+                        <div className='emprestimo__paramsItems'>
+                            <div className='emprestimo__paramsItemTitle'>{linha.title2}</div>
+                            <div className='emprestimo__paramsItemValue' style={{ textAlign: 'right' }}>{linha.value2}</div>
                         </div>
                     </div>
                 ))
             }
-            <div className={classes2.paramsItems}>
-                <div className={classes2.paramsItemTitle}>Total do desembolso:</div>
-                <div className={classes2.paramsItemValue} style={{ textAlign: 'right' }}>{desembolsoEditado}</div>
+            <div className='emprestimo__paramsItems'>
+                <div className='emprestimo__paramsItemTitle'>Total do desembolso:</div>
+                <div className='emprestimo__paramsItemValue' style={{ textAlign: 'right' }}>{desembolsoEditado}</div>
             </div>
         </div>
     )
@@ -105,33 +102,38 @@ const EmprestimoPriceLista = props => {
     const listaPDF = location.state.listaPDF || []
     const totalDesembolso = location.state.totalDesembolso || 0
 
-    console.log('fo0rmdatarecebgido ', formData)
-    console.log('listaPDFcebgido ', listaPDF)
-
     let cont = 0
     let classe
 
     return (
-        <div className='centralizar-lista'>
-            <div className={classes2.lista}>
-            <div className='header'>
-                    <div className='containerButton hide-component'>
-                        <button className='botaoBox-button' type="button" onClick={() => EmprestimoPriceListaPDF(formData, listaPDF)}>Gerar PDF</button>
+        <div className='emprestimo__centralizar-lista'>
+            <div className='emprestimo__lista'>
+                <div className='emprestimo__header'>
+                    <div className='form-botaoBox'>
+                        <button
+                            className='form-botaoBox__button w150'
+                            type="button"
+                            onClick={() => EmprestimoPriceListaPDF(formData, listaPDF, totalDesembolso)}
+                        >Gerar PDF</button>
                     </div>
-                    <div className='containerButton hide-component'>
-                        <button className='botaoBox-button' type="button" onClick={() => window.print()}>Imprimir</button>
+                    <div className='form-botaoBox'>
+                        <button
+                            className='form-botaoBox__button w150'
+                            type="button"
+                            onClick={() => window.print()}
+                        >Imprimir</button>
                     </div>
                 </div>
                 <h2 style={{ color: 'black', textAlign: 'center' }}>Simulação - Price</h2>
                 <Parametros formData={formData} totalDesembolso={totalDesembolso} />
-                <ul className={classes2.main}>
-                    <li key={-1} className={classes2.linha}>
-                        <div className={classes2.indice} style={{ fontWeight: 'bold' }}>Mês</div>
-                        <div className={classes2.valor} style={{ fontWeight: 'bold' }}>Aporte</div>
-                        <div className={classes2.valor} style={{ fontWeight: 'bold' }}>Juros</div>
-                        <div className={classes2.valor} style={{ fontWeight: 'bold' }}>Desembolso</div>
-                        <div className={classes2.valor} style={{ fontWeight: 'bold' }}>Amortização</div>
-                        <div className={classes2.valor} style={{ fontWeight: 'bold' }}>Saldo</div>
+                <ul className='emprestimo__container-tabela'>
+                    <li key={-1} className='emprestimo__tabela-linha'>
+                        <div className='emprestimo__tabela-indice' style={{ fontWeight: 'bold' }}>Mês</div>
+                        <div className='emprestimo__tabela-valor' style={{ fontWeight: 'bold' }}>Aporte</div>
+                        <div className='emprestimo__tabela-valor' style={{ fontWeight: 'bold' }}>Juros</div>
+                        <div className='emprestimo__tabela-valor' style={{ fontWeight: 'bold' }}>Desembolso</div>
+                        <div className='emprestimo__tabela-valor' style={{ fontWeight: 'bold' }}>Amortização</div>
+                        <div className='emprestimo__tabela-valor' style={{ fontWeight: 'bold' }}>Saldo</div>
 
                     </li>
                     {listaPDF.map(item => {

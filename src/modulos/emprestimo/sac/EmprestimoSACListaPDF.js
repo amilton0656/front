@@ -119,7 +119,10 @@ const EmprestimoSACListaPDF = (formData, listaPDF) => {
 
         header: [reportTitle],
         content: [details],
-        footer: rodape
+        footer: rodape,
+        defaultStyle: {
+          font: 'Helvetica'
+        }
     }
 
     pdfMake.createPdf(docDefinitions).download()

@@ -4,19 +4,80 @@
     width: 100%;
 }
 
-.main-emprestimo__sub {
+
+.main-emprestimo__container {
     display: flex; 
     flex-direction: column; 
     align-items: center; 
     justify-content: center; 
     width: 100%;
+    margin: 0 auto;
 }
 
-.centralizar-lista {
+.emprestimo__centralizar-lista {
     display: flex;
     justify-content: center;
 }
 
+.emprestimo__lista {
+    width: 780px;
+    padding: 20px;
+    height: 100%;
+}
+
+.emprestimo__container-tabela {
+    border: 1px solid grey;
+    /* margin-top: 20px; */
+    padding: 10px 0;
+    width: 780px;
+    overflow: hidden;
+}
+
+.emprestimo__tabela-linha {
+    padding: 5px 0;
+    border-bottom: 1px solid grey;
+    width: 100%;
+    list-style:none;
+}
+
+.emprestimo__tabela-indice {
+    display: inline-block;
+    width: 10%;
+    text-align: right;
+}
+
+.emprestimo__tabela-last {
+    margin: 5px;
+}
+
+.emprestimo__tabela-valor {
+    display: inline-block;
+    width: 17%;
+    text-align: right;
+}
+
+.emprestimo__paramsLinha {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.emprestimo__paramsItems {
+    display: flex;
+    padding: 8px 0;
+    width: 40%;
+}
+
+.emprestimo__paramsItemTitle {
+    width: 62%;
+    text-align: left;
+}
+
+.emprestimo__paramsItemValue {
+    width: 38%;
+    /* margin-right: 120px; */
+    text-align: right;
+}
 
 
 .title {
@@ -30,7 +91,7 @@
     
 }
 
-.header {
+.emprestimo__header {
     /* border: 1px solid grey; */
     display: flex;
     justify-content: space-around;
@@ -67,7 +128,11 @@ width: 100%;
 display: inline-block;
 }
 
+
+
 @media print {
+
+    
     .newPage {
         /* page-break-before: always; */
         page-break-after: always;
@@ -78,5 +143,11 @@ display: inline-block;
 
     .hide-component {
         display: none;
+    }
+}
+
+@media (min-width: 460px) {
+    .main-emprestimo__container {
+        width: 400px;
     }
 }

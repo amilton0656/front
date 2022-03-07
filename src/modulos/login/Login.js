@@ -1,11 +1,14 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import clienteAxios from '../../config/axios'
-import classes from './Login.module.css'
 import Swal from 'sweetalert2'
 import { loginActions } from '../../store/loginReducers'
+import bcrypt from 'bcryptjs'
 
+import Card from '../../components/Card'
+import Form from '../../components/Form'
 
+import './login.css'
 
 const Login = () => {
 
@@ -14,6 +17,8 @@ const Login = () => {
         senha: ''
     }
 
+
+
     const dispatch = useDispatch()
 
     const [formData, setFormData] = useState(initialState)
@@ -21,9 +26,6 @@ const Login = () => {
     const textHandler = (event) => {
 
         let dataEntered = event.target.value
-        if (event.target.name === 'nome') {
-            dataEntered = dataEntered.toUpperCase()
-        }
 
         setFormData({
             ...formData,
@@ -34,37 +36,36 @@ const Login = () => {
     const submitHandler = event => {
         event.preventDefault()
 
+        const usuario = {
+            nome: formData.nome,
+            senha: bcrypt.hashSync(formData.senha)
+        }
 
-        clienteAxios.post('/usuario/login', formData)
-            .then(resposta => {
-
+        clienteAxios.post('/auth',usuario)
+        .then(resposta => {
                 if (resposta.status === 200) {
                     dispatch(loginActions.login(resposta.data))
                 } else {
                     Swal.fire('Acesso não autorizado!')
                 }
             })
-            .catch((err) => {
+            .catch(err => {
                 console.log('err ', err)
+                Swal.fire('Sem conexão!')
             })
-
-
-
-
-        // dispatch(loginActions.login())
     }
 
-
     return (
-        <div id="login" className={classes.container}>
-            <div className={classes.card}>
-                <h1 className={classes['login-h1']}>Login</h1>
-                <form onSubmit={submitHandler} className={classes.form}>
+        <div id="login" className='login-container'>
+            <Card>
+                <h1 className='login-title'>Login</h1>
+                <Form onSubmit={submitHandler}>
+
                     {/* Nome */}
-                    <div className={classes.inputBox}>
+                    <div>
                         <label htmlFor="nome">Nome</label>
                         <input
-                            className={classes['login-input']}
+                            className='form-input'
                             id="nome"
                             name="nome"
                             onChange={textHandler}
@@ -73,10 +74,10 @@ const Login = () => {
                     </div>
 
                     {/* Senha */}
-                    <div className={classes.inputBox}>
+                    <div>
                         <label htmlFor="senha">Senha:</label>
                         <input
-                            className={classes['login-input']}
+                            className='form-input'
                             type="password"
                             id="senha"
                             name="senha"
@@ -85,12 +86,17 @@ const Login = () => {
                         />
                     </div>
 
-                    <div className={classes.botaoBox}>
-                        <button className={classes['botaoBox-button']} type="submit" >Entrar</button>
+                    {/* <Button /> */}
+                    <div className='form-botaoBox'>
+                        <button
+                            className='form-botaoBox__button'
+                            type="button"
+                            onClick={submitHandler}
+                        >Entrar</button>
                     </div>
-                </form>
-                <div>2020 03 04 01</div>
-            </div>
+
+                </Form>
+            </Card>
         </div>
     )
 }
