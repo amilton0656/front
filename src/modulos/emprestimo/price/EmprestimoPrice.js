@@ -138,10 +138,13 @@ const EmprestimoPrice = () => {
             console.log('levando dif desemb ', difDesembolso)
             listaPDF = await monta(formData)
 
+            const tipo = 'price'
+
             const leva = {
                 formData,
                 listaPDF,
-                totalDesembolso
+                totalDesembolso,
+                tipo
             }
 
             localStorage.setItem("emprestimo", JSON.stringify(formData));
@@ -469,17 +472,17 @@ const EmprestimoPrice = () => {
                         className='form-botaoBox__button'
                         type="button"
                         onClick={calcularHandle}
-                    >Entrar</button>
+                    >Calcular</button>
                 </div>
             </Form>
 
-            <div>
+            {/* <div>
                 {
                     lista.length > 0 &&
                     <EmprestimoSACLista formData={formData} />
 
                 }
-            </div>
+            </div> */}
 
 
         </main>

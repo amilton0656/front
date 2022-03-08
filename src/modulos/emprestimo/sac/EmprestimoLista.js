@@ -33,7 +33,19 @@ const ItemLinha = props => {
 const Parametros = props => {
 
     const { formData, totalDesembolso } = props
-    const desembolsoEditado = convertToReal(totalDesembolso)    
+    const desembolsoEditado = convertToReal(totalDesembolso)  
+    
+
+    const linhaTipo = props.tipo === 'sac' 
+        ?   {
+            title: 'Qtde meses (Amort):', value: formData.amortizacaoMeses,
+            title2: 'Amortização Mensal:', value2: convertToReal(formData.amortizacaoValor)
+            }
+        :   {
+            title: 'Qtde meses (Desembolso):', value: formData.desembolsoMeses,
+            title2: 'Desembolso Mensal:', value2: convertToReal(formData.desembolsoValor)
+            }
+         
 
     const abc = [
         {
@@ -48,10 +60,9 @@ const Parametros = props => {
             title: 'Qtde meses (Aporte):', value: formData.aporteMeses,
             title2: 'Aporte Mensal:', value2: convertToReal(formData.aporteValor)
         },
-        {
-            title: 'Qtde meses (Amort):', value: formData.amortizacaoMeses,
-            title2: 'Amortização Mensal:', value2: convertToReal(formData.amortizacaoValor)
-        },
+
+        linhaTipo,
+
         {
             title: 'Taxa Juros (% a.a.):', value: convertToReal(formData.taxaJurosAA),
             title2: 'Taxa Juros (% a.m.):', value2: convertToReal(formData.taxaJurosAM)
@@ -92,7 +103,7 @@ const Parametros = props => {
 }
 
 
-const EmprestimoSACLista = props => {
+const EmprestimoLista = props => {
 
     const [lista, setLista] = useState([])
 
@@ -101,6 +112,7 @@ const EmprestimoSACLista = props => {
     const formData = location.state.formData || {}
     const listaPDF = location.state.listaPDF || []
     const totalDesembolso = location.state.totalDesembolso || 0
+    const tipo = location.state.tipo || 'sac'
 
     let cont = 0
     let classe
@@ -126,9 +138,9 @@ const EmprestimoSACLista = props => {
 
                 </div>
 
-                <h2 style={{ color: 'black', textAlign: 'center' }}>Simulação - SAC</h2>
+                <h2 style={{ color: 'black', textAlign: 'center' }}>Simulação0 - {tipo === 'sac' ? 'SAC' : 'Price'}</h2>
                
-                <Parametros formData={formData} totalDesembolso={totalDesembolso}/>
+                <Parametros formData={formData} totalDesembolso={totalDesembolso} tipo ={tipo} />
                 <ul className='emprestimo__container-tabela'>
                     <li key={-1} className='emprestimo__tabela-linha'>
                         <div className='emprestimo__tabela-indice' style={{ fontWeight: 'bold' }}>Mês</div>
@@ -152,4 +164,4 @@ const EmprestimoSACLista = props => {
     );
 }
 
-export default EmprestimoSACLista;
+export default EmprestimoLista;

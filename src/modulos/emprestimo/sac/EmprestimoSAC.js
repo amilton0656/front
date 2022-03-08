@@ -116,11 +116,13 @@ const EmprestimoSAC = () => {
 
         if (montarLista) {
             listaPDF = await monta(formData)
+            const tipo = 'sac'
 
             const leva = {
                 formData,
                 listaPDF,
-                totalDesembolso
+                totalDesembolso,
+                tipo
             }
 
             localStorage.setItem("emprestimoSAC", JSON.stringify(formData));
@@ -451,18 +453,18 @@ const EmprestimoSAC = () => {
                         className='form-botaoBox__button'
                         type="button"
                         onClick={calcularHandle}
-                    >Entrar</button>
+                    >Calcular</button>
                 </div>
 
             </Form>
 
-            <div>
+            {/* <div>
                 {
                     lista.length > 0 &&
                     <EmprestimoSACLista formData={formData} />
 
                 }
-            </div>
+            </div> */}
 
 
         </main>

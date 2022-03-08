@@ -3,7 +3,16 @@ import pdfFonts from 'pdfmake/build/vfs_fonts'
 import { convertToReal } from '../../../util/util'
 import './EmprestimoSACListaPDF.css'
 
-const EmprestimoSACListaPDF = (formData, listaPDF) => {
+const EmprestimoSACListaPDF = (formData, listaPDF, totalDesembolso) => {
+
+  pdfMake.fonts = {
+    Roboto: {
+      normal: 'Roboto-Regular.ttf',
+      bold: 'Roboto-Medium.ttf',
+      italics: 'Roboto-Italic.ttf',
+      bolditalics: 'Roboto-MediumItalic.ttf'
+    }
+  }
 
     console.log('dentro do pdf ', formData, listaPDF)
 
@@ -65,7 +74,10 @@ const EmprestimoSACListaPDF = (formData, listaPDF) => {
                   'Comissão (1) - Valor:', {text: convertToReal(formData.comissao1Valor), style: {alignment: 'right'}}],
 
                 [ 'Comissão (2) - Perc:', {text: convertToReal(formData.comissao2Perc), style: {alignment: 'right'}}, '',
-                  'Comissão (2) - Valor:', {text: convertToReal(formData.comissao2Valor), style: {alignment: 'right'}}]
+                  'Comissão (2) - Valor:', {text: convertToReal(formData.comissao2Valor), style: {alignment: 'right'}}],
+
+                  [ 'Total do desembolso', {text: convertToReal(totalDesembolso), style: {alignment: 'right'}}, '',
+                  '', {text: ''}]
 
                 ]
             },
@@ -121,7 +133,7 @@ const EmprestimoSACListaPDF = (formData, listaPDF) => {
         content: [details],
         footer: rodape,
         defaultStyle: {
-          font: 'Helvetica'
+          font: 'Roboto'
         }
     }
 

@@ -77,7 +77,7 @@ const EmprestimoSACListaPDF = (formData, listaPDF, totalDesembolso) => {
                   'Comissão (2) - Valor:', {text: convertToReal(formData.comissao2Valor), style: {alignment: 'right'}}],
 
                   [ 'Total do desembolso', {text: convertToReal(totalDesembolso), style: {alignment: 'right'}}, '',
-                  'Comissão (2) - Valor:', {text: convertToReal(formData.comissao2Valor), style: {alignment: 'right'}}]
+                  '', {text: ''}]
 
                 ]
             },
