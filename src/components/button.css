@@ -1,0 +1,22 @@
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: steelblue;
+    border-radius: 0.4rem;
+    padding: 0.3rem;
+    width: 100%;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.button-main:hover {
+    filter: brightness(110%);
+}

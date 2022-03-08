@@ -3,7 +3,7 @@
     height: 150px;
     background: #7FFFD4;
     margin: 10px 0;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
 }
 
 .intra-fones__form {

@@ -94,9 +94,11 @@
 .emprestimo__header {
     /* border: 1px solid grey; */
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
     align-items: center;
     background: lightgray;
+    padding: 20px;
 }
 
 .headerTitle {

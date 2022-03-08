@@ -7,9 +7,11 @@ import { FaRegFilePdf } from 'react-icons/fa'
 import clienteAxios from '../../../config/axios'
 import Swal from 'sweetalert2'
 import Spinner from '../../../spinner/Spinner'
+import Button from '../../../components/Button'
+import './pessoaLista.css'
 
-import classes from './PessoaLista.module.css'
-import classes2 from '../PessoaCad.module.css'
+// import classes from './PessoaLista.module.css'
+// import classes2 from '../PessoaCad.module.css'
 import { pessoasActions } from '../../../store/pessoaReducers'
 import Nav from '../../proponente/nav/NavProponente'
 
@@ -37,7 +39,7 @@ const PessoaLista = () => {
 
     const atualizar = () => {
         setIsLoading(true)
-        clienteAxios.get('/pessoa/lista', { headers: { Authorization: token } })
+        clienteAxios.get('/pessoas', { headers: { Authorization: token } })
             .then(resposta => {
                 setPessoas(resposta.data)
                 setPessoasAll(resposta.data)
@@ -136,63 +138,90 @@ const PessoaLista = () => {
         let formDataII
 
         clienteAxios.get(`/pessoa/lista/id/${id_pessoa}`)
-                .then(resposta => {
-                    const id_pessoa = resposta.data.id_pessoa
-                    formDataI = resposta.data
+            .then(resposta => {
+                const id_pessoa = resposta.data.id_pessoa
+                formDataI = resposta.data
 
-                    clienteAxios.get(`/pessoacomplemento/lista/id/${id_pessoa}`)
-                        .then(resposta => {
-                            if (resposta.data.length === 0) {
-                                formDataII = {}
-                            } else {
-                                formDataII = resposta.data[0]
-                            }
+                clienteAxios.get(`/pessoacomplemento/lista/id/${id_pessoa}`)
+                    .then(resposta => {
+                        if (resposta.data.length === 0) {
+                            formDataII = {}
+                        } else {
+                            formDataII = resposta.data[0]
+                        }
 
                         PessoaFichaCadastralPdf(formDataI, formDataII)
 
-                        })
-                        .catch(err => {
-                            console.log('Erro ao buscar ', err)
-                        })
-                })
-                .catch(err => {
-                    console.log('Erro ao buscar ', err)
-                })
+                    })
+                    .catch(err => {
+                        console.log('Erro ao buscar ', err)
+                    })
+            })
+            .catch(err => {
+                console.log('Erro ao buscar ', err)
+            })
 
-        
+
+    }
+
+    const styleButton = {
+        width: '80px',
+        background: 'lightgreen',
+        color: 'blue'
     }
 
     return (
-        <div className={classes.container}>
-            <Nav />
+        <div className='pessoa-list__layout'>
+
+            {/* <Nav /> */}
             {isLoading && <Spinner />}
-            <main className={classes.main}>
-                <div className={classes.containerHeaderButtons}>
+            {/* <main className='pessoa-list__main'> */}
+                <div className='pessoa-list__header'>
                     <h2>Proponentes</h2>
-                    <button type="button" onClick={() => goToForm(null)}>Novo</button>
-                    <button type="button" onClick={() => PessoaListaPdf(pessoas)}>PDF</button>
-                    <button type="button" onClick={() => navigate('/', { replace: true })}>Sair</button>
-                </div>
-                <ul className={classes.containerLista}>
-                    <div className={classes.busca}>
-                        <div className={classes2.inputBox}>
-                            <label htmlFor="busca">Busca:</label>
-                            <input
-                                className={classes2['login-input']}
-                                id="busca"
-                                name="busca"
-                                onChange={textHandler}
-                                value={busca}
-                            />
-                        </div>
-                        {/* <div style={{ textAlign: 'right' }}><button className={classes.pdf} onClick={() => PessoaListaPdf(pessoas)}><FaRegFilePdf size={30} color='grey' style={{ paddingTop: 0 }} /></button></div> */}
+                    <div className='pessoa-list__header-buttons'>
+
+                        <Button style={styleButton}>
+                            <button
+                                className='form-botaoBox__button'
+                                type="button"
+                                onClick={() => goToForm(null)}
+                            >Novo</button>
+                        </Button>
+                        <Button style={styleButton}>
+                            <button
+                                className='form-botaoBox__button'
+                                type="button"
+                                onClick={() => PessoaListaPdf(pessoas)}
+                            >PDF</button>
+                        </Button>
+                        <Button style={styleButton}>
+                            <button
+                                className='form-botaoBox__button'
+                                type="button"
+                                onClick={() => navigate('/', { replace: true })}
+                            >Sair</button>
+                        </Button>
+
                     </div>
+                    <div className='pessoa-list__input-box'>
+                        <label htmlFor="busca">Busca:</label>
+                        <input
+                            className='form-input pessoa-list__input-busca'
+                            id="busca"
+                            name="busca"
+                            onChange={textHandler}
+                            value={busca}
+                        />
+                    </div>
+                </div>
+                <ul className='pessoa-list__container-list'>
+
                     {
                         pessoas.map(pessoa => (
-                            <div>
-                                <div className={classes.item} key={pessoa.id_pessoa}>
+                            <div style ={{background: 'white'}}>
+                                <div className='pessoa-list__item' key={pessoa.id_pessoa}>
                                     <li
-                                        className={classes.linha}
+                                        className='pessoa-list__linha'
                                         onClick={() => clickHandle(pessoa.id_pessoa)}>{pessoa.nome}
                                     </li>
 
@@ -211,7 +240,7 @@ const PessoaLista = () => {
                     }
                 </ul>
 
-            </main>
+            {/* </main> */}
         </div>
     );
 }

@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import InputNumber from '../../../components/InputNumber'
 import EmprestimoSACLista from './EmprestimoSACLista'
 import Form from '../../../components/Form'
+import Button from '../../../components/Button'
 
 import '../emprestimo.css'
 
@@ -448,13 +449,21 @@ const EmprestimoSAC = () => {
                         />
                     </div>
                 </div>
-                <div className='form-botaoBox'>
+                {/* <div className='form-botaoBox'>
                     <button
                         className='form-botaoBox__button'
                         type="button"
                         onClick={calcularHandle}
                     >Calcular</button>
-                </div>
+                </div> */}
+
+                <Button style={{width: '200px', marginTop: '30px'}}>
+                    <button
+                        className='form-botaoBox__button'
+                        type="button"
+                        onClick={calcularHandle}
+                    >Calcular</button>
+                </Button>
 
             </Form>
 

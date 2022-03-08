@@ -1,20 +1,15 @@
-
+import './button.css'
+import './form.css'
 
 const Button = props => {
 
-    const { height, width, color} = props
-
-    const style = {
-        height: props.height ? props.height : '2rem',
-        width: props.width ? props.width : '7rem',
-        color: props.color ? props.color : 'steelblue'
-    }
-
-    return ( 
-        <div style = {style}>
-
+    return (
+        <div className='button-container'>
+            <div className='button-main' style={{ ...props.style }} >
+                {props.children}
+            </div>
         </div>
-     )
+    )
 }
- 
+
 export default Button

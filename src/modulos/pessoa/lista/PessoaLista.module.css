@@ -55,10 +55,13 @@ button {
     flex-direction: column;
     justify-content: space-between;
     border-bottom: 1px solid grey;
+    background: white;
 }
 
 .linha {
     font-size: 1.2rem;
+    background: white;
+    padding: 0.5rem;
 }
 
 .pdf {

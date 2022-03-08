@@ -5,12 +5,12 @@ import './Empreend_Ramais.css'
 
 const Empreend_Ramais = () => {
 
-    const [mostrar, xMostrar] = useState(false)
+    const [mostrar, setMostrar] = useState(false)
 
     return (
         <div>
 
-            <div className="intra-ramais__button" onClick={() => xMostrar(!mostrar)}
+            <div className="intra-ramais__button" onClick={() => setMostrar(!mostrar)}
 
             >  <span style = {{marginRight: '20px'}}>Ramais</span>  <FaPhone size={25} color='white'/>
 

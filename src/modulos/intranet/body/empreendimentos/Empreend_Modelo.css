@@ -1,6 +1,10 @@
+.intra-empreend-container__card {
+    margin: 0
+}
+
 .intra-empreend-card {
     width: 100%;
-    margin: 0;
+    margin: 10px 0;
 }
 
 .intra-empreend-card-fluid {
@@ -13,5 +17,9 @@
     .intra-empreend-card {
         width: 100%;
         margin: 0px;
+    }
+
+    .intra-empreend-container__card {
+        margin: 0.6rem
     }
 }

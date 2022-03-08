@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { convertToReal } from '../../../util/util'
 import EmprestimoPriceListaPDF from './EmprestimoPriceListaPDF'
+import Button from '../../../components/Button'
 
 
 import '../emprestimo.css'
@@ -109,20 +110,21 @@ const EmprestimoPriceLista = props => {
         <div className='emprestimo__centralizar-lista'>
             <div className='emprestimo__lista'>
                 <div className='emprestimo__header'>
-                    <div className='form-botaoBox'>
+                    <Button>
                         <button
                             className='form-botaoBox__button w150'
                             type="button"
                             onClick={() => EmprestimoPriceListaPDF(formData, listaPDF, totalDesembolso)}
                         >Gerar PDF</button>
-                    </div>
-                    <div className='form-botaoBox'>
+                    </Button>
+
+                    <Button>
                         <button
                             className='form-botaoBox__button w150'
                             type="button"
                             onClick={() => window.print()}
                         >Imprimir</button>
-                    </div>
+                    </Button>
                 </div>
                 <h2 style={{ color: 'black', textAlign: 'center' }}>Simulação - Price</h2>
                 <Parametros formData={formData} totalDesembolso={totalDesembolso} />

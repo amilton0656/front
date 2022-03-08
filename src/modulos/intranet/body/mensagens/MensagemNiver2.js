@@ -1,4 +1,5 @@
 import React from 'react'
+import './Mensagem.css'
 import Card from '../../../../components/Card'
 
 const Mensagem001 = ({ titulo, cor, data, img, nome, local, nome2, local2, dataExt }) => {

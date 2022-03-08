@@ -1,5 +1,5 @@
 import React from 'react'
-
+import './Mensagem.css'
 import Card from '../../../../components/Card'
 
 const MensagemImg = ({titulo,cor,data,img}) => {

@@ -6,10 +6,10 @@ import Empreend_Modelo from './Empreend_Modelo'
 
 const EmpreendLista = ({ history }) => {
 
-    const [tamanhoTela, xTamanhoTela] = useState(window.innerWidth)
+    const [tamanhoTela, setTamanhoTela] = useState(window.innerWidth)
 
     window.addEventListener('resize', function () {
-        xTamanhoTela(window.innerWidth)
+        setTamanhoTela(window.innerWidth)
     });
 
     return (

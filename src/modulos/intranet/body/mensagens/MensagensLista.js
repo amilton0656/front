@@ -10,22 +10,22 @@ import Empreend_Telefones from '../telefones/Empreend_Telefones'
 
 const MensagensLista = () => {
 
-    const [tamanhoTela, xTamanhoTela] = useState(window.innerWidth)
+    const [tamanhoTela, setTamanhoTela] = useState(window.innerWidth)
 
     window.addEventListener('resize', function () {
-        xTamanhoTela(window.innerWidth)
+        setTamanhoTela(window.innerWidth)
     });
 
     return (
         <div>
             <MensagemCub />
-            {/* {
+            {
                 tamanhoTela < 700
-                    ? <div style={{ marginLeft: '8px', width: '100%' }}>
-                        <Empreend_Telefones style={{ marginLeft: '10px' }} />
+                    ? <div style ={{width: '94%', margin: '0 auto'}}>
+                        <Empreend_Telefones />
                     </div>
                     : null
-            } */}
+            }
 
 
             {/* ************************ Expediente - Carnaval 2022 */}

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { convertToReal } from '../../../util/util'
 import EmprestimoSACListaPDF from './EmprestimoSACListaPDF'
+import Button from '../../../components/Button'
 
 
 import '../emprestimo.css'
@@ -13,7 +14,7 @@ const ItemLinha = props => {
 
     const { item } = props
 
-    // const classe = item.mes === 250 ? classes2.newPage : ''
+
 
 
     return (
@@ -33,7 +34,7 @@ const ItemLinha = props => {
 const Parametros = props => {
 
     const { formData, totalDesembolso } = props
-    const desembolsoEditado = convertToReal(totalDesembolso)    
+    const desembolsoEditado = convertToReal(totalDesembolso)
 
     const abc = [
         {
@@ -75,7 +76,7 @@ const Parametros = props => {
                             <div className='emprestimo__paramsItemTitle'>{linha.title}</div>
                             <div className='emprestimo__paramsItemValue' style={{ textAlign: 'right' }}>{linha.value}</div>
                         </div>
-                        <div style ={{width: '20%'}}></div>
+                        <div style={{ width: '20%' }}></div>
                         <div className='emprestimo__paramsItems'>
                             <div className='emprestimo__paramsItemTitle'>{linha.title2}</div>
                             <div className='emprestimo__paramsItemValue' style={{ textAlign: 'right' }}>{linha.value2}</div>
@@ -109,26 +110,28 @@ const EmprestimoSACLista = props => {
         <div className='emprestimo__centralizar-lista'>
             <div className='emprestimo__lista'>
                 <div className='emprestimo__header'>
-                <div className='form-botaoBox'>
-                    <button
-                        className='form-botaoBox__button w150'
-                        type="button"
-                        onClick={() => EmprestimoSACListaPDF(formData, listaPDF, totalDesembolso)}
-                    >Gerar PDF</button>
-                </div>
-                <div className='form-botaoBox'>
-                    <button
-                        className='form-botaoBox__button w150'
-                        type="button"
-                        onClick={() => window.print()}
-                    >Imprimir</button>
-                </div>
+
+                    <Button>
+                        <button
+                            className='form-botaoBox__button w150'
+                            type="button"
+                            onClick={() => EmprestimoSACListaPDF(formData, listaPDF, totalDesembolso)}
+                        >Gerar PDF</button>
+                    </Button>
+
+                    <Button>
+                        <button
+                            className='form-botaoBox__button w150'
+                            type="button"
+                            onClick={() => window.print()}
+                        >Imprimir</button>
+                    </Button>
 
                 </div>
 
                 <h2 style={{ color: 'black', textAlign: 'center' }}>Simulação - SAC</h2>
-               
-                <Parametros formData={formData} totalDesembolso={totalDesembolso}/>
+
+                <Parametros formData={formData} totalDesembolso={totalDesembolso} />
                 <ul className='emprestimo__container-tabela'>
                     <li key={-1} className='emprestimo__tabela-linha'>
                         <div className='emprestimo__tabela-indice' style={{ fontWeight: 'bold' }}>Mês</div>

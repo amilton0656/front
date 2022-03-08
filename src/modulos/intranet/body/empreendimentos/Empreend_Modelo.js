@@ -7,10 +7,10 @@ const EmpreendimentoModelo = ({ logo, fachada }) => {
 
 
     return (
-        <div>
+        <div className="intra-empreend-container__card">
 
             <div className="intra-empreend-card">
-                <Card>
+                <Card stype ={{width: '95%'}}>
                     <a onclick="pg_const()" href="#">
                         <div>
                             <div>

@@ -1,30 +1,60 @@
-.form-form {
+.container {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.main {
+    background: steelblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    /* height: calc(100vh + 200px); */
+    height: 100%;
+    width: 100%;
+    /* margin-top: 60px; */
+
+}
+
+.pessoa-list__header {
+    width: 100%;
+}
+
+h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 2rem;
+    color: white
+
+}
+
+.form {
     width: 90%;
     padding: 10px;
-    padding-bottom: 20px;
     background: rgb(228, 226, 226); 
     border: 1px solid grey;
     border-radius: 5px;
     min-width: 300px;
 } 
 
-.form-inputBox {
+.inputBox {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
-/* .inputBoxCPF {
+.inputBoxCPF {
     display: flex;
     flex-direction: column;
     width: 50%;
 }
 
-.form-inputBox40 {
+.inputBox40 {
     display: flex;
     flex-direction: column;
     width: 150px;
-} */
+}
 
 .checkboxBox {
     display: flex;
@@ -62,9 +92,9 @@ label {
 }
 
 
-.form-input{
-    width: calc(100% - 0.5rem);
-    padding: 0.3rem 0 0.3rem 0.5rem;
+.login-input{
+    width: 100%;
+    padding: 0.3rem 8px;
     font-size: 1rem;
     border-radius: 5px;
     border: 1px solid grey;
@@ -76,7 +106,7 @@ input:disabled {
     background: lightgray;
 }
 
-.form-botaoBox {
+.botaoBox {
     margin: 20px 80px;
     margin-top: 30px;
     display: flex;
@@ -85,7 +115,7 @@ input:disabled {
     border-radius: 8px;
 }
 
-.form-botaoBox__button {
+.botaoBox-button {
     padding: 6px;
     font-size: 1rem;
     border-radius: 10px;
@@ -94,8 +124,6 @@ input:disabled {
     cursor: pointer;
     text-align: center;
     margin: auto;
-    border: none;
-    text-align: center;
 }
 
 .radioBox {
@@ -132,15 +160,29 @@ padding: 7px;
     margin-right: 10px;
     width: 30px;
 }
-/* 
-.w100 {
-    width: 100px;
+
+.containerTitulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.w150 {
-    width: 150px;
-}
 
-.w200 {
-    width: 200px;
-} */
+
+
+
+@media (min-width: 460px) {
+    .form {
+        padding: 20px;
+        width: 400px;
+        max-width: 500px;
+        min-width: 350px;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+        font-size: 2rem;
+    }    
+
+
+}
