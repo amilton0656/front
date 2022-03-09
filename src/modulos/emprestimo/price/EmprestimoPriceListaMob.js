@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { convertToReal } from '../../../util/util'
-import EmprestimoSACListaPDF from './EmprestimoSACListaPDF'
+import EmprestimoPriceListaPDF from './EmprestimoPriceListaPDF'
 import Button from '../../../components/Button'
 
 
@@ -23,8 +23,8 @@ const ItemLinha = props => {
                 <div className='emprestimo__tabela-indice'>{item.mes}</div>
                 <div className='emprestimo__tabela-valor'>{item.aporte}</div>
                 <div className='emprestimo__tabela-valor'>{item.juros}</div>
-                <div className='emprestimo__tabela-valor'>{item.amortizacao}</div>
                 <div className='emprestimo__tabela-valor'>{item.desembolso}</div>
+                <div className='emprestimo__tabela-valor'>{item.amortizacao}</div>
                 <div className='emprestimo__tabela-valor' style={{ width: '20%' }}>{item.saldo}</div>
             </li>
         </div>
@@ -43,8 +43,8 @@ const Parametros = props => {
         { title: 'Caução (Valor):', value: convertToReal(formData.caucaoValor) },
         { title: 'Qtde meses (Aporte):', value: formData.aporteMeses },
         { title: 'Aporte Mensal:', value: convertToReal(formData.aporteValor) },
-        { title: 'Qtde meses (Amort):', value: formData.amortizacaoMeses },
-        { title: 'Amortização Mensal:', value: convertToReal(formData.amortizacaoValor) },
+        { title: 'Qtde meses (Desembolso):', value: formData.desembolsoMeses },
+        { title: 'Desembolso Mensal:', value: convertToReal(formData.desembolsoValor) },
         { title: 'Taxa Juros (% a.a.):', value: convertToReal(formData.taxaJurosAA) },
         { title: 'Taxa Juros (% a.m.):', value: convertToReal(formData.taxaJurosAM) },
         { title: 'Comissão (1) - Perc:', value: convertToReal(formData.comissao1Perc) },
@@ -53,6 +53,7 @@ const Parametros = props => {
         { title: 'Comissão (2) - Valor:', value: convertToReal(formData.comissao2Valor) },
         { title: 'Total do desembolso::', value: convertToReal(totalDesembolso) },
     ]
+
 
     return (
         <div style ={{padding: '0 20px'}}>
@@ -78,8 +79,8 @@ const Lista = props => {
                 <div className='emprestimo__tabela-indice' style={{ fontWeight: 'bold' }}>Mês</div>
                 <div className='emprestimo__tabela-valor' style={{ fontWeight: 'bold' }}>Aporte</div>
                 <div className='emprestimo__tabela-valor' style={{ fontWeight: 'bold' }}>Juros</div>
-                <div className='emprestimo__tabela-valor' style={{ fontWeight: 'bold' }}>Amortização</div>
                 <div className='emprestimo__tabela-valor' style={{ fontWeight: 'bold' }}>Desembolso</div>
+                <div className='emprestimo__tabela-valor' style={{ fontWeight: 'bold' }}>Amortização</div>
                 <div className='emprestimo__tabela-valor ' style={{ fontWeight: 'bold', width: '20%' }}>Saldo</div>
 
             </li>
@@ -94,7 +95,7 @@ const Lista = props => {
 }
 
 
-const EmprestimoSACListaMob = props => {
+const EmprestimoPriceListaMob = props => {
 
     const [lista, setLista] = useState([])
 
@@ -118,7 +119,7 @@ const EmprestimoSACListaMob = props => {
                             <button
                                 className='form-botaoBox__button w100'
                                 type="button"
-                                onClick={() => EmprestimoSACListaPDF(formData, listaPDF, totalDesembolso)}
+                                onClick={() => EmprestimoPriceListaPDF(formData, listaPDF, totalDesembolso)}
                             >Gerar PDF</button>
                         </Button>
 
@@ -132,7 +133,7 @@ const EmprestimoSACListaMob = props => {
 
                     </div>
 
-                    <h2 style={{ color: 'black', textAlign: 'center' }}>Simulação - SAC</h2>
+                    <h2 style={{ color: 'black', textAlign: 'center' }}>Simulação - Price</h2>
 
                     <Parametros formData={formData} totalDesembolso={totalDesembolso} />
                 </div>
@@ -148,12 +149,12 @@ const EmprestimoSACListaMob = props => {
                         <div className='emprestimo__tabela-indice-mob' style={{ fontWeight: 'bold' }}>Mês</div>
                         <div className='emprestimo__tabela-valor' style={{ fontWeight: 'bold' }}>Aporte</div>
                         <div className='emprestimo__tabela-valor' style={{ fontWeight: 'bold' }}>Juros</div>
-                        <div className='emprestimo__tabela-valor' style={{ fontWeight: 'bold' }}>Amortização</div>
                         <div className='emprestimo__tabela-valor' style={{ fontWeight: 'bold' }}>Desembolso</div>
+                        <div className='emprestimo__tabela-valor' style={{ fontWeight: 'bold' }}>Amortização</div>
                         <div className='emprestimo__tabela-valor ' style={{ fontWeight: 'bold', width: '20%' }}>Saldo</div>
 
                     </li>
-                    {listaPDF.map(item => {
+                    {listaPDF.map(item => { 
                         return (
                             <ItemLinha item={item} />
                         )
@@ -166,4 +167,4 @@ const EmprestimoSACListaMob = props => {
     );
 }
 
-export default EmprestimoSACListaMob;
+export default EmprestimoPriceListaMob;

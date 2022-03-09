@@ -10,7 +10,7 @@ import Button from '../../../components/Button'
 import '../emprestimo.css'
 
 
-const initialStateX = {
+const initialState = {
     valorEmprestimo: null,
     carencia: '2',
     caucaoPerc: null,
@@ -29,29 +29,14 @@ const initialStateX = {
 
 const EmprestimoSAC = () => {
 
+    let initial = initialState
 
-    const saved = localStorage.getItem("emprestimoSAC");
-    const initialState = JSON.parse(saved) || initialStateX;
+    if (window.innerWidth > 400) {
+        const saved = localStorage.getItem("emprestimoSAC")
+        initial = JSON.parse(saved) || initialState
+    }
 
-    // const initialState = {
-    //     valorEmprestimo: 150000,
-    //     carencia: '10',
-    //     caucaoPerc: 30,
-    //     caucaoValor: null,
-    //     aporteMeses: 17,
-    //     aporteValor: null,
-    //     amortizacaoMeses: 10,
-    //     amortizacaoValor: null,
-    //     taxaJurosAA: 24,
-    //     taxaJurosAM: null,
-    //     comissao1Perc: 5,
-    //     comissao1Valor: null,
-    //     comissao2Perc: 2,
-    //     comissao2Valor: null,
-    //     flag: false
-    // }
-
-    const [formData, setFormData] = useState(initialState)
+    const [formData, setFormData] = useState(initial)
     const [montarLista, setMontarLista] = useState(false)
     const [montouLista, setMontouLista] = useState(false)
     const [lista, setLista] = useState([])
@@ -126,7 +111,10 @@ const EmprestimoSAC = () => {
                 tipo
             }
 
-            localStorage.setItem("emprestimoSAC", JSON.stringify(formData));
+
+            if (window.innerWidth > 400) {
+                localStorage.setItem("emprestimoSAC", JSON.stringify(formData));
+            }
 
             navigate('/emprestimosac/lista', { state: leva })
         }

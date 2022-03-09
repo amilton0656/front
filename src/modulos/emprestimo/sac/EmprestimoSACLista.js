@@ -4,6 +4,8 @@ import { convertToReal } from '../../../util/util'
 import EmprestimoSACListaPDF from './EmprestimoSACListaPDF'
 import Button from '../../../components/Button'
 
+import EmprestimoSACListaMob from './EmprestimoSACListaMob'
+
 
 import '../emprestimo.css'
 
@@ -106,6 +108,11 @@ const EmprestimoSACLista = props => {
     let cont = 0
     let classe
 
+
+    if (window.innerWidth <= 400) {
+        return <EmprestimoSACListaMob />
+    }
+
     return (
         <div className='emprestimo__centralizar-lista'>
             <div className='emprestimo__lista'>
@@ -140,7 +147,6 @@ const EmprestimoSACLista = props => {
                         <div className='emprestimo__tabela-valor' style={{ fontWeight: 'bold' }}>Amortização</div>
                         <div className='emprestimo__tabela-valor' style={{ fontWeight: 'bold' }}>Desembolso</div>
                         <div className='emprestimo__tabela-valor ' style={{ fontWeight: 'bold', width: '20%' }}>Saldo</div>
-
                     </li>
                     {listaPDF.map(item => {
                         return (

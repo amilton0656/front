@@ -1,0 +1,26 @@
+.slide {
+    width: 100vw;
+    height: 100vh;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 400vw;
+}
+
+.one {
+    background: blue;
+}
+
+.two {
+    background: green;
+}
+
+.three {
+    background: red;
+}
+
+.four {
+    background: yellow;
+}

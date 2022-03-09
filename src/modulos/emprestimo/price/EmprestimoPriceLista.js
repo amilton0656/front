@@ -4,6 +4,7 @@ import { convertToReal } from '../../../util/util'
 import EmprestimoPriceListaPDF from './EmprestimoPriceListaPDF'
 import Button from '../../../components/Button'
 
+import EmprestimoPriceListaMob from './EmprestimoPriceListaMob'
 
 import '../emprestimo.css'
 
@@ -69,7 +70,7 @@ const Parametros = props => {
     ]
 
     return (
-        <div className='wrapper'> 
+        <div> 
             {
                 abc.map(linha => (
                     <div className='emprestimo__paramsLinha'>
@@ -105,6 +106,12 @@ const EmprestimoPriceLista = props => {
 
     let cont = 0
     let classe
+
+    console.log('tamanho ', window.innerWidth)
+
+    if (window.innerWidth <= 400) {
+        return <EmprestimoPriceListaMob />
+    }
 
     return (
         <div className='emprestimo__centralizar-lista'>

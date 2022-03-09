@@ -1,26 +1,36 @@
-.slide {
+.items-wrapper {
     width: 100vw;
-    height: 100vh;
 }
 
-.wrapper {
+.items {
     display: flex;
-    flex-direction: row;
-    width: 400vw;
+    overflow-x: auto;
+}
+
+.item {
+    flex: none;
 }
 
 .one {
     background: blue;
+    width: 100%;
+    height: 300px;
 }
 
 .two {
     background: green;
+    width: 100%;
+    height: 300px;
 }
 
 .three {
     background: red;
+    width: 100%;
+    height: 300px;
 }
 
 .four {
     background: yellow;
+    width: 100%;
+    height: 300px;
 }

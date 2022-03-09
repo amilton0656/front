@@ -10,7 +10,7 @@ import Button from '../../../components/Button'
 import '../emprestimo.css'
 
 
-const initialStateX = {
+const initialState = {
     valorEmprestimo: null,
     carencia: '2',
     caucaoPerc: null,
@@ -30,30 +30,14 @@ let difDesembolso = 0
 
 const EmprestimoPrice = () => {
 
+    let initial = initialState
 
-    const saved = localStorage.getItem("emprestimo");
-    const initialState = JSON.parse(saved) || initialStateX;
-    // const initialState = initialStateX
+    if (window.innerWidth > 400) {
+        const saved = localStorage.getItem("emprestimoPrice")
+        initial = JSON.parse(saved) || initialState
+    }
 
-    // const initialState = {
-    //     valorEmprestimo: 150000,
-    //     carencia: '10',
-    //     caucaoPerc: 30,
-    //     caucaoValor: null,
-    //     aporteMeses: 17,
-    //     aporteValor: null,
-    //     amortizacaoMeses: 10,
-    //     amortizacaoValor: null,
-    //     taxaJurosAA: 24,
-    //     taxaJurosAM: null,
-    //     comissao1Perc: 5,
-    //     comissao1Valor: null,
-    //     comissao2Perc: 2,
-    //     comissao2Valor: null,
-    //     flag: false
-    // }
-
-    const [formData, setFormData] = useState(initialState)
+    const [formData, setFormData] = useState(initial)
     const [montarLista, setMontarLista] = useState(false)
     const [montouLista, setMontouLista] = useState(false)
     const [lista, setLista] = useState([])
@@ -111,8 +95,6 @@ const EmprestimoPrice = () => {
 
                 difDesembolso = Math.round(difDesembolso * 100) / 100
 
-
-                console.log('dif desemb achada ', difDesembolso)
             }
         } else {
             desembolsoValor = 0
@@ -136,7 +118,6 @@ const EmprestimoPrice = () => {
     useEffect(async () => {
 
         if (montarLista) {
-            console.log('levando dif desemb ', difDesembolso)
             listaPDF = await monta(formData)
 
             const tipo = 'price'
@@ -148,9 +129,9 @@ const EmprestimoPrice = () => {
                 tipo
             }
 
-            localStorage.setItem("emprestimo", JSON.stringify(formData));
-
-            console.log('levando leva ', leva)
+            if (window.innerWidth > 400) {
+                localStorage.setItem("emprestimoPrice", JSON.stringify(formData));
+            }
 
             navigate('/emprestimoprice/lista', { state: leva })
         }
