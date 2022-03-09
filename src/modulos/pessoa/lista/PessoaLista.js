@@ -176,33 +176,35 @@ const PessoaLista = () => {
             {/* <Nav /> */}
             {isLoading && <Spinner />}
             {/* <main className='pessoa-list__main'> */}
-                <div className='pessoa-list__header'>
-                    <h2>Proponentes</h2>
-                    <div className='pessoa-list__header-buttons'>
+            <div className='pessoa-list__header'>
+                <h2>Proponentes</h2>
+                <div className='pessoa-list__header-buttons'>
 
-                        <Button style={styleButton}>
-                            <button
-                                className='form-botaoBox__button'
-                                type="button"
-                                onClick={() => goToForm(null)}
-                            >Novo</button>
-                        </Button>
-                        <Button style={styleButton}>
-                            <button
-                                className='form-botaoBox__button'
-                                type="button"
-                                onClick={() => PessoaListaPdf(pessoas)}
-                            >PDF</button>
-                        </Button>
-                        <Button style={styleButton}>
-                            <button
-                                className='form-botaoBox__button'
-                                type="button"
-                                onClick={() => navigate('/', { replace: true })}
-                            >Sair</button>
-                        </Button>
+                    <Button style={styleButton}>
+                        <button
+                            className='form-botaoBox__button'
+                            type="button"
+                            onClick={() => goToForm(null)}
+                        >Novo</button>
+                    </Button>
+                    <Button style={styleButton}>
+                        <button
+                            className='form-botaoBox__button'
+                            type="button"
+                            onClick={() => PessoaListaPdf(pessoas)}
+                        >PDF</button>
+                    </Button>
+                    <Button style={styleButton}>
+                        <button
+                            className='form-botaoBox__button'
+                            type="button"
+                            onClick={() => navigate('/', { replace: true })}
+                        >Sair</button>
+                    </Button>
 
-                    </div>
+                </div>
+                <div className='pessoa-list__busca'>
+
                     <div className='pessoa-list__input-box'>
                         <label htmlFor="busca">Busca:</label>
                         <input
@@ -214,7 +216,8 @@ const PessoaLista = () => {
                         />
                     </div>
                 </div>
-                <ul className='pessoa-list__container-list'>
+            </div>
+            <ul className='pessoa-list__container-list'>
 
                     {
                         pessoas.map(pessoa => (
@@ -226,10 +229,10 @@ const PessoaLista = () => {
                                     </li>
 
                                     {icones && id === pessoa.id_pessoa &&
-                                        <div>
-                                            <button onClick={() => goToForm(pessoa)}><FaRegEdit size={30} color='blue' /></button>
-                                            <button onClick={() => FichaCadastral(pessoa.id_pessoa)}><FaRegFilePdf size={30} color='grey' /></button>
-                                            <button onClick={() => deletePessoaHandler(pessoa.id_pessoa)}><BsTrash size={30} color='red' /></button>
+                                        <div className='pessoa_list__icones'>
+                                            <button className='pessoa_list__icones-button' onClick={() => goToForm(pessoa)}><FaRegEdit size={30} color='blue' /></button>
+                                            <button className='pessoa_list__icones-button' onClick={() => FichaCadastral(pessoa.id_pessoa)}><FaRegFilePdf size={30} color='grey' /></button>
+                                            <button className='pessoa_list__icones-button' onClick={() => deletePessoaHandler(pessoa.id_pessoa)}><BsTrash size={30} color='red' /></button>
                                         </div>
                                     }
 

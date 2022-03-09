@@ -1,10 +1,11 @@
 .pessoa-list__layout {
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
     background: white;
-    width: 100%;
+    width: 100vw;
 }
-
 
 /* .pessoa-list__main {
     display: flex;
@@ -23,11 +24,12 @@
 }
 
 .pessoa-list__header h2 {
-    margin: 0;
+    margin: 0 auto;
     padding: 15px;
     font-size: 1.5rem;
     margin: 0 auto;
     color: white;
+    display: flex;
 }
 
 .pessoa-list__header-buttons {
@@ -49,38 +51,68 @@
     font-weight: bold;
 }
 
+.pessoa-list__busca {
+    width: 100%;
+    margin: 0 0 0 0px;
+}
+
 .pessoa-list__list {
     width: 100%;
     padding: 0;
     background: white;
 }
 
-.pessoa-list__input-busca {
-    padding: 0.5rem 0; 
-    width: 90%;
+
+
+.pessoa-list__input-box {
+    /* width: 100%;  */
+    /* padding: 20px; */
 }
 
 .pessoa-list__input-box {
-    width: 100%; 
-    padding: 20px;
-}
-
-.pessoa-list__input-box {
-    width: 100%; 
-    padding: 0 20px;
+    width: 90%; 
+    flex: none;
+    margin: 0 auto;
 }
 
 .pessoa-list__item {
-    margin: 10px 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    margin: 0;
+    padding : 5px 0;
     border-bottom: 1px solid rgb(160, 160, 160);
 }
 
 .pessoa-list__linha {
     font-size: 1.2rem;
     list-style: none;
+}
+
+.pessoa_list__icones {
+    margin: 5px 20px;
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pessoa_list__icones-button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.pessoa_list__icones-button:hover {
+    cursor: pointer;
+
+    background: lightgreen;
+    border-radius: 10px;
+}
+
+
+.pessoa-list__container-list {
+    flex: none;
+    width: 100%;
+    /* margin: 0 auto; */
+    padding: 0;
+    overflow: hidden;
 }
 
 @media (min-width: 460px) {
@@ -100,18 +132,24 @@
     }
 
     .pessoa-list__container-list {
-        width: 50%;
+        /* width: 50%;
         margin: 0;
+        padding: 0; */
     }
 
     .pessoa-list__input-busca {
         width: 100%;
+        overflow: hidden;
     }
 
     .pessoa-list__input-box {
         width: 90%; 
         margin: 0 auto;
         margin-bottom: 15px;
+    }
+
+    .pessoa-list__busca {
+        margin: 0;
     }
 
 }

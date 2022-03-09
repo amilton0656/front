@@ -11,7 +11,7 @@
     margin: 0;
     padding: 0;
     height: 100%;
-    margin-right: 0px;;
+    margin-right: 100px;;
 }
 
 .intra-nav__dropdown-item {
@@ -21,6 +21,7 @@
     position: relative;
     height: 100%;
     padding: 0 10px;
+    /* font-weight: 600; */
 }
 
 .intra-nav__dropdown-item:hover
@@ -37,15 +38,17 @@
 }
 
 .intra-nav__dropdown-link {
-    color: var(--second);
+    color: rgba(0, 0, 0, 0.5);
     text-decoration: none;
     display: inline-block;
     height: 100%;
-    padding-top: 15px;
+    padding-top: 20px;
+    font-weight: 600;
 }
 
 .intra-nav__dropdown-link:hover {
     text-decoration: none;
+    color: rgba(0, 0, 0, 0.8);
 }
 
 .intra-nav__dropdown-submenu {
