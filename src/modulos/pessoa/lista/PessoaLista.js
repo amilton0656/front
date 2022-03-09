@@ -170,14 +170,38 @@ const PessoaLista = () => {
         color: 'blue'
     }
 
+    const detectar_mobile = () => {
+        if (navigator.userAgent.match(/Android/i)
+            || navigator.userAgent.match(/webOS/i)
+            || navigator.userAgent.match(/iPhone/i)
+            || navigator.userAgent.match(/iPad/i)
+            || navigator.userAgent.match(/iPod/i)
+            || navigator.userAgent.match(/BlackBerry/i)
+            || navigator.userAgent.match(/Windows Phone/i)
+        ) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    const isMobile = () => {
+        var userAgent = navigator.userAgent.toLowerCase();
+        if (userAgent.search(/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i) != -1)
+            return true;
+    }
+
+    const mobile = isMobile()
+
     return (
         <div className='pessoa-list__layout'>
-
             {/* <Nav /> */}
             {isLoading && <Spinner />}
             {/* <main className='pessoa-list__main'> */}
             <div className='pessoa-list__header'>
                 <h2>Proponentes</h2>
+                <div>xxxx {mobile}</div>
                 <div className='pessoa-list__header-buttons'>
 
                     <Button style={styleButton}>
@@ -219,29 +243,29 @@ const PessoaLista = () => {
             </div>
             <ul className='pessoa-list__container-list'>
 
-                    {
-                        pessoas.map(pessoa => (
-                            <div style ={{background: 'white'}}>
-                                <div className='pessoa-list__item' key={pessoa.id_pessoa}>
-                                    <li
-                                        className='pessoa-list__linha'
-                                        onClick={() => clickHandle(pessoa.id_pessoa)}>{pessoa.nome}
-                                    </li>
+                {
+                    pessoas.map(pessoa => (
+                        <div style={{ background: 'white' }}>
+                            <div className='pessoa-list__item' key={pessoa.id_pessoa}>
+                                <li
+                                    className='pessoa-list__linha'
+                                    onClick={() => clickHandle(pessoa.id_pessoa)}>{pessoa.nome}
+                                </li>
 
-                                    {icones && id === pessoa.id_pessoa &&
-                                        <div className='pessoa_list__icones'>
-                                            <button className='pessoa_list__icones-button' onClick={() => goToForm(pessoa)}><FaRegEdit size={30} color='blue' /></button>
-                                            <button className='pessoa_list__icones-button' onClick={() => FichaCadastral(pessoa.id_pessoa)}><FaRegFilePdf size={30} color='grey' /></button>
-                                            <button className='pessoa_list__icones-button' onClick={() => deletePessoaHandler(pessoa.id_pessoa)}><BsTrash size={30} color='red' /></button>
-                                        </div>
-                                    }
+                                {icones && id === pessoa.id_pessoa &&
+                                    <div className='pessoa_list__icones'>
+                                        <button className='pessoa_list__icones-button' onClick={() => goToForm(pessoa)}><FaRegEdit size={30} color='blue' /></button>
+                                        <button className='pessoa_list__icones-button' onClick={() => FichaCadastral(pessoa.id_pessoa)}><FaRegFilePdf size={30} color='grey' /></button>
+                                        <button className='pessoa_list__icones-button' onClick={() => deletePessoaHandler(pessoa.id_pessoa)}><BsTrash size={30} color='red' /></button>
+                                    </div>
+                                }
 
-                                </div>
                             </div>
-                        )
-                        )
-                    }
-                </ul>
+                        </div>
+                    )
+                    )
+                }
+            </ul>
 
             {/* </main> */}
         </div>
