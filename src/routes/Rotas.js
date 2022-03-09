@@ -31,7 +31,7 @@ const Rotas = () => {
                 <Route path="/erp" element={<Erp />} />
 
                 <Route path="/emprestimosac" element={<EmprestimoSAC />} />
-                <Route path="/emprestimosac/lista" element={<EmprestimoSACListaMob />} />
+                <Route path="/emprestimosac/lista" element={<EmprestimoSACLista />} />
                 <Route path="/emprestimosac/listapdf" element={<EmprestimoSACListaPDF />} />
 
                 <Route path="/emprestimoprice" element={<EmprestimoPrice />} />

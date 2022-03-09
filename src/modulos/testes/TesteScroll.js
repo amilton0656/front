@@ -2,6 +2,17 @@ import './testeScroll.css'
 
 const TesteScroll = () => {
     return (
+        <>
+
+        <div style ={{
+            width: '100px', 
+            height: '100px', 
+            background: 'lime',
+            position: 'absolute', 
+            left: 0,   
+        }}>
+
+        </div>
         <div>
             <div className="wrapper">
                 <div className="slide one"></div>
@@ -12,6 +23,7 @@ const TesteScroll = () => {
 
 
         </div>
+        </>
     );
 }
 

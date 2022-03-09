@@ -71,6 +71,28 @@ const Parametros = props => {
     )
 }
 
+const Lista = props => {
+    return (
+<ul className='emprestimo__container-tabela wrapper'>
+                <li key={-1} className='emprestimo__tabela-linha'>
+                    <div className='emprestimo__tabela-indice' style={{ fontWeight: 'bold' }}>Mês</div>
+                    <div className='emprestimo__tabela-valor' style={{ fontWeight: 'bold' }}>Aporte</div>
+                    <div className='emprestimo__tabela-valor' style={{ fontWeight: 'bold' }}>Juros</div>
+                    <div className='emprestimo__tabela-valor' style={{ fontWeight: 'bold' }}>Amortização</div>
+                    <div className='emprestimo__tabela-valor' style={{ fontWeight: 'bold' }}>Desembolso</div>
+                    <div className='emprestimo__tabela-valor ' style={{ fontWeight: 'bold', width: '20%' }}>Saldo</div>
+
+                </li>
+                {props.listaPDF.map(item => {
+                    return (
+                        <ItemLinha item={item} />
+                    )
+                }
+                )}
+            </ul>
+    )
+}
+
 
 const EmprestimoSACListaMob = props => {
 
@@ -86,9 +108,11 @@ const EmprestimoSACListaMob = props => {
     let classe
 
     return (
-        <div className='emprestimo__centralizar-lista'>
-            <div className='emprestimo__lista'>
-                <div className='emprestimo__header'>
+        <>
+        
+        <div className='emprestimo__centralizar-lista-mob'>
+            <div className='emprestimo__header-mob'>
+                <div className='emprestimo__header emprestimo__header-mob'>
 
                     <Button>
                         <button
@@ -111,26 +135,30 @@ const EmprestimoSACListaMob = props => {
                 <h2 style={{ color: 'black', textAlign: 'center' }}>Simulação - SAC - mob</h2>
 
                 <Parametros formData={formData} totalDesembolso={totalDesembolso} />
-                 <ul className='emprestimo__container-tabela'>
-                    <li key={-1} className='emprestimo__tabela-linha'>
-                        <div className='emprestimo__tabela-indice' style={{ fontWeight: 'bold' }}>Mês</div>
-                        <div className='emprestimo__tabela-valor' style={{ fontWeight: 'bold' }}>Aporte</div>
-                        <div className='emprestimo__tabela-valor' style={{ fontWeight: 'bold' }}>Juros</div>
-                        <div className='emprestimo__tabela-valor' style={{ fontWeight: 'bold' }}>Amortização</div>
-                        <div className='emprestimo__tabela-valor' style={{ fontWeight: 'bold' }}>Desembolso</div>
-                        <div className='emprestimo__tabela-valor ' style={{ fontWeight: 'bold', width: '20%' }}>Saldo</div>
-
-                    </li>
-                    {listaPDF.map(item => {
-                        return (
-                            <ItemLinha item={item} />
-                        )
-                    }
-                    )}
-                </ul>
             </div>
+                </div>
 
-        </div>
+                <Lista listaPDF={listaPDF} />
+
+            {/* <ul className='emprestimo__container-tabela'>
+                <li key={-1} className='emprestimo__tabela-linha'>
+                    <div className='emprestimo__tabela-indice' style={{ fontWeight: 'bold' }}>Mês</div>
+                    <div className='emprestimo__tabela-valor' style={{ fontWeight: 'bold' }}>Aporte</div>
+                    <div className='emprestimo__tabela-valor' style={{ fontWeight: 'bold' }}>Juros</div>
+                    <div className='emprestimo__tabela-valor' style={{ fontWeight: 'bold' }}>Amortização</div>
+                    <div className='emprestimo__tabela-valor' style={{ fontWeight: 'bold' }}>Desembolso</div>
+                    <div className='emprestimo__tabela-valor ' style={{ fontWeight: 'bold', width: '20%' }}>Saldo</div>
+
+                </li>
+                {listaPDF.map(item => {
+                    return (
+                        <ItemLinha item={item} />
+                    )
+                }
+                )}
+            </ul> */}
+
+        </>
     );
 }
 

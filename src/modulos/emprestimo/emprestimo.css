@@ -19,10 +19,32 @@
     justify-content: center;
 }
 
+.emprestimo__centralizar-lista-mob {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .emprestimo__lista {
     width: 780px;
     padding: 20px;
     height: 100%;
+}
+
+
+
+
+.emprestimo__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background: lightgray;
+    padding: 20px;
+}
+
+.emprestimo__header-mob {
+    max-width: 375px;
 }
 
 .emprestimo__container-tabela {
@@ -115,15 +137,7 @@
     
 }
 
-.emprestimo__header {
-    /* border: 1px solid grey; */
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    background: lightgray;
-    padding: 20px;
-}
+
 
 .headerTitle {
     font-weight: bold;
