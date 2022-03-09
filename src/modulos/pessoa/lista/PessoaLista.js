@@ -8,6 +8,7 @@ import clienteAxios from '../../../config/axios'
 import Swal from 'sweetalert2'
 import Spinner from '../../../spinner/Spinner'
 import Button from '../../../components/Button'
+import { checkMobile } from '../../../util/util'
 import './pessoaLista.css'
 
 // import classes from './PessoaLista.module.css'
@@ -172,12 +173,7 @@ const PessoaLista = () => {
 
 
 
-    let mobile = 'PC ' + window.window.innerWidth
-
-    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-    if (userAgent.match(/Android/i)) {
-        mobile = 'Android';
-    }
+    const isMobile = checkMobile()
 
     return (
         <div className='pessoa-list__layout'>
@@ -186,7 +182,7 @@ const PessoaLista = () => {
             {/* <main className='pessoa-list__main'> */}
             <div className='pessoa-list__header'>
                 <h2>Proponentes</h2>
-                <div>xxxx {mobile}</div>
+                <div>xxxx {isMobile}</div>
                 <div className='pessoa-list__header-buttons'>
 
                     <Button style={styleButton}>
