@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import './IntranetDropdown.css'
 
@@ -26,6 +26,7 @@ const IntranetDropdown = props => {
 
   const [showItem, setShowItem] = useState(0)
 
+  const navigate = useNavigate()
 
   const classe = props.show ? 'intra-mob-menu__show' : 'intra-mob-menu__hidden'
 
@@ -39,6 +40,10 @@ const IntranetDropdown = props => {
       setShowItem(0)
     } else {
       setShowItem(item)
+    }
+
+    if (item === 7) {
+      navigate('/erp')
     }
 
   }

@@ -25,8 +25,7 @@ const IntranetHeader = () => {
                 <IntranetHeaderNav />
             </nav>
             <div className='intra-header__button-container' onClick={() => setShow(!show)}>
-
-                <button className='intra-header__button'><FiMenu size={40} color='black'/></button>
+                <button className='intra-header__button'><FiMenu id="intra-header__button-menu" size={40} /></button>
             </div>
 
         </nav>

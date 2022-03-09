@@ -79,6 +79,30 @@
     text-align: right;
 }
 
+.emprestimo__paramsLinha-mob {
+    /* display: flex;
+    justify-content: space-between; */
+    width: 100%;
+    padding: 4px 0;
+    
+}
+
+.emprestimo__paramsItems-mob {
+    display: flex;
+    /* width: 40%; */
+}
+
+.emprestimo__paramsItemTitle-mob {
+    width: 62%;
+    text-align: left;
+}
+
+.emprestimo__paramsItemValue-mob {
+    width: 38%;
+    /* margin-right: 120px; */
+    text-align: right;
+}
+
 
 .title {
     color: black;
@@ -128,6 +152,17 @@
 text-align: center;
 width: 100%;
 display: inline-block;
+}
+
+.slide {
+    width: 100vw;
+    height: 100vh;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 400vw;
 }
 
 

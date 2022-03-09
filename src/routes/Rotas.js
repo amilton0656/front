@@ -9,9 +9,11 @@ import EmprestimoSACLista from '../modulos/emprestimo/sac/EmprestimoSACLista'
 import EmprestimoSACListaPDF from '../modulos/emprestimo/sac/EmprestimoSACListaPDF'
 import EmprestimoPrice from '../modulos/emprestimo/price/EmprestimoPrice'
 import EmprestimoPriceLista from '../modulos/emprestimo/price/EmprestimoPriceLista'
+import EmprestimoSACListaMob from '../modulos/emprestimo/sac/EmprestimoSACListaMob'
 import EmprestimoPriceListaPDF from '../modulos/emprestimo/price/EmprestimoPriceListaPDF'
 
 import PessoaLista from '../modulos/pessoa/lista/PessoaLista'
+import TesteScroll from '../modulos/testes/TesteScroll'
 
 const Rotas = () => {
 
@@ -29,7 +31,7 @@ const Rotas = () => {
                 <Route path="/erp" element={<Erp />} />
 
                 <Route path="/emprestimosac" element={<EmprestimoSAC />} />
-                <Route path="/emprestimosac/lista" element={<EmprestimoSACLista />} />
+                <Route path="/emprestimosac/lista" element={<EmprestimoSACListaMob />} />
                 <Route path="/emprestimosac/listapdf" element={<EmprestimoSACListaPDF />} />
 
                 <Route path="/emprestimoprice" element={<EmprestimoPrice />} />
@@ -37,6 +39,8 @@ const Rotas = () => {
                 <Route path="/emprestimoprice/listapdf" element={<EmprestimoPriceListaPDF />} />
 
                 <Route path="/pessoa/lista" element={<PessoaLista />} />
+
+                <Route path="/teste" element={<TesteScroll />} />
 
             </Routes>
 

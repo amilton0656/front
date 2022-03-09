@@ -92,7 +92,6 @@ const IntranetHeaderNav = () => {
                 </ul>
             </li>
             <li className='intra-nav__dropdown-item'>
-                {/* <a href="#" className='intra-nav__dropdown-link'>Sistema</a> */}
                 <Link className='intra-nav__dropdown-link' to ='/erp'>Sistema</Link>
             </li>
         </ul>

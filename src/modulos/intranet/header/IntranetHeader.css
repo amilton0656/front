@@ -44,6 +44,14 @@
     background-color: transparent;
 }
 
+#intra-header__button-menu {
+    color: black;
+}
+
+#intra-header__button-menu:hover {
+    color: rgb(83, 82, 82);
+}
+
 @media (min-width: 990px) {
     .intra-header__button {
         display: none;
