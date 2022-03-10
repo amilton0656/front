@@ -108,7 +108,8 @@ const EmprestimoPrice = () => {
             aporteValorx: convertToReal(aporteValor),
             desembolsoValor,
             desembolsoValorx: convertToReal(desembolsoValor),
-            taxaJurosAM: Math.round(taxaJurosAM * 1000000) / 1000000,
+            taxaJurosAM: taxaJurosAM,
+            taxaJurosAMx: Math.round(taxaJurosAM * 1000000) / 1000000,
             comissao1Valor: convertToReal(comissao1Valor),
             comissao2Valor: convertToReal(comissao2Valor),
         })
@@ -433,7 +434,7 @@ const EmprestimoPrice = () => {
                     />
             </div>
 
-            <Button style={{ width: '200px', marginTop: '30px' }}>
+            <Button style={{ marginTop: '30px' }}>
                 <button
                     className='form-botaoBox__button'
                     type="button"

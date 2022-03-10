@@ -1,0 +1,25 @@
+.pessoa-container {
+    background: steelblue;
+    
+}
+
+.pessoa-main {
+    width: 100%;
+    margin: 0 auto;
+
+}
+
+.pessoa-container__header-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+@media (min-width: 380px) {
+    .pessoa-main {
+        width: 70%;
+        max-width: 600px;
+
+    
+    }
+}

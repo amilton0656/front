@@ -2,8 +2,8 @@ import React from "react"
 import './form.css'
 
 const Form = props => {
-    return ( 
-        <form className="form-form" style ={{...props}}>
+    return (   
+        <form className={`form-form ${props.className}`}>
             {props.children}
         </form>
      );

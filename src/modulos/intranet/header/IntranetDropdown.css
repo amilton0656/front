@@ -37,24 +37,43 @@
 
 
 .intra-mob-menu__item {
-    padding: 5px;
+    padding: 10px;
     list-style: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: rgb(87, 86, 86)
   }
 
   .intra-mob-menu__subitem {
-    padding: 5px;
+    padding: 3px;
     margin-left: 20px;
     width: 100%;
-    color: black;
+    color: rgb(87, 86, 86);
     list-style: none;
+    font-size: 1rem;
+    height: 100%
+    
   }
-
+  
   .intra-mob-menu__subitem a:link,
   .intra-mob-menu__subitem a:visited,
   .intra-mob-menu__subitem a:hover,
   .intra-mob-menu__subitem a:active
   {
-    color: black;
+    color: rgb(87, 86, 86);
+    
+    
+  }
+  
+  .intra-mob-menu__subitem a {
+    padding: 5px;
+    display: inline-block;
+    width: 100%;
+    font-weight: none;
+  }
+  
+  .intra-mob-menu__subitem a:hover {
+    background: lightgrey;
     
   }
 

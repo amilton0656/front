@@ -13,6 +13,7 @@ import EmprestimoSACListaMob from '../modulos/emprestimo/sac/EmprestimoSACListaM
 import EmprestimoPriceListaPDF from '../modulos/emprestimo/price/EmprestimoPriceListaPDF'
 
 import PessoaLista from '../modulos/pessoa/lista/PessoaLista'
+import PessoaCadDados from '../modulos/pessoa/dados/PessoaCadDados'
 import TesteScroll from '../modulos/testes/TesteScroll'
 
 const Rotas = () => {
@@ -39,6 +40,7 @@ const Rotas = () => {
                 <Route path="/emprestimoprice/listapdf" element={<EmprestimoPriceListaPDF />} />
 
                 <Route path="/pessoa/lista" element={<PessoaLista />} />
+                <Route path="/pessoa/formdados" element={<PessoaCadDados />} />
 
                 <Route path="/teste" element={<TesteScroll />} />
 

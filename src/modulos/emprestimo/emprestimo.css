@@ -12,6 +12,7 @@
     justify-content: center; 
     width: 100%;
     margin: 0 auto;
+    border: none;
 }
 
 .emprestimo__centralizar-lista {
@@ -111,16 +112,16 @@
 .emprestimo__paramsItems {
     display: flex;
     padding: 8px 0;
-    width: 40%;
+    width: 44%;
 }
 
 .emprestimo__paramsItemTitle {
-    width: 62%;
+    width: 64%;
     text-align: left;
 }
 
 .emprestimo__paramsItemValue {
-    width: 38%;
+    width: 36%;
 
     text-align: right;
 }

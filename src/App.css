@@ -27,6 +27,18 @@
     width: 300px;
 }
 
+.w375 {
+    width: 375px;
+}
+
+.w500 {
+    width: 500px;
+}
+
+.w600 {
+    width: 600px;
+}
+
 @media (min-width: 1px) and (max-width: 459px) {
     
 }

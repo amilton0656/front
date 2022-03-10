@@ -8,8 +8,13 @@ import classes2 from '../lista/PessoaLista.module.css'
 import { pessoasActions } from '../../../store/pessoaReducers'
 import { cepMask, cpfMask, cnpjMask, validarCPF, validarCNPJ } from '../../../util/util'
 import Nav from '../../proponente/nav/NavProponente'
+import Form from '../../../components/Form'
+import Input from '../../../components/Input'
 import InputNumber from '../../../components/InputNumber'
+import Button from '../../../components/Button'
 import PessoaContatosLista from '../contatos/PessoaContatosLista'
+
+import './pessoaCadDados.css'
 
 const ProponenteCadDados = props => {
 
@@ -387,18 +392,17 @@ const ProponenteCadDados = props => {
     }
 
     return (
-        <div className={classes.container}>
-            <Nav />
-
-            <main className={classes.main}>
-                <div className={classes2.containerHeaderButtons}>
+        <div className='pessoa-container'>
+            <main className='pessoa-main'>
+                <div className='pessoa-container__header-buttons'>
                     <h2>Proponente</h2>
-                    <div style={{ width: '70px' }}>
-                        <button type="button" onClick={getOutHandle}>Voltar</button>
+                    <Button c = 'yellow' w = '150px' h= '30px'>
+                    </Button>
 
-                    </div>
+                
                 </div>
-                <form onSubmit={submitHandler} className={classes.form}>
+                {/* <form onSubmit={submitHandler} className={classes.form}> */}
+                    <Form>
                     <div>{formDataI.id_pessoa}</div>
                     {/* Tipo de Pessoa */}
                     <div className={classes.inputBox}>
@@ -968,8 +972,8 @@ const ProponenteCadDados = props => {
                     <div className={classes.botaoBox}>
                         {botao}
                     </div>
-
-                </form>
+                    </Form>
+                {/* </form> */}
                 <div style={{ height: '20px' }}></div>
 
             </main>
