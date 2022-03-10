@@ -20,10 +20,10 @@ const ErpLayout = () => {
             <div className='erp-card'>
                 <Link className='erp-link' to='/emprestimoprice'>Simulação Price</Link>
             </div>
-{/* 
+
             <div className='erp-card'>
                 <Link className='erp-link' to='/teste'>Teste</Link>
-            </div> */}
+            </div>
         </main>
      );
 }

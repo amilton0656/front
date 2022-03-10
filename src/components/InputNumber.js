@@ -51,6 +51,7 @@ const InputNumber = props => {
 
     return (
             <input
+                type='number'
                 className={props.className}
                 value={valorE}
                 onKeyDown={getKey}
