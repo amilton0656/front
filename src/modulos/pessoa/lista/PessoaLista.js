@@ -8,7 +8,7 @@ import clienteAxios from '../../../config/axios'
 import Swal from 'sweetalert2'
 import Spinner from '../../../spinner/Spinner'
 import Button from '../../../components/Button'
-import { checkMobile } from '../../../util/util'
+import { isMobile } from '../../../util/util'
 import './pessoaLista.css'
 
 // import classes from './PessoaLista.module.css'
@@ -173,7 +173,6 @@ const PessoaLista = () => {
 
 
 
-    const isMobile = checkMobile()
 
     return (
         <div className='pessoa-list__layout'>
@@ -182,7 +181,6 @@ const PessoaLista = () => {
             {/* <main className='pessoa-list__main'> */}
             <div className='pessoa-list__header'>
                 <h2>Proponentes</h2>
-                <div>xxxx {isMobile}</div>
                 <div className='pessoa-list__header-buttons'>
 
                     <Button style={styleButton}>

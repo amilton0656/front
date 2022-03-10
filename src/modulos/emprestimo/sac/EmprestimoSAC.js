@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { convertToReal } from '../../../util/util'
+import { convertToReal, isMobile } from '../../../util/util'
 import { useNavigate } from 'react-router-dom'
 
 import InputNumber from '../../../components/InputNumber'
@@ -31,7 +31,7 @@ const EmprestimoSAC = () => {
 
     let initial = initialState
 
-    if (window.innerWidth > 400) {
+    if (!isMobile()) {
         const saved = localStorage.getItem("emprestimoSAC")
         initial = JSON.parse(saved) || initialState
     }
@@ -112,7 +112,7 @@ const EmprestimoSAC = () => {
             }
 
 
-            if (window.innerWidth > 400) {
+            if (!isMobile()) {
                 localStorage.setItem("emprestimoSAC", JSON.stringify(formData));
             }
 
@@ -139,7 +139,6 @@ const EmprestimoSAC = () => {
         const difAporte = Math.round((parseFloat(formData.valorEmprestimo) - (parseInt(formData.aporteMeses) * parseFloat(formData.aporteValor))) * 100) / 100
         const difAmortizacao = Math.round((parseFloat(formData.valorEmprestimo) - (parseInt(formData.amortizacaoMeses) * parseFloat(formData.amortizacaoValor))) * 100) / 100
 
-        console.log('difAmortizacao', difAmortizacao)
         saldo = parseFloat(formData.saldo)
 
         for (var mes = 0; mes < tamanho; mes++) {

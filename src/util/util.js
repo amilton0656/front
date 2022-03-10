@@ -174,16 +174,16 @@ export const formatarNumero = (n) => {
 //     var dinheiro = numero.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
   }
 
-  export const checkMobile = () => {
-      let mobile = ''
+  export const isMobile = () => {
+      let isMobile = false
 
       var userAgent = navigator.userAgent || navigator.vendor || window.opera;
       
       if( userAgent.match( /iPad/i ) || userAgent.match( /iPhone/i ) || userAgent.match( /iPod/i ) ) {
-            mobile = 'android'
+            isMobile = true
       } else if (userAgent.match(/Android/i)) {
-          mobile = 'android';
+          isMobile = true;
       }
 
-      return mobile
+      return isMobile
   }

@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import { convertToReal } from '../../../util/util'
 import EmprestimoPriceListaPDF from './EmprestimoPriceListaPDF'
 import Button from '../../../components/Button'
+import { isMobile } from '../../../util/util'
 
 import EmprestimoPriceListaMob from './EmprestimoPriceListaMob'
 
@@ -107,9 +108,7 @@ const EmprestimoPriceLista = props => {
     let cont = 0
     let classe
 
-    console.log('tamanho ', window.innerWidth)
-
-    if (window.innerWidth <= 400) {
+    if (isMobile()) {
         return <EmprestimoPriceListaMob />
     }
 
