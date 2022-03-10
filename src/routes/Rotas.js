@@ -14,7 +14,6 @@ import EmprestimoPriceListaPDF from '../modulos/emprestimo/price/EmprestimoPrice
 
 import PessoaLista from '../modulos/pessoa/lista/PessoaLista'
 import TesteScroll from '../modulos/testes/TesteScroll'
-import EmprestimoSACclean from '../modulos/emprestimo/sac/EmprestimoSACclean'
 
 const Rotas = () => {
 
@@ -41,7 +40,7 @@ const Rotas = () => {
 
                 <Route path="/pessoa/lista" element={<PessoaLista />} />
 
-                <Route path="/teste" element={<EmprestimoSACclean />} />
+                <Route path="/teste" element={<TesteScroll />} />
 
             </Routes>
 

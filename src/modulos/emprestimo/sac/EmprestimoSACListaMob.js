@@ -40,18 +40,18 @@ const Parametros = props => {
         { title: 'Valor do empréstimo:', value: convertToReal(formData.valorEmprestimo) },
         { title: 'Carência (em meses):', value: formData.carencia },
         { title: 'Caução (Percentual):', value: convertToReal(formData.caucaoPerc) },
-        { title: 'Caução (Valor):', value: convertToReal(formData.caucaoValor) },
+        { title: 'Caução (Valor):', value: formData.caucaoValor },
         { title: 'Qtde meses (Aporte):', value: formData.aporteMeses },
-        { title: 'Aporte Mensal:', value: convertToReal(formData.aporteValor) },
+        { title: 'Aporte Mensal:', value: formData.aporteValorx },
         { title: 'Qtde meses (Amort):', value: formData.amortizacaoMeses },
-        { title: 'Amortização Mensal:', value: convertToReal(formData.amortizacaoValor) },
+        { title: 'Amortização Mensal:', value: formData.amortizacaoValorx },
         { title: 'Taxa Juros (% a.a.):', value: convertToReal(formData.taxaJurosAA) },
-        { title: 'Taxa Juros (% a.m.):', value: convertToReal(formData.taxaJurosAM) },
+        { title: 'Taxa Juros (% a.m.):', value: formData.taxaJurosAMx },
         { title: 'Comissão (1) - Perc:', value: convertToReal(formData.comissao1Perc) },
         { title: 'Comissão (1) - Valor:', value: convertToReal(formData.comissao1Valor) },
-        { title: 'Comissão (2) - Perc:', value: convertToReal(formData.comissao2Perc) },
+        { title: 'Comissão (2) - Perc:', value: formData.comissao2Perc },
         { title: 'Comissão (2) - Valor:', value: convertToReal(formData.comissao2Valor) },
-        { title: 'Total do desembolso::', value: convertToReal(totalDesembolso) },
+        { title: 'Total do desembolso::', value: totalDesembolso },
     ]
 
     return (
@@ -112,7 +112,7 @@ const EmprestimoSACListaMob = props => {
 
             <div>
                 <div className='emprestimo__header-mob'>
-                    <div className='emprestimo__header emprestimo__header-mob'>
+                    <div className='emprestimo__header emprestimo__header-mob hide-component'>
 
                         <Button>
                             <button

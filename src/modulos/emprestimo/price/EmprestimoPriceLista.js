@@ -46,7 +46,7 @@ const Parametros = props => {
         },
         {
             title: 'Caução (Percentual):', value: convertToReal(formData.caucaoPerc),
-            title2: 'Caução (Valor):', value2: convertToReal(formData.caucaoValor)
+            title2: 'Caução (Valor):', value2: formData.caucaoValor
         },
         {
             title: 'Qtde meses (Aporte):', value: formData.aporteMeses,
@@ -54,19 +54,19 @@ const Parametros = props => {
         },
         {
             title: 'Qtde meses (Desembolso):', value: formData.desembolsoMeses,
-            title2: 'Desembolso Mensal:', value2: convertToReal(formData.desembolsoValor)
+            title2: 'Desembolso Mensal:', value2: formData.desembolsoValorx
         },
         {
             title: 'Taxa Juros (% a.a.):', value: convertToReal(formData.taxaJurosAA),
-            title2: 'Taxa Juros (% a.m.):', value2: convertToReal(formData.taxaJurosAM)
+            title2: 'Taxa Juros (% a.m.):', value2: formData.taxaJurosAMx
         },
         {
             title: 'Comissão (1) - Perc:', value: convertToReal(formData.comissao1Perc),
-            title2: 'Comissão (1) - Valor:', value2: convertToReal(formData.comissao1Valor)
+            title2: 'Comissão (1) - Valor:', value2: formData.comissao1Valor
         },
         {
             title: 'Comissão (2) - Perc:', value: convertToReal(formData.comissao2Perc),
-            title2: 'Comissão (2) - Valor:', value2: convertToReal(formData.comissao2Valor)
+            title2: 'Comissão (2) - Valor:', value2: formData.comissao2Valor
         },
     ]
 
@@ -115,7 +115,7 @@ const EmprestimoPriceLista = props => {
     return (
         <div className='emprestimo__centralizar-lista'>
             <div className='emprestimo__lista'>
-                <div className='emprestimo__header'>
+                <div className='emprestimo__header hide-component'>
                     <Button>
                         <button
                             className='form-botaoBox__button w150'

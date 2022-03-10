@@ -6,6 +6,7 @@ import InputNumber from '../../../components/InputNumber'
 import EmprestimoSACLista from './EmprestimoSACLista'
 import Form from '../../../components/Form'
 import Button from '../../../components/Button'
+import Input from '../../../components/Input'
 
 import '../emprestimo.css'
 
@@ -27,7 +28,7 @@ const initialState = {
     comissao2Valor: null
 }
 
-const EmprestimoSACclean = () => {
+const EmprestimoSAC = () => {
 
     let initial = initialState
 
@@ -220,6 +221,7 @@ const EmprestimoSACclean = () => {
 
     }
 
+
     return (
         <main className='main-emprestimo__container'>
             <h2 className='title'>Simulação - SAC</h2>
@@ -230,19 +232,32 @@ const EmprestimoSACclean = () => {
                     {/* Valor do empréstimo */}
                     <div className='form.inputBox w150'>
                         <label htmlFor="valorEmprestimo">Valor do empréstimo:</label>
-                                             <input
-                            type='number'
-                            step="1"
+                        <InputNumber
+                            formData={formData}
+                            setFormData={setFormData}
                             className='form-input'
                             id="valorEmprestimo"
                             name="valorEmprestimo"
-                            onChange={textHandler}
                             value={formData.valorEmprestimo}
                         />
+
                     </div>
 
                     {/* Carência (em meses) */}
-                    <div className='form.inputBox w150'>
+                    <Input 
+                        label='Carência (em meses):'
+                        type='number'
+                        id='carencia'
+                        name='carencia'
+                        value={formData.carencia}
+                        onChange={textHandler}
+                        className='w150'
+                        step={1}
+                    
+                    
+                    />
+
+                    {/* <div className='form.inputBox w150'>
                         <label htmlFor="carencia">Carência (em meses):</label>
                         <input
                             type='number'
@@ -253,7 +268,9 @@ const EmprestimoSACclean = () => {
                             onChange={textHandler}
                             value={formData.carencia}
                         />
-                    </div>
+                    </div> */}
+
+
 
                 </div>
 
@@ -261,14 +278,12 @@ const EmprestimoSACclean = () => {
                     {/* Caução (Percentual) */}
                     <div className='form.inputBox w150'>
                         <label htmlFor="caucaoPerc">Caução (Percentual):</label>
-
-                                                                     <input
-                            type='number'
-                            step="1"
+                        <InputNumber
+                            formData={formData}
+                            setFormData={setFormData}
                             className='form-input'
                             id="caucaoPerc"
                             name="caucaoPerc"
-                            onChange={textHandler}
                             value={formData.caucaoPerc}
                         />
                     </div>
@@ -355,14 +370,12 @@ const EmprestimoSACclean = () => {
                     {/* Taxa de Juros (  % a.a. ) */}
                     <div className='form.inputBox w150'>
                         <label htmlFor="taxaJurosAA">Taxa Juros (% a.a.):</label>
-
-                        <input
-                            type='number'
-                            step="1"
+                        <InputNumber
+                            formData={formData}
+                            setFormData={setFormData}
                             className='form-input'
                             id="taxaJurosAA"
                             name="taxaJurosAA"
-                            onChange={textHandler}
                             value={formData.taxaJurosAA}
                         />
                     </div>
@@ -387,13 +400,12 @@ const EmprestimoSACclean = () => {
                     {/* Comissão (1) - Percentual */}
                     <div className='form.inputBox w150'>
                         <label htmlFor="comissao1Perc">Comissão (1) - Perc:</label>
-                                                <input
-                            type='number'
-                            step="1"
+                        <InputNumber
+                            formData={formData}
+                            setFormData={setFormData}
                             className='form-input'
                             id="comissao1Perc"
                             name="comissao1Perc"
-                            onChange={textHandler}
                             value={formData.comissao1Perc}
                         />
                     </div>
@@ -418,15 +430,13 @@ const EmprestimoSACclean = () => {
                     {/* Comissão (2) - Percentual */}
                     <div className='form.inputBox w150'>
                         <label htmlFor="comissao2Perc">Comissão (2) - Perc:</label>
-
-                                                <input
-                            disabled
+                        <InputNumber
                             formData={formData}
                             setFormData={setFormData}
                             className='form-input'
                             id="comissao2Perc"
                             name="comissao2Perc"
-                            value={convertToReal(formData.comissao2Perc)}
+                            value={formData.comissao2Perc}
                         />
                     </div>
 
@@ -475,4 +485,4 @@ const EmprestimoSACclean = () => {
     );
 }
 
-export default EmprestimoSACclean;
+export default EmprestimoSAC;

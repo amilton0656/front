@@ -3,6 +3,7 @@ import { convertToReal } from '../../../util/util'
 import { useNavigate } from 'react-router-dom'
 
 import InputNumber from '../../../components/InputNumber'
+import Input from '../../../components/Input'
 import EmprestimoSACLista from '../sac/EmprestimoSACLista'
 import Form from '../../../components/Form'
 import Button from '../../../components/Button'
@@ -102,12 +103,14 @@ const EmprestimoPrice = () => {
 
         setFormData({
             ...formData,
-            caucaoValor,
-            aporteValor,
+            caucaoValor: convertToReal(caucaoValor),
+            aporteValor: aporteValor,
+            aporteValorx: convertToReal(aporteValor),
             desembolsoValor,
-            taxaJurosAM,
-            comissao1Valor,
-            comissao2Valor
+            desembolsoValorx: convertToReal(desembolsoValor),
+            taxaJurosAM: Math.round(taxaJurosAM * 1000000) / 1000000,
+            comissao1Valor: convertToReal(comissao1Valor),
+            comissao2Valor: convertToReal(comissao2Valor),
         })
 
         setMontarLista(true)
@@ -240,223 +243,204 @@ const EmprestimoPrice = () => {
                 <div className='sideByside'>
 
                     {/* Valor do empréstimo */}
-                    <div className='form.inputBox w150'>
-                        <label htmlFor="valorEmprestimo">Valor do empréstimo:</label>
-                        <InputNumber
-                            formData={formData}
-                            setFormData={setFormData}
-                            className='form-input'
-                            id="valorEmprestimo"
-                            name="valorEmprestimo"
-                            value={formData.valorEmprestimo}
-                        />
-                    </div>
+                    <InputNumber
+                        label='Valor do empréstimo:'
+                        formData={formData}
+                        setFormData={setFormData}
+                        className='w150'
+                        id="valorEmprestimo"
+                        name="valorEmprestimo"
+                        value={formData.valorEmprestimo}
+                    />
 
                     {/* Carência (em meses) */}
-                    <div className='form.inputBox w150'>
-                        <label htmlFor="carencia">Carência (em meses):</label>
-                        <input
-                            type='number'
-                            step="1"
-                            className='form-input'
-                            id="carencia"
-                            name="carencia"
-                            onChange={textHandler}
-                            value={formData.carencia}
-                        />
-                    </div>
+                    <Input
+                        label='Carência (em meses):'
+                        type='number'
+                        id='carencia'
+                        name='carencia'
+                        value={formData.carencia}
+                        onChange={textHandler}
+                        className='w150'
+                        step={1}
+                    />
 
                 </div>
 
                 <div className='sideByside'>
                     {/* Caução (Percentual) */}
-                    <div className='form.inputBox w150'>
-                        <label htmlFor="caucaoPerc">Caução (Percentual):</label>
-                        <InputNumber
-                            formData={formData}
-                            setFormData={setFormData}
-                            className='form-input'
-                            id="caucaoPerc"
-                            name="caucaoPerc"
-                            value={formData.caucaoPerc}
-                        />
-                    </div>
+                    <InputNumber
+                        label='Caução (Percentual):'
+                        formData={formData}
+                        setFormData={setFormData}
+                        className='w150'
+                        id="caucaoPerc"
+                        name="caucaoPerc"
+                        value={formData.caucaoPerc}
+                    />
 
                     {/* Caução (Valor) */}
-                    <div className='form.inputBox w150'>
-                        <label htmlFor="caucaoValor">Caução (Valor):</label>
-                        <input
-                            disabled
-                            formData={formData}
-                            setFormData={setFormData}
-                            className='form-input'
-                            id="caucaoValor"
-                            name="caucaoValor"
-                            value={convertToReal(formData.caucaoValor)}
-                        />
-                    </div>
+
+                    <Input
+                        disabled='disabled'
+                        label='Caução (Valor):'
+                        type='text'
+                        id='caucaoValor'
+                        name='caucaoValor'
+                        value={formData.caucaoValor}
+                        onChange={textHandler}
+                        className='w150'
+                        step={1}
+                    />
                 </div>
 
                 <div className='sideByside'>
 
                     {/* Aporte (em meses) */}
-                    <div className='form.inputBox w150'>
-                        <label htmlFor="aporteMeses">Qtde meses (Aporte):</label>
-                        <input
-                            type='number'
-                            step="1"
-                            className='form-input'
-                            id="aporteMeses"
-                            name="aporteMeses"
-                            onChange={textHandler}
-                            value={formData.aporteMeses}
-                        />
-                    </div>
+                    <Input
+                        label='Qtde meses (Aporte):'
+                        type='number'
+                        id='aporteMeses'
+                        name='aporteMeses'
+                        value={formData.aporteMeses}
+                        onChange={textHandler}
+                        className='w150'
+                        step={1}
+                    />
 
                     {/* Aporte Mensal */}
-                    <div className='form.inputBox w150'>
-                        <label htmlFor="aporteValor">Aporte Mensal:</label>
-                        <input
-                            disabled
-                            formData={formData}
-                            setFormData={setFormData}
-                            className='form-input'
-                            id="aporteValor"
-                            name="aporteValor"
-                            value={convertToReal(formData.aporteValor)}
-                        />
-                    </div>
+                    <Input
+                        disabled='disabled'
+                        label='Aporte Mensal:'
+                        type='text'
+                        id='aporteValor'
+                        name='aporteValor'
+                        value={formData.aporteValorx}
+                        onChange={textHandler}
+                        className='w150'
+                        step={1}
+                    />
+
                 </div>
 
                 <div className='sideByside'>
 
                     {/* Quantidade de meses (Desembolso) : */}
-                    <div className='form.inputBox w150'>
-                        <label htmlFor="desembolsoMeses">Qtde meses (Des):</label>
-                        <input
-                            type='number'
-                            step="1"
-                            className='form-input'
-                            id="desembolsoMeses"
-                            name="desembolsoMeses"
-                            onChange={textHandler}
-                            value={formData.desembolsoMeses}
-                        />
-                    </div>
+                    <Input
+                        label='Qtde meses (Des):'
+                        type='number'
+                        id='desembolsoMeses'
+                        name='desembolsoMeses'
+                        value={formData.desembolsoMeses}
+                        onChange={textHandler}
+                        className='w150'
+                        step={1}
+                    />
 
                     {/* Desembolso Mensal */}
-                    <div className='form.inputBox w150'>
-                        <label htmlFor="desembolsoValor">Desembolso Mensal:</label>
-                        <input
-                            disabled
-                            formData={formData}
-                            setFormData={setFormData}
-                            className='form-input'
-                            id="desembolsoValor"
-                            name="desembolsoValor"
-                            value={convertToReal(formData.desembolsoValor)}
-                        />
-                    </div>
+                    <Input
+                        disabled='disabled'
+                        label='Desembolso Mensal:'
+                        type='text'
+                        id='desembolsoValor'
+                        name='desembolsoValor'
+                        value={formData.desembolsoValorx}
+                        onChange={textHandler}
+                        className='w150'
+                        step={1}
+                    />
                 </div>
 
                 <div className='sideByside'>
 
                     {/* Taxa de Juros (  % a.a. ) */}
-                    <div className='form.inputBox w150'>
-                        <label htmlFor="taxaJurosAA">Taxa Juros (% a.a.):</label>
-                        <InputNumber
-                            formData={formData}
-                            setFormData={setFormData}
-                            className='form-input'
-                            id="taxaJurosAA"
-                            name="taxaJurosAA"
-                            value={formData.taxaJurosAA}
-                        />
-                    </div>
+                    <InputNumber
+                        label='Taxa Juros (% a.a.):'
+                        formData={formData}
+                        setFormData={setFormData}
+                        className='w150'
+                        id="taxaJurosAA"
+                        name="taxaJurosAA"
+                        value={formData.taxaJurosAA}
+                    />
 
                     {/* Taxa de Juros (  % a.m. ) */}
-                    <div className='form.inputBox w150'>
-                        <label htmlFor="taxaJurosAM">Taxa Juros (% a.m.):</label>
-                        <input
-                            disabled
-                            formData={formData}
-                            setFormData={setFormData}
-                            className='form-input'
-                            id="taxaJurosAM"
-                            name="taxaJurosAM"
-                            value={formData.taxaJurosAM}
-                        />
-                    </div>
+                    <Input
+                        disabled='disabled'
+                        label='Taxa Juros (% a.m.):'
+                        type='text'
+                        id='taxaJurosAM'
+                        name='taxaJurosAM'
+                        value={formData.taxaJurosAM}
+                        onChange={textHandler}
+                        className='w150'
+                        step={1}
+                    />
+
                 </div>
 
                 <div className='sideByside'>
 
                     {/* Comissão (1) - Percentual */}
-                    <div className='form.inputBox w150'>
-                        <label htmlFor="comissao1Perc">Comissão (1) - Perc:</label>
-                        <InputNumber
-                            formData={formData}
-                            setFormData={setFormData}
-                            className='form-input'
-                            id="comissao1Perc"
-                            name="comissao1Perc"
-                            value={formData.comissao1Perc}
-                        />
-                    </div>
+                    <InputNumber
+                        label='Comissão (1) - Perc:'
+                        formData={formData}
+                        setFormData={setFormData}
+                        className='w150'
+                        id="comissao1Perc"
+                        name="comissao1Perc"
+                        value={formData.comissao1Perc}
+                    />
 
                     {/* Comissão (1) - Valor */}
-                    <div className='form.inputBox w150'>
-                        <label htmlFor="comissao1Valor">Comissão (1) - Valor:</label>
-                        <input
-                            disabled
-                            formData={formData}
-                            setFormData={setFormData}
-                            className='form-input'
-                            id="comissao1Valor"
-                            name="comissao1Valor"
-                            value={convertToReal(formData.comissao1Valor)}
-                        />
-                    </div>
+                    <Input
+                        disabled='disabled'
+                        label='Comissão (1) - Valor:'
+                        type='text'
+                        id='comissao1Valor'
+                        name='comissao1Valor'
+                        value={formData.comissao1Valor}
+                        onChange={textHandler}
+                        className='w150'
+                        step={1}
+                    />
                 </div>
 
                 <div className='sideByside'>
 
                     {/* Comissão (2) - Percentual */}
-                    <div className='form.inputBox w150'>
-                        <label htmlFor="comissao2Perc">Comissão (2) - Perc:</label>
-                        <InputNumber
-                            formData={formData}
-                            setFormData={setFormData}
-                            className='form-input'
-                            id="comissao2Perc"
-                            name="comissao2Perc"
-                            value={formData.comissao2Perc}
-                        />
-                    </div>
+                    <InputNumber
+                        label='Comissão (2) - Perc:'
+                        formData={formData}
+                        setFormData={setFormData}
+                        className='w150'
+                        id="comissao2Perc"
+                        name="comissao2Perc"
+                        value={formData.comissao2Perc}
+                    />
 
                     {/* Comissão (2) - Valor */}
-                    <div className='form.inputBox w150'>
-                        <label htmlFor="comissao2Valor">Comissão (2) - Valor:</label>
-                        <input
-                            disabled
-                            formData={formData}
-                            setFormData={setFormData}
-                            className='form-input'
-                            id="comissao2Valor"
-                            name="comissao2Valor"
-                            value={convertToReal(formData.comissao2Valor)}
-                        />
-                    </div>
-                </div>
+                    <Input
+                        disabled='disabled'
+                        label='Comissão (2) - Valor:'
+                        type='text'
+                        id='comissao2Valor'
+                        name='comissao2Valor'
+                        value={formData.comissao2Valor}
+                        onChange={textHandler}
+                        className='w150'
+                        step={1}
+                    />
+            </div>
 
-                <Button style={{width: '200px', marginTop: '30px'}}>
-                    <button
-                        className='form-botaoBox__button'
-                        type="button"
-                        onClick={calcularHandle}
-                    >Calcular</button>
-                </Button>
-            </Form>
+            <Button style={{ width: '200px', marginTop: '30px' }}>
+                <button
+                    className='form-botaoBox__button'
+                    type="button"
+                    onClick={calcularHandle}
+                >Calcular</button>
+            </Button>
+        </Form>
 
             {/* <div>
                 {
@@ -467,7 +451,7 @@ const EmprestimoPrice = () => {
             </div> */}
 
 
-        </main>
+        </main >
     );
 }
 

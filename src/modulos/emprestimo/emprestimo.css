@@ -26,7 +26,7 @@
 }
 
 .emprestimo__lista {
-    width: 780px;
+    width: 750px;
     padding: 20px;
     height: 100%;
 }
@@ -51,14 +51,14 @@
     border: 1px solid grey;
     /* margin-top: 20px; */
     padding: 10px 0;
-    width: 780px;
+    width: 750px;
     overflow: hidden;
 }
 
 .emprestimo__container-tabela-mob {
     /* border: 1px solid grey; */
     padding: 10px 0;
-    width: 780px;
+    width: 750px;
 }
 
 .emprestimo__tabela-linha {

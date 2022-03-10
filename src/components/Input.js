@@ -1,21 +1,25 @@
-
+import './form.css'
 
 const Input = props => {
-    return ( 
-        <div
-            className={`${classes.control} ${props.isValid === false ? classes.invalid : ''}`}
-        >
-            <label htmlFor={props.id}>{props.label}</label>
-            <input 
-                type={props.type}
-                id={props.id}
-                value={props.value}
-                onChange={props.onChange}
-                onBlur={props.onBlur}
-            /> 
+    return (
+            <div
+                className={`form.inputBox ${props.className}`}
+            >
+                <label htmlFor={props.id}>{props.label}</label>
+                <input
+                    disabled={props.disabled}
+                    type={props.type}
+                    id={props.id}
+                    name={props.name}
+                    value={props.value}
+                    onChange={props.onChange}
+                    onBlur={props.onBlur}
+                    className={`form-input ${props.className}`}
+                    step={props.step}
+                />
 
-        </div>
-     )
+            </div>
+    )
 }
- 
+
 export default Input
