@@ -71,7 +71,7 @@ const Parametros = props => {
     ]
 
     return (
-        <div> 
+        <div>
             {
                 abc.map(linha => (
                     <div className='emprestimo__paramsLinha'>
@@ -116,21 +116,21 @@ const EmprestimoPriceLista = props => {
         <div className='emprestimo__centralizar-lista'>
             <div className='emprestimo__lista'>
                 <div className='emprestimo__header hide-component'>
-                    <Button>
-                        <button
-                            className='form-botaoBox__button w150'
-                            type="button"
+                    <div className='center'>
+                        <Button
+                            className='w200'
+                            title='Gerar PDF'
                             onClick={() => EmprestimoPriceListaPDF(formData, listaPDF, totalDesembolso)}
-                        >Gerar PDF</button>
-                    </Button>
+                        />
+                    </div>
 
-                    <Button>
-                        <button
-                            className='form-botaoBox__button w150'
-                            type="button"
+                    <div className='center'>
+                        <Button
+                            className='w200'
+                            title='Imprimir'
                             onClick={() => window.print()}
-                        >Imprimir</button>
-                    </Button>
+                        />
+                    </div>
                 </div>
                 <h2 style={{ color: 'black', textAlign: 'center' }}>Simulação - Price</h2>
                 <Parametros formData={formData} totalDesembolso={totalDesembolso} />

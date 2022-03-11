@@ -8,11 +8,16 @@
 .main-emprestimo__container {
     display: flex; 
     flex-direction: column; 
-    align-items: center; 
-    justify-content: center; 
     width: 100%;
+    /* align-items: center; 
+    justify-content: center; 
+    width: 100%; */
     margin: 0 auto;
-    border: none;
+    /* border: none; */
+}
+
+.main-emprestimo__form {
+    /* padding: 20px; */
 }
 
 .emprestimo__centralizar-lista {
@@ -222,5 +227,9 @@ display: inline-block;
 @media (min-width: 460px) {
     .main-emprestimo__container {
         width: 400px;
+    }
+
+    .main-emprestimo__form {
+        padding: 20px;
     }
 }

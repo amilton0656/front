@@ -228,7 +228,7 @@ const EmprestimoSAC = () => {
     return (
         <main className='main-emprestimo__container'>
             <h2 className='title'>Simulação - SAC</h2>
-            <Form>
+            <Form className='main-emprestimo__form'>
 
                 <div className='sideByside'>
 
@@ -372,15 +372,15 @@ const EmprestimoSAC = () => {
                 <div className='sideByside'>
 
                     {/* Comissão (1) - Percentual */}
-                        <InputNumber
-                            label='Comissão (1) - Perc:'
-                            formData={formData}
-                            setFormData={setFormData}
-                            className='w150'
-                            id="comissao1Perc"
-                            name="comissao1Perc"
-                            value={formData.comissao1Perc}
-                        />
+                    <InputNumber
+                        label='Comissão (1) - Perc:'
+                        formData={formData}
+                        setFormData={setFormData}
+                        className='w150'
+                        id="comissao1Perc"
+                        name="comissao1Perc"
+                        value={formData.comissao1Perc}
+                    />
 
                     {/* Comissão (1) - Valor */}
                     <Input
@@ -399,15 +399,15 @@ const EmprestimoSAC = () => {
                 <div className='sideByside'>
 
                     {/* Comissão (2) - Percentual */}
-                        <InputNumber
-                            label='Comissão (2) - Perc:'
-                            formData={formData}
-                            setFormData={setFormData}
-                            className='w150'
-                            id="comissao2Perc"
-                            name="comissao2Perc"
-                            value={formData.comissao2Perc}
-                        />
+                    <InputNumber
+                        label='Comissão (2) - Perc:'
+                        formData={formData}
+                        setFormData={setFormData}
+                        className='w150'
+                        id="comissao2Perc"
+                        name="comissao2Perc"
+                        value={formData.comissao2Perc}
+                    />
 
                     {/* Comissão (2) - Valor */}
                     <Input
@@ -422,21 +422,14 @@ const EmprestimoSAC = () => {
                         step={1}
                     />
                 </div>
-                {/* <div className='form-botaoBox'>
-                    <button
-                        className='form-botaoBox__button'
-                        type="button"
+                <div style={{ marginTop: '20px', width: '100%', textAlign: 'center' }}>
+                    <Button
+                        className='w150'
+                        title='Calcular'
                         onClick={calcularHandle}
-                    >Calcular</button>
-                </div> */}
+                    />
+                </div>
 
-                <Button style={{ width: '200px', marginTop: '30px' }}>
-                    <button
-                        className='form-botaoBox__button'
-                        type="button"
-                        onClick={calcularHandle}
-                    >Calcular</button>
-                </Button>
 
             </Form>
 

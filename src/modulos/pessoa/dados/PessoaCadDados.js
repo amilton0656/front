@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useLocation, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import clienteAxios from '../../../config/axios'
-import classes from '../PessoaCad.module.css'
-import classes2 from '../lista/PessoaLista.module.css'
+// import classes from '../PessoaCad.module.css'
+// import classes2 from '../lista/PessoaLista.module.css'
 import { pessoasActions } from '../../../store/pessoaReducers'
 import { cepMask, cpfMask, cnpjMask, validarCPF, validarCNPJ } from '../../../util/util'
 import Nav from '../../proponente/nav/NavProponente'
@@ -12,9 +12,42 @@ import Form from '../../../components/Form'
 import Input from '../../../components/Input'
 import InputNumber from '../../../components/InputNumber'
 import Button from '../../../components/Button'
+import RadioBox from '../../../components/RadioBox'
 import PessoaContatosLista from '../contatos/PessoaContatosLista'
 
 import './pessoaCadDados.css'
+
+const classes = {}
+const classes2 = {}
+
+const Header = props => {
+
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
+
+    const getOutHandle = () => {
+        navigate(-1)
+        dispatch(pessoasActions.setPessoa({}))
+    }
+    return (
+        <div className='pessoa-container__header-buttons'>
+            <h2 style={{ marginLeft: '5px' }}>Proponente</h2>
+
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+                <Button
+                    className='w150'
+                    bg='transparent'
+                    c='white'
+                    title='<<<  Voltar'
+                    onClick={getOutHandle}
+                    style={{ textAlign: 'right' }}
+                />
+            </div>
+
+
+        </div>
+    )
+}
 
 const ProponenteCadDados = props => {
 
@@ -72,7 +105,7 @@ const ProponenteCadDados = props => {
                 .then(resposta => {
                     setFormDataI(resposta.data)
                     const id_pessoa = resposta.data.id_pessoa
-                    
+
                     checaCPF(resposta.data.tipo_pessoa, resposta.data.cpf_cnpj.replace(/\D/g, ''))
 
 
@@ -339,9 +372,31 @@ const ProponenteCadDados = props => {
             })
     }
 
+    // const botao = !!formDataI.id_pessoa
+    //     ? <button className={classes['botaoBox-button']} type="button" onClick={editHandle}>Salvar</button>
+    //     : <button className={classes['botaoBox-button']} type="button" onClick={addHandle}>Salvar</button>
+
     const botao = !!formDataI.id_pessoa
-        ? <button className={classes['botaoBox-button']} type="button" onClick={editHandle}>Salvar</button>
-        : <button className={classes['botaoBox-button']} type="button" onClick={addHandle}>Salvar</button>
+        ? (
+            <div style={{ marginTop: '20px', width: '100%', textAlign: 'center' }}>
+                <Button
+                    className='w150'
+                    title='Salvar'
+                    onClick={editHandle}
+                />
+            </div>
+
+        )
+        : (
+            <div style={{ marginTop: '20px', width: '100%', textAlign: 'center' }}>
+                <Button
+                    className='w150'
+                    title='Salvar'
+                    onClick={addHandle}
+                />
+            </div>
+        )
+
 
     const onBuscarCep = cep => {
 
@@ -386,69 +441,58 @@ const ProponenteCadDados = props => {
             })
     }
 
-    const getOutHandle = () => {
-        navigate(-1)
-        dispatch(pessoasActions.setPessoa({}))
-    }
 
     return (
         <div className='pessoa-container'>
             <main className='pessoa-main'>
-                <div className='pessoa-container__header-buttons'>
-                    <h2>Proponente</h2>
-                    <Button c = 'yellow' w = '150px' h= '30px'>
-                    </Button>
-
-                
-                </div>
-                {/* <form onSubmit={submitHandler} className={classes.form}> */}
-                    <Form>
+                <Header />
+                <Form className='pessoa-form'>
                     <div>{formDataI.id_pessoa}</div>
-                    {/* Tipo de Pessoa */}
-                    <div className={classes.inputBox}>
-                        <label htmlFor="tipo_pessoa">Tipo de Pessoa:</label>
-                        <div className={classes.radioBox}>
-                            <div className={classes.radioBoxLinha}>
-                                <input
-                                    type='radio'
-                                    name='tipo_pessoa'
-                                    id="tipo_pessoa1"
-                                    onChange={textHandlerI}
 
-                                    value={formDataI.tipo_pessoa}
-                                    checked={formDataI.tipo_pessoa.toString() === "1"}
-                                /><label htmlFor="tipo_pessoa1">Física</label>
+                    <RadioBox
+                        name='tipo_pessoa'
+                        label='Tipo de Pessoa:'
+                        direction='row'
+                    >
 
-                            </div>
-
-                            <div className={classes.radioBoxLinha}>
-                                <input
-                                    type='radio'
-                                    name='tipo_pessoa'
-                                    id="tipo_pessoa2"
-                                    onChange={textHandlerI}
-                                    value={formDataI.tipo_pessoa}
-                                    checked={formDataI.tipo_pessoa.toString() === "2"}
-                                /><label htmlFor="tipo_pessoa2">Jurídica</label>
-
-                            </div>
+                        <div className='form-radioBoxLinha'>
+                            <input
+                                type='radio'
+                                name='tipo_pessoa'
+                                id="tipo_pessoa1"
+                                onChange={textHandlerI}
+                                value={formDataI.tipo_pessoa}
+                                checked={formDataI.tipo_pessoa.toString() === "1"}
+                            /><label htmlFor="tipo_pessoa1">Física</label>
 
                         </div>
-                    </div>
+
+                        <div className='form-radioBoxLinha'>
+                            <input
+                                style={{ marginLeft: '50px' }}
+                                type='radio'
+                                name='tipo_pessoa'
+                                id="tipo_pessoa2"
+                                onChange={textHandlerI}
+                                value={formDataI.tipo_pessoa}
+                                checked={formDataI.tipo_pessoa.toString() === "2"}
+                            /><label htmlFor="tipo_pessoa2">Jurídica</label>
+
+                        </div>
+                    </RadioBox>
 
                     {/* CPF / CNPJ */}
                     <div style={{ display: 'flex', alignItems: 'end' }}>
-                        <div className={classes.inputBoxCPF}>
-                            <label htmlFor="nome">{formDataI.tipo_pessoa.toString() === '1' ? 'CPF:' : 'CNPJ:'}</label>
-                            <input
-                                className={classes['login-input']}
-                                id="cpf_cnpj"
-                                name="cpf_cnpj"
-                                onChange={textHandlerI}
-                                value={formDataI.cpf_cnpj}
-                                onBlur={verCPF}
-                            />
-                        </div>
+                        <Input
+                            label={formDataI.tipo_pessoa.toString() === '1' ? 'CPF:' : 'CNPJ:'}
+                            type='text'
+                            id='cpf_cnpj'
+                            name='cpf_cnpj'
+                            value={formDataI.cpf_cnpj}
+                            onChange={textHandlerI}
+                            onBlur={verCPF}
+                            className='w200'
+                        />
                         {
                             !cpfValido &&
                             <div style={{ margin: '7px 10px', color: 'red', fontWeight: 'bold' }}>
@@ -459,83 +503,71 @@ const ProponenteCadDados = props => {
                     </div>
 
                     {/* Nome / Razão Social */}
-                    <div className={classes.inputBox}>
-                        <label htmlFor="nome">{formDataI.tipo_pessoa.toString() === '1' ? 'Nome:' : 'Razão Social:'}</label>
-                        <input
-                            required
-                            className={classes['login-input']}
-                            id="nome"
-                            name="nome"
-                            onChange={textHandlerI}
-                            value={formDataI.nome}
-                        />
-                    </div>
+                    <Input
+                        label={formDataI.tipo_pessoa.toString() === '1' ? 'Nome:' : 'Razão Social:'}
+                        type='text'
+                        id='nome'
+                        name='nome'
+                        value={formDataI.nome}
+                        onChange={textHandlerI}
+                    />
 
                     {/* CEP */}
-                    <div className={classes.inputBoxCPF}>
-                        <label htmlFor="cep">CEP:</label>
-                        <input
-                            className={classes['login-input']}
-                            id="cep"
-                            name="cep"
-                            onChange={textHandlerI}
-                            value={formDataI.cep}
-                        />
-                    </div>
+                    <Input
+                        label='CEP:'
+                        type='text'
+                        id='cep'
+                        name='cep'
+                        value={formDataI.cep}
+                        onChange={textHandlerI}
+                        className='w100'
+                    />
 
                     {/* Endereço */}
-                    <div className={classes.inputBox}>
-                        <label htmlFor="endereco">Endereço:</label>
-                        <input
-                            className={classes['login-input']}
-                            id="endereco"
-                            name="endereco"
-                            onChange={textHandlerI}
-                            value={formDataI.endereco}
-                        />
-                    </div>
+                    <Input
+                        label='Endereço:'
+                        type='text'
+                        id='endereco'
+                        name='endereco'
+                        value={formDataI.endereco}
+                        onChange={textHandlerI}
+                    />
 
                     {/* Complemento */}
-                    <div className={classes.inputBox}>
-                        <label htmlFor="complemento">Complemento:</label>
-                        <input
-                            className={classes['login-input']}
-                            id="complemento"
-                            name="complemento"
-                            onChange={textHandlerI}
-                            value={formDataI.complemento}
-                        />
-                    </div>
+                    <Input
+                        label='Complemento:'
+                        type='text'
+                        id='complemento'
+                        name='complemento'
+                        value={formDataI.complemento}
+                        onChange={textHandlerI}
+                    />
 
                     {/* Bairro */}
-                    <div className={classes.inputBox}>
-                        <label htmlFor="bairro">Bairro:</label>
-                        <input
-                            className={classes['login-input']}
-                            id="bairro"
-                            name="bairro"
-                            onChange={textHandlerI}
-                            value={formDataI.bairro}
-                        />
-                    </div>
+                    <Input
+                        label='Bairro:'
+                        type='text'
+                        id='bairro'
+                        name='bairro'
+                        value={formDataI.bairro}
+                        onChange={textHandlerI}
+                    />
 
                     {/* Município */}
-                    <div className={classes.inputBox}>
-                        <label htmlFor="municipio">Município:</label>
-                        <input
-                            className={classes['login-input']}
-                            id="municipio"
-                            name="municipio"
-                            onChange={textHandlerI}
-                            value={formDataI.municipio}
-                        />
-                    </div>
+                    <Input
+                        label='Município:'
+                        type='text'
+                        id='municipio'
+                        name='municipio'
+                        value={formDataI.municipio}
+                        onChange={textHandlerI}
+                    />
 
-                    {/* Município */}
-                    <div className={classes.inputBox}>
+                    {/* UF */}
+                    <div className='form-inputBox'>
                         <label htmlFor="uf">UF:</label>
                         <select
-                            className={classes['login-input']}
+                            className='form-input'
                             id="uf"
                             name="uf"
                             onChange={textHandlerI}
@@ -571,7 +603,9 @@ const ProponenteCadDados = props => {
                         </select>
                     </div>
 
-                    {formDataI.id_pessoa && <PessoaContatosLista
+                    {/* formDataI.id_pessoa && <PessoaContatosLista */}
+
+                    {1 && <PessoaContatosLista
                         id_pessoa={formDataI.id_pessoa}
                         formDataI={formDataI}
                         formDataII={formDataII}
@@ -582,121 +616,122 @@ const ProponenteCadDados = props => {
                         (formDataI.tipo_pessoa.toString() === '1') && <div>
 
                             {/* Data de Nascimento */}
-                            <div className={classes.inputBoxCPF}>
-                                <label htmlFor="data_nascimento">Data de Nascimento:</label>
-                                <input
-                                    className={classes['login-input']}
-                                    type='date'
-                                    id="data_nascimento"
-                                    name="data_nascimento"
-                                    onChange={textHandlerII}
-                                    value={formDataII.data_nascimento}
-                                />
-                            </div>
+                            <Input
+                                label='Data de Nascimento:'
+                                type='date'
+                                id='data_nascimento'
+                                name='data_nascimento'
+                                value={formDataII.data_nascimento}
+                                onChange={textHandlerII}
+                                className='w170'
+                            />
 
 
                             {/* Nacionalidade */}
-                            <div className={classes.inputBox}>
-                                <label htmlFor="nacionalidade">Nacionalidade:</label>
-                                <input
-                                    className={classes['login-input']}
-                                    id="nacionalidade"
-                                    name="nacionalidade"
-                                    onChange={textHandlerII}
-                                    value={formDataII.nacionalidade}
-                                />
-                            </div>
+                            <Input
+                                label='Nacionalidade:'
+                                type='text'
+                                id='nacionalidade'
+                                name='nacionalidade'
+                                value={formDataII.nacionalidade}
+                                onChange={textHandlerII}
+                            />
 
                             {/* Sexo */}
-                            <div className={classes.inputBox}>
-                                <label htmlFor="sexo">Sexo:</label>
-                                <div className={classes.radioBox}>
-                                    <div className={classes.radioBoxLinha}>
-                                        <input
-                                            type='radio'
-                                            name='sexo'
-                                            id="sexo1"
-                                            onChange={textHandlerII}
-                                            value={formDataII.sexo}
-                                            checked={formDataII.sexo.toString() === "1"}
-                                        /><label htmlFor="sexo1">Masculino</label>
-                                    </div>
-                                    <div className={classes.radioBoxLinha}>
-                                        <input
-                                            type='radio'
-                                            name='sexo'
-                                            id="sexo2"
-                                            onChange={textHandlerII}
-                                            value={formDataII.sexo}
-                                            checked={formDataII.sexo.toString() === "2"}
-                                        /><label htmlFor="sexo2">Feminino</label>
-                                    </div>
+                            <RadioBox
+                                name='sexo'
+                                label='Sexo:'
+                                direction='row'
+                            >
+
+                                <div className='form-radioBoxLinha'>
+                                    <input
+                                        type='radio'
+                                        name='sexo'
+                                        id="sexo1"
+                                        onChange={textHandlerII}
+                                        value={formDataII.sexo}
+                                        checked={formDataII.sexo.toString() === "1"}
+                                    /><label htmlFor="sexo1">Masculino</label>
                                 </div>
-                            </div>
+                                <div className='form-radioBoxLinha'>
+                                    <input
+                                        style={{ marginLeft: '50px' }}
+                                        type='radio'
+                                        name='sexo'
+                                        id="sexo2"
+                                        onChange={textHandlerII}
+                                        value={formDataII.sexo}
+                                        checked={formDataII.sexo.toString() === "2"}
+                                    /><label htmlFor="sexo2">Feminino</label>
+                                </div>
+
+                            </RadioBox>
 
                             {/* Estado Civil */}
-                            <div className={classes.inputBox}>
-                                <label htmlFor="estado_civil">Estado Civil:</label>
-                                <div className={classes.radioBox}>
-                                    <div className={classes.radioBoxLinha}>
-                                        <input
-                                            type='radio'
-                                            name='estado_civil'
-                                            id="estado_civil1"
-                                            onChange={textHandlerII}
+                            <RadioBox
+                                name='estado_civil'
+                                label='Estado Civil:'
+                                direction='column'
+                            >
+                                <div className='form-radioBoxLinha'>
+                                    <input
+                                        type='radio'
+                                        name='estado_civil'
+                                        id="estado_civil1"
+                                        onChange={textHandlerII}
 
-                                            value={formDataII.estado_civil}
-                                            checked={formDataII.estado_civil.toString() === "1"}
-                                        /><label htmlFor="estado_civil1">Solteiro(a)</label>
-                                    </div>
-                                    <div className={classes.radioBoxLinha}>
-                                        <input
-                                            type='radio'
-                                            name='estado_civil'
-                                            id="estado_civil2"
-                                            onChange={textHandlerII}
-                                            value={formDataII.estado_civil}
-                                            checked={formDataII.estado_civil.toString() === "2"}
-                                        /><label htmlFor="estado_civil2">Casado(a)</label>
-                                    </div>
-                                    <div className={classes.radioBoxLinha}>
-                                        <input
-                                            type='radio'
-                                            name='estado_civil'
-                                            id="estado_civil3"
-                                            onChange={textHandlerII}
-                                            value={formDataII.estado_civil}
-                                            checked={formDataII.estado_civil.toString() === "3"}
-                                        /><label htmlFor="estado_civil3">Separado(a)</label>
-                                    </div>
-                                    <div className={classes.radioBoxLinha}>
-                                        <input
-                                            type='radio'
-                                            name='estado_civil'
-                                            id="estado_civil4"
-                                            onChange={textHandlerII}
-                                            value={formDataII.estado_civil}
-                                            checked={formDataII.estado_civil.toString() === "4"}
-                                        /><label htmlFor="estado_civil4">Divorciado(a)</label>
-                                    </div>
-                                    <div className={classes.radioBoxLinha}>
-                                        <input
-                                            type='radio'
-                                            name='estado_civil'
-                                            id="estado_civil5"
-                                            onChange={textHandlerII}
-                                            value={formDataII.estado_civil}
-                                            checked={formDataII.estado_civil.toString() === "5"}
-                                        /><label htmlFor="estado_civil5">Viúvo(a)</label>
-                                    </div>
+                                        value={formDataII.estado_civil}
+                                        checked={formDataII.estado_civil.toString() === "1"}
+                                    /><label htmlFor="estado_civil1">Solteiro(a)</label>
                                 </div>
-                            </div>
+                                <div className='form-radioBoxLinha'>
+                                    <input
+                                        type='radio'
+                                        name='estado_civil'
+                                        id="estado_civil2"
+                                        onChange={textHandlerII}
+                                        value={formDataII.estado_civil}
+                                        checked={formDataII.estado_civil.toString() === "2"}
+                                    /><label htmlFor="estado_civil2">Casado(a)</label>
+                                </div>
+                                <div className='form-radioBoxLinha'>
+                                    <input
+                                        type='radio'
+                                        name='estado_civil'
+                                        id="estado_civil3"
+                                        onChange={textHandlerII}
+                                        value={formDataII.estado_civil}
+                                        checked={formDataII.estado_civil.toString() === "3"}
+                                    /><label htmlFor="estado_civil3">Separado(a)</label>
+                                </div>
+                                <div className='form-radioBoxLinha'>
+                                    <input
+                                        type='radio'
+                                        name='estado_civil'
+                                        id="estado_civil4"
+                                        onChange={textHandlerII}
+                                        value={formDataII.estado_civil}
+                                        checked={formDataII.estado_civil.toString() === "4"}
+                                    /><label htmlFor="estado_civil4">Divorciado(a)</label>
+                                </div>
+                                <div className='form-radioBoxLinha'>
+                                    <input
+                                        type='radio'
+                                        name='estado_civil'
+                                        id="estado_civil5"
+                                        onChange={textHandlerII}
+                                        value={formDataII.estado_civil}
+                                        checked={formDataII.estado_civil.toString() === "5"}
+                                    /><label htmlFor="estado_civil5">Viúvo(a)</label>
+                                </div>
+                            </RadioBox>
 
                             {/* União Estável */}
-                            <div className={classes.checkboxBox}>
+                            <div className='form-checkboxBox'>
                                 <input
                                     type='checkbox'
-                                    className={classes['login-input']}
+                                    className='form-input'
                                     id="uniao_estavel"
                                     name="uniao_estavel"
                                     defaultChecked={formDataII.uniao_estavel.toString() === '0' ? false : true}
@@ -707,96 +742,101 @@ const ProponenteCadDados = props => {
                             </div>
 
                             {/* Nome do Cônjuge */}
-                            <div className={classes.inputBox}>
-                                <label htmlFor="nome">Nome do Cônjuge</label>
-                                <input
-                                    className={classes['login-input']}
-                                    id="conjuge_nome"
-                                    name="conjuge_nome"
-                                    onChange={textHandlerII}
-                                    value={formDataII.conjuge_nome}
-                                />
-                            </div>
+                            <Input
+                                label='Nome do Cônjuge:'
+                                type='text'
+                                id='conjuge_nome'
+                                name='conjuge_nome'
+                                value={formDataII.conjuge_nome}
+                                onChange={textHandlerII}
+                            />
 
                             {/* CPF do Cônjuge */}
-                            <div className={classes.inputBoxCPF}>
-                                <label htmlFor="conjuge_cpf">CPF do Cônjuge:</label>
-                                <input
-                                    className={classes['login-input']}
-                                    id="conjuge_cpf"
-                                    name="conjuge_cpf"
-                                    onChange={textHandlerII}
-                                    value={formDataII.conjuge_cpf}
-                                />
+                            <Input
+                                label='CPF do Cônjuge:'
+                                type='text'
+                                id='conjuge_cpf'
+                                name='conjuge_cpf'
+                                value={formDataII.conjuge_cpf}
+                                onChange={textHandlerII}
+                                // onBlur={verCPF}
+                                className='w200'
+                            />
+                            {/* {
+                            !cpfValido &&
+                            <div style={{ margin: '7px 10px', color: 'red', fontWeight: 'bold' }}>
+                                Inválido !
                             </div>
+                        } */}
+
                             {
                                 (formDataII.estado_civil.toString() === '2' || formDataII.estado_civil.toString() === '3') && <div>
 
 
                                     {/* Regime de Casamento */}
-                                    <div className={classes.inputBox}>
-                                        <label htmlFor="regime_casamento">Regime de Casamento:</label>
-                                        <div className={classes.radioBox}>
-                                            <div className={classes.radioBoxLinha}>
-                                                <input
-                                                    type='radio'
-                                                    name='regime_casamento'
-                                                    id="regime_casamento1"
-                                                    onChange={textHandlerII}
 
-                                                    value={formDataII.regime_casamento}
-                                                    checked={formDataII.regime_casamento.toString() === "1"}
-                                                /><label htmlFor="regime_casamento1">Comunhão Universal de Bens</label>
-                                            </div>
-                                            <div className={classes.radioBoxLinha}>
-                                                <input
-                                                    type='radio'
-                                                    name='regime_casamento'
-                                                    id="regime_casamento2"
-                                                    onChange={textHandlerII}
-                                                    value={formDataII.regime_casamento}
-                                                    checked={formDataII.regime_casamento.toString() === "2"}
-                                                /><label htmlFor="regime_casamento2">Comunhão Parcial de Bens</label>
-                                            </div>
-                                            <div className={classes.radioBoxLinha}>
-                                                <input
-                                                    type='radio'
-                                                    name='regime_casamento'
-                                                    id="regime_casamento3"
-                                                    onChange={textHandlerII}
+                                    <RadioBox
+                                        name='regime_casamento'
+                                        label='Regime de Casamento:'
+                                        direction='column'
+                                    >
+                                        <div className='form-radioBoxLinha'>
+                                            <input
+                                                type='radio'
+                                                name='regime_casamento'
+                                                id="regime_casamento1"
+                                                onChange={textHandlerII}
 
-                                                    value={formDataII.regime_casamento}
-                                                    checked={formDataII.regime_casamento.toString() === "3"}
-                                                /><label htmlFor="regime_casamento3">Separação de Bens</label>
-                                            </div>
-                                            <div className={classes.radioBoxLinha}>
-                                                <input
-                                                    type='radio'
-                                                    name='regime_casamento'
-                                                    id="regime_casamento4"
-                                                    onChange={textHandlerII}
-                                                    value={formDataII.regime_casamento}
-                                                    checked={formDataII.regime_casamento.toString() === "4"}
-                                                /><label htmlFor="regime_casamento4">Outros</label>
-                                            </div>
+                                                value={formDataII.regime_casamento}
+                                                checked={formDataII.regime_casamento.toString() === "1"}
+                                            /><label htmlFor="regime_casamento1">Comunhão Universal de Bens</label>
                                         </div>
-                                    </div>
+                                        <div className='form-radioBoxLinha'>
+                                            <input
+                                                type='radio'
+                                                name='regime_casamento'
+                                                id="regime_casamento2"
+                                                onChange={textHandlerII}
+                                                value={formDataII.regime_casamento}
+                                                checked={formDataII.regime_casamento.toString() === "2"}
+                                            /><label htmlFor="regime_casamento2">Comunhão Parcial de Bens</label>
+                                        </div>
+                                        <div className='form-radioBoxLinha'>
+                                            <input
+                                                type='radio'
+                                                name='regime_casamento'
+                                                id="regime_casamento3"
+                                                onChange={textHandlerII}
+
+                                                value={formDataII.regime_casamento}
+                                                checked={formDataII.regime_casamento.toString() === "3"}
+                                            /><label htmlFor="regime_casamento3">Separação de Bens</label>
+                                        </div>
+                                        <div className='form-radioBoxLinha'>
+                                            <input
+                                                type='radio'
+                                                name='regime_casamento'
+                                                id="regime_casamento4"
+                                                onChange={textHandlerII}
+                                                value={formDataII.regime_casamento}
+                                                checked={formDataII.regime_casamento.toString() === "4"}
+                                            /><label htmlFor="regime_casamento4">Outros</label>
+                                        </div>
+                                    </RadioBox>
 
                                     {/* Data do Casamento */}
-                                    <div className={classes.inputBoxCPF}>
-                                        <label htmlFor="data_casamento">Data do Casamento:</label>
-                                        <input
-                                            className={classes['login-input']}
-                                            type='date'
-                                            id="data_casamento"
-                                            name="data_casamento"
-                                            onChange={textHandlerII}
-                                            value={formDataII.data_casamento}
-                                        />
-                                    </div>
+                                    <Input
+                                        label='Data do Casamento:'
+                                        type='date'
+                                        id='data_casamento'
+                                        name='data_casamento'
+                                        value={formDataII.data_casamento}
+                                        onChange={textHandlerII}
+                                        className='w170'
+                                    />
 
                                     {/* Pacto Antenupcial */}
-                                    <div className={classes.inputBox}>
+                                    <div className='form-inputBox'>
                                         <label htmlFor="pacto_nupcial">Pacto Antenupcial:</label>
                                         <textarea
                                             className={classes['login-input']}
@@ -812,115 +852,102 @@ const ProponenteCadDados = props => {
                                 </div>}
 
                             {/* Profissão */}
-                            <div className={classes.inputBox}>
-                                <label htmlFor="profissao">Profissão:</label>
-                                <input
-                                    className={classes['login-input']}
-                                    id="profissao"
-                                    name="profissao"
-                                    onChange={textHandlerII}
-                                    value={formDataII.profissao}
-                                />
-                            </div>
+                            <Input
+                                label='Profissão:'
+                                type='text'
+                                id='profissao'
+                                name='profissao'
+                                value={formDataII.profissao}
+                                onChange={textHandlerII}
+                            />
 
                             {/* Número de Dependentes */}
-                            <div className={classes.inputBoxCPF}>
-                                <label htmlFor="numero_dependentes">Número de Dependentes:</label>
-                                <input
-                                    type='number'
-                                    step="1"
-                                    className={classes['login-input']}
-                                    id="numero_dependentes"
-                                    name="numero_dependentes"
-                                    onChange={textHandlerII}
-                                    value={formDataII.numero_dependentes}
-                                />
-                            </div>
+                            <Input
+                                label='Número de Dependentes:'
+                                type='text'
+                                id='numero_dependentes'
+                                name='numero_dependentes'
+                                value={formDataII.numero_dependentes}
+                                onChange={textHandlerII}
+                                className='w200'
+                            />
+
 
                             {/* Número do RG */}
-                            <div className={classes.inputBox}>
-                                <label htmlFor="rg">Número do RG:</label>
-                                <input
-                                    className={classes['login-input']}
-                                    id="rg"
-                                    name="rg"
-                                    onChange={textHandlerII}
-                                    value={formDataII.rg}
-                                />
-                            </div>
+                            <Input
+                                label='Número do RG:'
+                                type='text'
+                                id='rg'
+                                name='rg'
+                                value={formDataII.rg}
+                                onChange={textHandlerII}
+                                className='w200'
+                            />
 
                             {/* Data da Expedição */}
-                            <div className={classes.inputBoxCPF}>
-                                <label htmlFor="data_expedicao">Data da Expedição:</label>
-                                <input
-                                    className={classes['login-input']}
-                                    type='date'
-                                    id="data_expedicao"
-                                    name="data_expedicao"
-                                    onChange={textHandlerII}
-                                    value={formDataII.data_expedicao}
-                                />
-                            </div>
+                            <Input
+                                label='Data da Expedição:'
+                                type='date'
+                                id='data_expedicao'
+                                name='data_expedicao'
+                                value={formDataII.data_expedicao}
+                                onChange={textHandlerII}
+                                className='w170'
+                            />
 
                             {/* Órgao Emissor / UF */}
-                            <div className={classes.inputBox}>
-                                <label htmlFor="orgao_emissor_uf">Órgão Emissor / UF:</label>
-                                <input
-                                    className={classes['login-input']}
-                                    id="orgao_emissor_uf"
-                                    name="orgao_emissor_uf"
-                                    onChange={textHandlerII}
-                                    value={formDataII.orgao_emissor_uf}
-                                />
-                            </div>
+                            <Input
+                                label='Órgão Emissor / UF:'
+                                type='text'
+                                id='orgao_emissor_uf'
+                                name='orgao_emissor_uf'
+                                value={formDataII.orgao_emissor_uf}
+                                onChange={textHandlerII}
+                                className='w300'
+                            />
 
                             {/* Empresa onde trabalha */}
-                            <div className={classes.inputBox}>
-                                <label htmlFor="empresa_nome">Empresa onde trabalha:</label>
-                                <input
-                                    className={classes['login-input']}
-                                    id="empresa_nome"
-                                    name="empresa_nome"
-                                    onChange={textHandlerII}
-                                    value={formDataII.empresa_nome}
-                                />
-                            </div>
+                            <Input
+                                label='Empresa onde trabalha:'
+                                type='text'
+                                id='empresa_nome'
+                                name='empresa_nome'
+                                value={formDataII.empresa_nome}
+                                onChange={textHandlerII}
+                            />
 
                             {/* Cargo */}
-                            <div className={classes.inputBox}>
-                                <label htmlFor="cargo">Cargo:</label>
-                                <input
-                                    className={classes['login-input']}
-                                    id="cargo"
-                                    name="cargo"
-                                    onChange={textHandlerII}
-                                    value={formDataII.cargo}
-                                />
-                            </div>
+                            <Input
+                                label='Cargo:'
+                                type='text'
+                                id='cargo'
+                                name='cargo'
+                                value={formDataII.cargo}
+                                onChange={textHandlerII}
+                            />
 
                             {/* Tempo na Empresa */}
-                            <div className={classes.inputBox}>
-                                <label htmlFor="tempo_empresa">Tempo na Empresa:</label>
-                                <input
-                                    className={classes['login-input']}
-                                    id="tempo_empresa"
-                                    name="tempo_empresa"
-                                    onChange={textHandlerII}
-                                    value={formDataII.tempo_empresa}
-                                />
-                            </div>
+                            <Input
+                                label='Tempo na Empresa:'
+                                type='text'
+                                id='tempo_empresa'
+                                name='tempo_empresa'
+                                value={formDataII.tempo_empresa}
+                                onChange={textHandlerII}
+                                className='w200'
+                            />
 
                             {/* Renda Familiar */}
-                            <div className={classes.inputBox}>
-                                <label htmlFor="remuneracao">Renda Familiar:</label>
-                                <InputNumber
-                                    formData={formDataII}
-                                    setFormData={setFormDataII}
-                                    className={classes['login-input']}
-                                    id="remuneracao"
-                                    name="remuneracao"
-                                />
-                            </div>
+                            <InputNumber
+                                label='Renda Familiar:'
+                                formData={formDataII}
+                                setFormData={setFormDataII}
+                                className='w150'
+                                id="remuneracao"
+                                name="remuneracao"
+                                value={formDataII.remuneracao}
+                            />
+
 
                             <div className={classes.comprometimentoBox}>
 
@@ -929,41 +956,36 @@ const ProponenteCadDados = props => {
 
 
                                     {/* Comprometimento - Percentual */}
-                                    <div className={classes.inputBoxCPF}>
-                                        <label htmlFor="financ_valor">Percentual:</label>
-                                        <InputNumber
-                                            formData={formDataII}
-                                            setFormData={setFormDataII}
-                                            className={classes['login-input']}
-                                            id="financ_valor"
-                                            name="financ_valor"
-                                        />
-
-                                    </div>
+                                    <InputNumber
+                                        label='Percentual:'
+                                        formData={formDataII}
+                                        setFormData={setFormDataII}
+                                        className='w150'
+                                        id="financ_valor"
+                                        name="financ_valor"
+                                    />
 
                                     {/* Comprometimento - Prazo */}
-                                    <div className={classes.inputBox}>
-                                        <label htmlFor="financ_prazo">Prazo:</label>
-                                        <input
-                                            className={classes['login-input']}
-                                            id="financ_prazo"
-                                            name="financ_prazo"
-                                            onChange={textHandlerII}
-                                            value={formDataII.financ_prazo}
-                                        />
-                                    </div>
+                                    <Input
+                                        label='Prazo:'
+                                        type='text'
+                                        id='financ_prazo'
+                                        name='financ_prazo'
+                                        value={formDataII.financ_prazo}
+                                        onChange={textHandlerII}
+                                        className='w300'
+                                    />
+
 
                                     {/* Comprometimento - Descrição */}
-                                    <div className={classes.inputBox}>
-                                        <label htmlFor="financ_descricao">Descrição:</label>
-                                        <input
-                                            className={classes['login-input']}
-                                            id="financ_descricao"
-                                            name="financ_descricao"
-                                            onChange={textHandlerII}
-                                            value={formDataII.financ_descricao}
-                                        />
-                                    </div>
+                                    <Input
+                                        label='Descrição:'
+                                        type='text'
+                                        id='financ_descricao'
+                                        name='financ_descricao'
+                                        value={formDataII.financ_descricao}
+                                        onChange={textHandlerII}
+                                    />
                                 </div>
 
                             </div>
@@ -972,12 +994,12 @@ const ProponenteCadDados = props => {
                     <div className={classes.botaoBox}>
                         {botao}
                     </div>
-                    </Form>
+                </Form>
                 {/* </form> */}
                 <div style={{ height: '20px' }}></div>
 
             </main>
-        </div>
+        </div >
     );
 }
 

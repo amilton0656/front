@@ -3,7 +3,10 @@ import './form.css'
 
 const Form = props => {
     return (   
-        <form className={`form-form ${props.className}`}>
+        <form 
+            className={`form-form ${props.className}`}
+            // style={props.className}
+        >
             {props.children}
         </form>
      );

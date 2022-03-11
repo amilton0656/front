@@ -137,7 +137,7 @@ const PessoaLista = () => {
 
         let formDataI
         let formDataII
-        
+
 
         clienteAxios.get(`/pessoa/lista/id/${id_pessoa}`)
             .then(resposta => {
@@ -184,7 +184,33 @@ const PessoaLista = () => {
                 <h2>Proponentes</h2>
                 <div className='pessoa-list__header-buttons'>
 
-                    <Button style={styleButton}>
+                    <div>
+                        <Button
+                            className='pessoa-list__header-button'
+                            bg='lightgreen'
+                            c='green'
+                            title='Novo'
+                            onClick={() => goToForm(null)}
+                        />
+                    </div>
+                    <div>
+                        <Button
+                            className='pessoa-list__header-button'
+                            bg='green'
+                            title='PDF'
+                            onClick={() => PessoaListaPdf(pessoas)}
+                        />
+                    </div>
+                    <div>
+                        <Button
+                            className='pessoa-list__header-button'
+                            bg='grey'
+                            title='Sair'
+                            onClick={() => navigate('/', { replace: true })}
+                        />
+                    </div>
+
+                    {/* <Button style={styleButton}>
                         <button
                             className='form-botaoBox__button'
                             type="button"
@@ -204,7 +230,7 @@ const PessoaLista = () => {
                             type="button"
                             onClick={() => navigate('/', { replace: true })}
                         >Sair</button>
-                    </Button>
+                    </Button> */}
 
                 </div>
                 <div className='pessoa-list__busca'>

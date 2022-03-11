@@ -15,6 +15,7 @@ import EmprestimoPriceListaPDF from '../modulos/emprestimo/price/EmprestimoPrice
 import PessoaLista from '../modulos/pessoa/lista/PessoaLista'
 import PessoaCadDados from '../modulos/pessoa/dados/PessoaCadDados'
 import TesteScroll from '../modulos/testes/TesteScroll'
+import Teste from '../modulos/testes/Teste'
 
 const Rotas = () => {
 
@@ -42,7 +43,7 @@ const Rotas = () => {
                 <Route path="/pessoa/lista" element={<PessoaLista />} />
                 <Route path="/pessoa/formdados" element={<PessoaCadDados />} />
 
-                <Route path="/teste" element={<TesteScroll />} />
+                <Route path="/teste" element={<Teste />} />
 
             </Routes>
 

@@ -118,7 +118,23 @@ const EmprestimoSACLista = props => {
             <div className='emprestimo__lista'>
                 <div className='emprestimo__header hide-component'>
 
-                    <Button>
+                    <div className='center'>
+                        <Button
+                            className='w200'
+                            title='Gerar PDF'
+                            onClick={() => EmprestimoSACListaPDF(formData, listaPDF, totalDesembolso)}
+                        />
+                    </div>
+
+                    <div className='center'>
+                        <Button
+                            className='w200'
+                            title='Imprimir'
+                            onClick={() => window.print()}
+                        />
+                    </div>
+
+                    {/* <Button>
                         <button
                             className='form-botaoBox__button w150'
                             type="button"
@@ -132,7 +148,7 @@ const EmprestimoSACLista = props => {
                             type="button"
                             onClick={() => window.print()}
                         >Imprimir</button>
-                    </Button>
+                    </Button> */}
 
                 </div>
 

@@ -239,7 +239,7 @@ const EmprestimoPrice = () => {
     return (
         <main className='main-emprestimo__container'>
             <h2 className='title'>Simulação - Price</h2>
-            <Form>
+            <Form className='main-emprestimo__form'>
 
                 <div className='sideByside'>
 
@@ -432,16 +432,17 @@ const EmprestimoPrice = () => {
                         className='w150'
                         step={1}
                     />
-            </div>
+                </div>
 
-            <Button style={{ marginTop: '30px' }}>
-                <button
-                    className='form-botaoBox__button'
-                    type="button"
-                    onClick={calcularHandle}
-                >Calcular</button>
-            </Button>
-        </Form>
+                <div style={{ marginTop: '20px', width: '100%', textAlign: 'center' }}>
+                    <Button
+                        className='w150'
+                        title='Calcular'
+                        onClick={calcularHandle}
+                    />
+                </div>
+
+            </Form>
 
             {/* <div>
                 {
