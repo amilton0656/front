@@ -1,4 +1,7 @@
-
+:root {
+    --intranet-drop-bg: rgb(95, 94, 94);
+    --intranet-larg-submenu: 350px;
+  }
 
 .intra-header__main {
     height: 80px;
@@ -44,6 +47,16 @@
     background-color: transparent;
 }
 
+
+/* *****     menu dropdown com submenus     ***** */
+
+/* *****     botao sanduiche     ***** */
+
+#intra-header-input-menu {
+    display: none;
+}
+
+
 #intra-header__button-menu {
     color: black;
 }
@@ -51,6 +64,163 @@
 #intra-header__button-menu:hover {
     color: rgb(83, 82, 82);
 }
+
+/* *****     menu nav     ***** */
+
+
+#intra-header__nav-input-mob {
+    display: none;
+}
+
+.intra-header__nav-dropdown-mob {
+    background-color: rgba(16, 16, 16, 0.5);
+    width: 350px;
+    height: 900%;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 80px;
+    right: -350px;
+    transition: all .5s;
+}
+
+.intra-header__nav-dropdown-mob-ul {
+    /* background-color: var(--intranet-drop-bg); */
+    background-color: rgb(107, 106, 106);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+    /* padding-top: 85px; */
+}
+
+.intra-header__nav-dropdown-mob-ul-li-label {
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 10px 15px;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.intra-header__nav-dropdown-mob-ul-li-label:hover {
+    color: rgb(187, 184, 184);
+
+}
+
+#intra-header__nav-input-mob:checked ~ nav {
+    transform: translateX(-350px)
+}
+
+/* *****     swubmenu empreends     ***** */
+
+#ck-empreends:checked ~ #ck-empreends-submenu {
+    transform: translateX(0px);
+    transition: all .5s; 
+}
+
+#ck-empreends-submenu {
+    width: var(--intranet-larg-submenu);
+    height: 100%;
+    background-color: var(--intranet-drop-bg);
+    position: absolute;
+    top: 0;
+    transform: translateX(350px);
+    transition: all .5s;
+    z-index: 11;
+}
+
+/* *****     swubmenu adm     ***** */
+
+#ck-adm:checked ~ #ck-adm-submenu {
+    transform: translateX(0px);
+    transition: all .5s; 
+}
+
+#ck-adm-submenu {
+    width: var(--intranet-larg-submenu);
+    height: 100%;
+    background-color: var(--intranet-drop-bg);
+    position: absolute;
+    top: 0;
+    transform: translateX(350px);
+    transition: all .5s;
+    z-index: 11;
+}
+
+/* *****     swubmenu noticias     ***** */
+
+#ck-noticias:checked ~ #ck-noticias-submenu {
+    transform: translateX(0px);
+    transition: all .5s; 
+}
+
+#ck-noticias-submenu {
+    width: var(--intranet-larg-submenu);
+    height: 100%;
+    background-color: var(--intranet-drop-bg);
+    position: absolute;
+    top: 0;
+    transform: translateX(350px);
+    transition: all .5s;
+    z-index: 11;
+}
+
+/* *****     swubmenu bancos     ***** */
+
+#ck-bancos:checked ~ #ck-bancos-submenu {
+    transform: translateX(0px);
+    transition: all .5s; 
+}
+
+#ck-bancos-submenu {
+    width: var(--intranet-larg-submenu);
+    height: 100%;
+    background-color: var(--intranet-drop-bg);
+    position: absolute;
+    top: 0;
+    transform: translateX(350px);
+    transition: all .5s;
+    z-index: 11;
+}
+
+/* *****     swubmenu orgaos    ***** */
+
+#ck-orgaos:checked ~ #ck-orgaos-submenu {
+    transform: translateX(0px);
+    transition: all .5s; 
+}
+
+#ck-orgaos-submenu {
+    width: var(--intranet-larg-submenu);
+    height: 100%;
+    background-color: var(--intranet-drop-bg);
+    position: absolute;
+    top: 0;
+    transform: translateX(350px);
+    transition: all .5s;
+    z-index: 11;
+}
+
+/* *****     swubmenu uteis     ***** */
+
+#ck-uteis:checked ~ #ck-uteis-submenu {
+    transform: translateX(0px);
+    transition: all .5s; 
+}
+
+#ck-uteis-submenu {
+    width: var(--intranet-larg-submenu);
+    height: 100%;
+    background-color: var(--intranet-drop-bg);
+    position: absolute;
+    top: 0;
+    transform: translateX(350px);
+    transition: all .5s;
+    z-index: 11;
+}
+
 
 @media (min-width: 990px) {
     .intra-header__button {

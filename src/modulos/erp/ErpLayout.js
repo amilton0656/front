@@ -22,7 +22,7 @@ const ErpLayout = () => {
             </div>
 
             <div className='erp-card'>
-                <Link className='erp-link' to='/teste'>Teste</Link>
+                <Link className='erp-link' to='/menu'>Menu</Link>
             </div>
         </main>
      );

@@ -16,6 +16,7 @@ import PessoaLista from '../modulos/pessoa/lista/PessoaLista'
 import PessoaCadDados from '../modulos/pessoa/dados/PessoaCadDados'
 import TesteScroll from '../modulos/testes/TesteScroll'
 import Teste from '../modulos/testes/Teste'
+import Menu01 from '../exemplos/menus/Menu01'
 
 const Rotas = () => {
 
@@ -44,6 +45,7 @@ const Rotas = () => {
                 <Route path="/pessoa/formdados" element={<PessoaCadDados />} />
 
                 <Route path="/teste" element={<Teste />} />
+                <Route path="/menu" element={<Menu01 />} />
 
             </Routes>
 

@@ -89,37 +89,43 @@ export const IntranetDropdownItems = [
       idItem: 1,
       title: 'Empreendimentos',
       path: 'menuEmpreendimentos',
-      cName: 'dropdown-link'
+      cName: 'dropdown-link',
+      dropdown: 'empreends',
     },
     {
       idItem: 2,
       title: 'Administrativo',
       path: '/pessoa/lista',
-      cName: 'dropdown-link'
+      cName: 'dropdown-link',
+      dropdown: 'adm',
     },
     {
       idItem: 3,
       title: 'Notícias',
       path: '/',
-      cName: 'dropdown-link'
+      cName: 'dropdown-link',
+      dropdown: 'noticias',
     },
     {
       idItem: 4,
       title: 'Bancos',
       path: '/pessoa/formdados',
-      cName: 'dropdown-link'
+      cName: 'dropdown-link',
+      dropdown: 'bancos',
     },
     {
       idItem: 5,
       title: 'Órgãos Públicos',
       path: '/pessoa/lista',
-      cName: 'dropdown-link'
+      cName: 'dropdown-link',
+      dropdown: 'orgaos',
     },
     {
       idItem: 6,
       title: 'Sites Úteis',
       path: '/',
-      cName: 'dropdown-link'
+      cName: 'dropdown-link',
+      dropdown: 'uteis',
     },
     {
       idItem: 7,

@@ -1,0 +1,51 @@
+##menu01_main {
+    margin: 0;
+    padding: 0;
+}
+
+#menu01__ck {
+    display: none;
+}
+
+#menu01__ck:checked ~ nav {
+    transform: translateX(-350px)
+}
+
+#menu01__nav {
+    width: 350px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: -350px;
+    transition: all .5s;
+}
+
+#menu01__nav ul {
+    background-color: rgba(16, 16, 16, 0.5);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+    padding-top: 85px;
+}
+
+#menu01__nav ul a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding: 20px 15px;
+    color: white;
+}
+
+#menu01__nav ul a:hover {
+    background-color: rgb(176, 224, 230);
+    color: black;
+}
+
+#menu01__label {
+    padding: 15px;
+    position: absolute;
+    z-index: 1;
+}
