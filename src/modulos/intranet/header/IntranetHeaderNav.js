@@ -20,7 +20,7 @@ const IntranetHeaderNav = () => {
     return (
         <ul className='intra-nav__dropdown'>
             <li className='intra-nav__dropdown-item'>
-                <span href="#" className='intra-nav__dropdown-link'>Empreendimento</span>
+                <span href="#" className='intra-nav__dropdown-link'>Empreendimentos</span>
                 <ul className='intra-nav__dropdown-submenu'>
                     {
                         menuEmpreendimentos.map(emp => (

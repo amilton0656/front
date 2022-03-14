@@ -100,9 +100,12 @@ const ProponenteCadDados = props => {
 
     useEffect(() => {
 
+        console.log('id_pessoa ', id_pessoa)
+
         if (id_pessoa) {
-            clienteAxios.get(`/pessoa/lista/id/${id_pessoa}`)
+            clienteAxios.get(`/pessoa/${id_pessoa}`, { headers: { Authorization: token } })
                 .then(resposta => {
+                    console.log('id_pessoa_datda ', resposta.data)
                     setFormDataI(resposta.data)
                     const id_pessoa = resposta.data.id_pessoa
 
@@ -111,7 +114,7 @@ const ProponenteCadDados = props => {
 
                     dispatch(pessoasActions.setPessoa(resposta.data))
 
-                    clienteAxios.get(`/pessoacomplemento/lista/id/${id_pessoa}`)
+                    clienteAxios.get(`/pessoacomplemento/id/${id_pessoa}`, { headers: { Authorization: token } })
                         .then(resposta => {
                             if (resposta.data.length === 0) {
                                 setFormDataII({ ...initialStateII, id_pessoa })
@@ -125,6 +128,7 @@ const ProponenteCadDados = props => {
                         })
                 })
                 .catch(err => {
+                    console.log('id_pessoa_erro ', err)
                     console.log('Erro ao buscar ', err)
                 })
         }
@@ -168,13 +172,13 @@ const ProponenteCadDados = props => {
 
     const editHandle = () => {
 
-        clienteAxios.put('/pessoa/upd', formDataI)
+        clienteAxios.put('/pessoa/upd', formDataI, { headers: { Authorization: token } })
             .then(resposta => {
                 dispatch(pessoasActions.setPessoa(resposta.data))
             })
             .then(resposta => {
                 if (formDataII.id_dados) {
-                    clienteAxios.put('/pessoacomplemento/upd', formDataII)
+                    clienteAxios.put('/pessoacomplemento/upd', formDataII, { headers: { Authorization: token } })
                         .then(resposta => {
                             dispatch(pessoasActions.setComplemento(resposta.data))
                         })
@@ -183,7 +187,7 @@ const ProponenteCadDados = props => {
                         })
 
                 } else {
-                    clienteAxios.post('/pessoacomplemento/add', formDataII)
+                    clienteAxios.post('/pessoacomplemento/add', formDataII, { headers: { Authorization: token } })
                         .then(resposta => {
                             dispatch(pessoasActions.setComplemento(resposta.data))
                         })

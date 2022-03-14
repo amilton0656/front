@@ -94,6 +94,9 @@ const Login = () => {
                             onClick={submitHandler}
                         >Entrar</button>
                     </div>
+                    <div style={{fontSize: '0.7rem', display: 'block', textAlign: 'right'}}>
+                        2022 03 13 01
+                    </div>
 
                 </Form>
             </Card>

@@ -44,6 +44,7 @@
     height: 100%;
     padding-top: 20px;
     font-weight: 600;
+    text-transform: uppercase;
 }
 
 .intra-nav__dropdown-link:hover {

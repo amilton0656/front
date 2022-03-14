@@ -6,7 +6,6 @@ import ErpLayout from './ErpLayout'
 const Erp = () => {
 
     const { auth } = useSelector(state => state.login.login)
-    console.log('dentro erp')
 
     return ( 
         <>

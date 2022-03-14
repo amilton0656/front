@@ -12,10 +12,10 @@ import './Empreend_Telefones.css'
 
 const Empreend_Telefones = ({ history }) => {
 
-    const [telefones, xTelefones] = useState([])
-    const [mostrar, xMostrar] = useState(false)
-    const [nomeAbuscar, xNomeAbuscar] = useState('')
-    const [mostrarTelefones, xMostrarTelefones] = useState(false)
+    const [telefones, setTelefones] = useState([])
+    const [mostrar, setMostrar] = useState(false)
+    const [nomeAbuscar, setNomeAbuscar] = useState('')
+    const [mostrarTelefones, setMostrarTelefones] = useState(false)
 
     const onSubmit = (e) => {
 
@@ -24,10 +24,10 @@ const Empreend_Telefones = ({ history }) => {
 
         clienteAxios.get(`/agendatelefonica/${nomeAbuscar}`)
             .then(resposta => {
-                xMostrar(true)
+                setMostrar(true)
                 const contatos = resposta.data[0]
-                xTelefones(contatos.contatos)
-                xMostrarTelefones(true)
+                setTelefones(contatos.contatos)
+                setMostrarTelefones(true)
             })
             .catch(err => {
                 console.log(err)
@@ -36,8 +36,8 @@ const Empreend_Telefones = ({ history }) => {
 
 
     const limparTelefones = () => (
-        xNomeAbuscar(''),
-        xMostrarTelefones(false)
+        setNomeAbuscar(''),
+        setMostrarTelefones(false)
     )
 
     return (
@@ -56,7 +56,7 @@ const Empreend_Telefones = ({ history }) => {
                             type="text"
                             class="intra-fones__input"
                             value={nomeAbuscar}
-                            onChange={e => xNomeAbuscar(e.target.value)}
+                            onChange={e => setNomeAbuscar(e.target.value)}
                         />
 
                     </div>
